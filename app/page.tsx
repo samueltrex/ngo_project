@@ -1,5 +1,7 @@
 "use client";
 
+import React from 'react';
+
 export default function Home() {
   const trustees = [
     { name: "Rev Fr Hilary Naankot Longs", role: "Catholic Priest / Leadership", img: "/a.jpg" },
@@ -14,79 +16,84 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-black font-sans selection:bg-yellow-100">
       
-      {/* --- NAVIGATION --- */}
-      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4">
-        <div className="max-w-[2048px] mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-black rounded flex items-center justify-center text-yellow-500 font-black text-xs">G</div>
-            <span className="font-black uppercase tracking-tighter text-sm">GICD <span className="text-yellow-600">Nigeria</span></span>
-          </div>
-          <div className="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-widest">
-            <a href="#who" className="hover:text-yellow-600 transition-colors">Who We Are</a>
-            <a href="#what" className="hover:text-yellow-600 transition-colors">What We Do</a>
-            <a href="#updates" className="hover:text-yellow-600 transition-colors">Updates</a>
-            <a href="#work" className="bg-black text-white px-4 py-2 rounded-full hover:bg-yellow-500 transition-all">Work With Us</a>
-          </div>
-        </div>
-      </nav>
-
-      {/* 1. WHO WE ARE - HERO & ENLARGED BOARD (2048x1336 Optimized) */}
-      <section id="who" className="pt-40 pb-32 px-6 bg-black text-white">
-        <div className="max-w-[2048px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
-          
-          {/* Vision Statement */}
-          <div className="lg:col-span-5 lg:sticky lg:top-40">
-            <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-12 uppercase italic">
+      {/* SECTION 1: WHO WE ARE (From Layout Item 1) */}
+      <section id="who" className="pt-48 pb-32 px-6 bg-black text-white">
+        <div className="max-w-[2048px] mx-auto lg:px-20">
+          <div className="mb-32 text-center lg:text-left">
+            <h2 className="text-yellow-500 text-[14px] font-black uppercase tracking-[1em] mb-12 italic">Section 01 / Leadership</h2>
+            <h1 className="text-8xl md:text-[11rem] font-black tracking-tighter leading-[0.75] mb-16 uppercase italic">
               Who We <br /> <span className="text-yellow-500">Are.</span>
             </h1>
-            <div className="space-y-10 border-l-8 border-yellow-500 pl-12">
-              <p className="text-3xl md:text-4xl font-light italic text-gray-200 leading-tight tracking-tight">
+            <div className="max-w-6xl border-y-2 border-yellow-500/30 py-16">
+              <p className="text-4xl md:text-5xl font-light italic text-gray-100 leading-tight mb-8">
                 &quot;Protection for Every Child; Empowerment for Every Youth; Resilience for Every Community.&quot;
               </p>
-              <p className="text-lg leading-relaxed text-gray-400 max-w-md font-medium">
-                GICD is a community-driven organization committed to advancing locally grounded research and ethically responsive development initiatives in Plateau State.
+              <p className="text-xl text-gray-400 font-medium max-w-2xl">
+                GICD is a community-driven organization committed to advancing locally grounded research and ethically responsive development initiatives.
               </p>
             </div>
           </div>
 
-          {/* Enlarged 7-Member Board Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* BOARD OF TRUSTEES GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {trustees.map((t, i) => (
-              <div 
-                key={i} 
-                className="group bg-white/5 p-10 rounded-[3.5rem] border border-white/10 flex flex-col items-center text-center hover:bg-yellow-500 hover:border-yellow-500 transition-all duration-700"
-              >
-                <div className="relative w-32 h-32 mb-8">
-                   <img 
-                    src={t.img} 
-                    className="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" 
-                    alt={t.name} 
-                   />
-                   <div className="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-black/20 transition-all"></div>
+              <div key={i} className="group bg-white/5 p-12 rounded-[5rem] border border-white/10 flex flex-col md:flex-row items-center gap-10 hover:bg-yellow-500 transition-all duration-700">
+                <div className="w-48 h-48 shrink-0">
+                  <img src={t.img} className="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 shadow-2xl" alt={t.name} />
                 </div>
-                <h4 className="text-xl font-black uppercase tracking-tighter leading-tight group-hover:text-black transition-colors">
-                  {t.name}
-                </h4>
-                <div className="w-12 h-1 bg-yellow-500 my-4 group-hover:bg-black transition-colors"></div>
-                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.3em] group-hover:text-black/70 transition-colors">
-                  {t.role}
-                </p>
+                <div className="text-center md:text-left">
+                  <h4 className="text-3xl font-black uppercase tracking-tighter group-hover:text-black transition-colors mb-4">{t.name}</h4>
+                  <div className="w-16 h-1.5 bg-yellow-500 mb-6 group-hover:bg-black transition-colors"></div>
+                  <p className="text-[12px] text-gray-400 font-black uppercase tracking-[0.4em] group-hover:text-black/60 transition-colors">{t.role}</p>
+                </div>
               </div>
             ))}
-            
-            {/* Design Filler to keep the grid looking intentional */}
-            <div className="hidden md:flex flex-col items-center justify-center p-10 border-2 border-dashed border-white/10 rounded-[3.5rem] opacity-30">
-               <span className="text-yellow-500 text-4xl mb-4">⭐</span>
-               <p className="text-[10px] font-black uppercase tracking-widest text-center leading-relaxed">
-                 Leadership & <br />Governance
-               </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2: PROGRAMME UPDATES - LAUGHS AT LAST! (From Layout Item 3) */}
+      <section id="updates" className="py-40 px-6 bg-white border-b border-gray-100">
+        <div className="max-w-[2048px] mx-auto lg:px-20 grid lg:grid-cols-12 gap-24 items-center">
+          
+          {/* Photo Collage Area (Using part a 2.jpg) */}
+          <div className="lg:col-span-7 relative">
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-yellow-400 rounded-full blur-[100px] opacity-20 animate-pulse"></div>
+            <img src="/part a 2.jpg" alt="Ministry Meeting" className="relative z-10 w-full rounded-[4rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000" />
+            <div className="absolute -bottom-8 -right-8 bg-black text-white p-8 rounded-3xl z-20 shadow-xl border-4 border-white">
+              <span className="text-yellow-500 font-black text-4xl leading-none">2026</span>
+              <p className="text-[10px] font-bold uppercase tracking-widest mt-1">Official Approval</p>
             </div>
           </div>
 
+          {/* Text Content Area */}
+          <div className="lg:col-span-5">
+            <span className="text-yellow-600 font-black text-[14px] uppercase tracking-[0.5em] mb-8 block underline decoration-4 underline-offset-8 italic">Latest Highlights</span>
+            <h2 className="text-7xl font-black uppercase tracking-tighter leading-[0.8] mb-12">
+              Laughs <br /> at <span className="text-yellow-500 italic">Last!</span>
+            </h2>
+            <div className="space-y-8 text-xl text-gray-600 leading-relaxed italic">
+              <p className="font-bold text-black border-l-8 border-yellow-500 pl-10">
+                &quot;The Commissioner&apos;s signing and approval of the Research Protocol signifies that the assessment will spotlight critical knowledge gaps.&quot;
+              </p>
+              <p className="pl-12 font-medium">
+                High-level engagement with the Honorable Commissioner, Plateau State Ministry of Women Affairs and Social Development.
+              </p>
+            </div>
+            
+            {/* Document Preview (Using part a 1.jpg) */}
+            <div className="mt-16 flex items-center gap-6 p-6 bg-gray-50 rounded-[2rem] border border-gray-200 w-fit">
+              <img src="/part a 1.jpg" className="w-20 h-28 object-cover rounded shadow-md" alt="Protocol Document" />
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1 italic">Status: Signed</p>
+                <p className="text-sm font-bold text-black uppercase">Research Protocol.pdf</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      {/* 3. PROGRAMME UPDATES */}
-{/* 3. PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
+
+      {/* SECTION 3: PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
       <section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -95,7 +102,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-24">
-            
+
             {/* URGENT UPDATE: SAFE SCHOOLS ADVOCACY */}
             <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-yellow-500 shadow-xl">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -148,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. RESOURCES */}
+      {/* SECTION 4: RESOURCES */}
       <section id="resources" className="py-28 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
@@ -168,7 +175,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. WORK WITH US */}
+      {/* SECTION 5: WORK WITH US */}
       <section id="work" className="py-28 px-6 bg-black text-white">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">Work With <br /><span className="text-yellow-500 underline decoration-[10px] underline-offset-8">Us.</span></h2>
@@ -191,7 +198,7 @@ export default function Home() {
         </div>
         <p className="text-gray-600 text-[10px] font-mono tracking-[0.6em] uppercase">© 2026 THE GUARDIANS INITIATIVE • GICD NIGERIA</p>
       </footer>
-
     </main>
   );
 }
+  
