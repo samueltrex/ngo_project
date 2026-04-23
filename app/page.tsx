@@ -16,95 +16,107 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-black font-sans selection:bg-yellow-100">
       
-      {/* --- NEW HEADER: Logo, Name & Navigation --- */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4">
-        <div className="max-w-[2048px] mx-auto flex justify-between items-center lg:px-20">
-          <div className="flex items-center gap-4">
-            {/* Replace with your actual logo file */}
-            <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center font-black text-white text-xl">G</div>
-            <div>
-              <h1 className="text-xl font-black uppercase tracking-tighter leading-none">The Guardian Initiative</h1>
-              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">For Community Development</p>
+      {/* --- BOLDER HEADER --- */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-8 py-6">
+        <div className="max-w-[2048px] mx-auto flex justify-between items-center lg:px-12">
+          
+          {/* Logo & Name Group */}
+          <div className="flex items-center gap-6">
+            {/* SVG Logo for guaranteed visibility */}
+            <div className="w-16 h-16 bg-black flex items-center justify-center rounded-none transform rotate-3 shadow-xl">
+              <span className="text-yellow-500 font-black text-3xl">G</span>
+            </div>
+            <div className="border-l-4 border-black pl-6">
+              <h1 className="text-3xl font-black uppercase tracking-tighter leading-none mb-1">
+                The Guardian <span className="text-yellow-600">Initiative</span>
+              </h1>
+              <p className="text-xs font-black text-gray-500 uppercase tracking-[0.3em]">
+                For Community Development
+              </p>
             </div>
           </div>
-          <nav className="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-widest">
-            <a href="#who" className="hover:text-yellow-600 transition-colors">Who We Are</a>
-            <a href="#updates" className="hover:text-yellow-600 transition-colors">Updates</a>
-            <a href="#" className="hover:text-yellow-600 transition-colors">Resources</a>
-            <a href="#" className="bg-black text-white px-6 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-all">Work With Us</a>
+
+          {/* Navigation */}
+          <nav className="hidden xl:flex gap-12 text-sm font-black uppercase tracking-widest">
+            <a href="#who" className="hover:text-yellow-600 transition-colors border-b-2 border-transparent hover:border-yellow-600 pb-1">Who We Are</a>
+            <a href="#updates" className="hover:text-yellow-600 transition-colors border-b-2 border-transparent hover:border-yellow-600 pb-1">Updates</a>
+            <a href="#" className="bg-black text-white px-8 py-4 rounded-none hover:bg-yellow-500 hover:text-black transition-all shadow-[8px_8px_0px_0px_rgba(234,179,8,1)]">
+              Work With Us
+            </a>
           </nav>
         </div>
       </header>
 
       {/* --- SECTION 1: WHO WE ARE (Layout Item 1) --- */}
-      <section id="who" className="pt-60 pb-32 px-6 bg-black text-white">
+      <section id="who" className="pt-72 pb-40 px-6 bg-black text-white">
         <div className="max-w-[2048px] mx-auto lg:px-20">
-          <div className="mb-24">
-            <h2 className="text-8xl md:text-[12rem] font-black tracking-tighter leading-[0.75] uppercase italic">
-              Who We <span className="text-yellow-500">Are.</span>
-            </h2>
+          <div className="mb-32">
+            <h1 className="text-9xl md:text-[15rem] font-black tracking-tighter leading-[0.75] uppercase italic">
+              Who We <br /> <span className="text-yellow-500">Are.</span>
+            </h1>
           </div>
 
-          {/* REFINED BOARD GRID: Minimal & Professional */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* PROFESSIONAL BOARD GRID */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {trustees.map((t, i) => (
-              <div key={i} className="group relative overflow-hidden bg-neutral-900 border border-white/5 rounded-2xl p-8 hover:border-yellow-500/50 transition-all duration-500">
-                <div className="relative z-10">
-                  <div className="mb-6 overflow-hidden rounded-xl grayscale group-hover:grayscale-0 transition-all duration-700 aspect-square">
-                    <img 
-                      src={t.img} 
-                      alt={t.name} 
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
-                    />
-                  </div>
-                  <h4 className="text-xl font-bold uppercase tracking-tight mb-2 group-hover:text-yellow-500 transition-colors">
-                    {t.name}
-                  </h4>
-                  <div className="h-0.5 w-8 bg-yellow-500 mb-4"></div>
-                  <p className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em] leading-relaxed">
-                    {t.role}
-                  </p>
+              <div key={i} className="group bg-neutral-900 border-l-4 border-white/10 p-10 hover:border-yellow-500 transition-all duration-500 hover:bg-neutral-800">
+                <div className="mb-8 overflow-hidden rounded-none grayscale group-hover:grayscale-0 transition-all duration-700 aspect-square border-2 border-white/5 shadow-2xl">
+                  <img 
+                    src={t.img} 
+                    alt={t.name} 
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
-                {/* Subtle background glow on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <h4 className="text-2xl font-black uppercase tracking-tighter mb-3 leading-none group-hover:text-yellow-500 transition-colors">
+                  {t.name}
+                </h4>
+                <p className="text-[11px] text-gray-500 font-black uppercase tracking-[0.2em] leading-relaxed">
+                  {t.role}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* --- SECTION 2: PROGRAMME UPDATES (Layout Item 3) --- */}
-      <section id="updates" className="py-40 px-6 bg-white">
+      {/* --- SECTION 2: PROGRAMME UPDATES (Laughs at Last!) --- */}
+      <section id="updates" className="py-48 px-6 bg-white">
         <div className="max-w-[2048px] mx-auto lg:px-20 grid lg:grid-cols-12 gap-24 items-center">
           <div className="lg:col-span-7">
-            <img 
-              src="/part a 2.jpg" 
-              alt="Ministry Meeting" 
-              className="w-full rounded-[3rem] shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" 
-            />
+            <div className="relative p-4 border-4 border-black">
+              <img 
+                src="/part a 2.jpg" 
+                alt="Ministry Meeting" 
+                className="w-full grayscale hover:grayscale-0 transition-all duration-700" 
+              />
+            </div>
           </div>
 
           <div className="lg:col-span-5">
-            <span className="text-yellow-600 font-black text-[12px] uppercase tracking-[0.4em] mb-6 block">Latest Updates</span>
-            <h2 className="text-6xl font-black uppercase tracking-tighter leading-[0.8] mb-10">
+            <span className="text-yellow-600 font-black text-sm uppercase tracking-[0.5em] mb-8 block underline decoration-4 underline-offset-8">Field Updates</span>
+            <h2 className="text-8xl font-black uppercase tracking-tighter leading-[0.8] mb-12">
               Laughs <br /> at <span className="text-yellow-500 italic">Last!</span>
             </h2>
-            <div className="space-y-6 text-lg text-gray-600 leading-relaxed italic border-l-4 border-yellow-500 pl-8">
-              <p className="font-bold text-black text-2xl">
-                &quot;The Commissioner&apos;s signing of the Research Protocol marks a milestone.&quot;
+            <div className="space-y-8 text-2xl text-gray-600 leading-tight italic border-l-8 border-black pl-10">
+              <p className="font-black text-black">
+                &quot;The Commissioner&apos;s signing of the Research Protocol marks a milestone for Plateau State.&quot;
               </p>
             </div>
             
-            <div className="mt-12 flex items-center gap-6 p-4 bg-gray-50 rounded-2xl border border-gray-100 w-fit">
-              <img src="/part a 1.jpg" className="w-16 h-20 object-cover rounded shadow-sm" alt="Document" />
+            <div className="mt-16 flex items-center gap-8 p-8 bg-gray-50 border-2 border-black w-fit shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+              <img src="/part a 1.jpg" className="w-20 h-28 object-cover shadow-lg" alt="Document" />
               <div>
-                <p className="text-[10px] font-black uppercase tracking-widest text-gray-400">Status: Approved</p>
-                <p className="text-xs font-bold text-black uppercase">Research_Protocol_2026.pdf</p>
+                <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">Status: Verified</p>
+                <p className="text-sm font-black text-black uppercase">Research_Protocol_2026.pdf</p>
               </div>
             </div>
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
+}
 
 {/* SECTION 3: PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
       <section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
