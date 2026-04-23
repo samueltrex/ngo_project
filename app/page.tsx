@@ -140,64 +140,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. CONTACT PORTAL - COMPACT VERSION */}
-      <section className="py-12 md:py-16 px-6 md:px-12 bg-black text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      {/* 4. CONTACT PORTAL - ULTRA LEAN */}
+      <section className="py-8 md:py-12 px-6 bg-black text-white border-t border-white/5">
+        <div className="max-w-5xl mx-auto"> {/* Narrowed the container from 7xl to 5xl */}
+          <div className="flex flex-col lg:flex-row gap-8 items-center">
             
-            {/* Left Side: Information */}
-            <div className="lg:sticky lg:top-10">
-              <div className="mb-8 border-l-[6px] border-yellow-500 pl-6">
-                <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-600 mb-1">Connect</h2>
-                <h3 className="text-4xl md:text-5xl font-black tracking-tighter uppercase">Contact <br/> Portal<span className="text-yellow-500">.</span></h3>
-              </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-                <div>
-                  <h4 className="text-yellow-500 font-mono uppercase tracking-widest text-[10px] mb-2">Headquarters</h4>
-                  <p className="text-lg font-light text-gray-300">Jos, Plateau State, Nigeria.</p>
-                </div>
-
-                <div>
-                  <h4 className="text-yellow-500 font-mono uppercase tracking-widest text-[10px] mb-2">Research</h4>
-                  <p className="text-lg font-light text-gray-300">research@gicd.org.ng</p>
-                </div>
-
-                <div className="pt-4">
-                  <div className="inline-block border border-white/10 px-4 py-2 rounded-xl bg-white/5">
-                    <span className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">System Online</span>
-                    </span>
-                  </div>
-                </div>
+            {/* Left: Heading & Info (Minimal) */}
+            <div className="w-full lg:w-1/3">
+              <h3 className="text-3xl font-black tracking-tighter uppercase mb-4">
+                Contact<span className="text-yellow-500">.</span>
+              </h3>
+              <div className="space-y-2 text-sm text-gray-400 font-light">
+                <p>Jos, Plateau State, Nigeria</p>
+                <p className="text-yellow-500 font-medium">research@gicd.org.ng</p>
               </div>
             </div>
 
-            {/* Right Side: Tighter Form */}
-            <div className="bg-white/5 p-6 md:p-8 rounded-[2rem] border border-white/10">
-              <form className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[9px] font-black uppercase tracking-widest text-gray-500">Full Name</label>
-                    <input type="text" className="bg-white/5 border-b border-white/20 p-3 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Name" />
-                  </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[9px] font-black uppercase tracking-widest text-gray-500">Email</label>
-                    <input type="email" className="bg-white/5 border-b border-white/20 p-3 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Email" />
-                  </div>
+            {/* Right: The Tightest Form */}
+            <div className="w-full lg:w-2/3 bg-white/5 p-5 md:p-6 rounded-2xl border border-white/10">
+              <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" className="bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Full Name" />
+                <input type="email" className="bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Email" />
+                <div className="md:col-span-2">
+                   <input type="text" className="w-full bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Message" />
                 </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-[9px] font-black uppercase tracking-widest text-gray-500">Message</label>
-                  <textarea rows={3} className="bg-white/5 border-b border-white/20 p-3 outline-none focus:border-yellow-500 transition-colors text-white text-sm resize-none" placeholder="Message"></textarea>
+                <div className="md:col-span-2 flex justify-end">
+                  <button type="button" className="px-8 py-3 bg-yellow-500 text-black font-black uppercase tracking-widest text-[10px] rounded-lg hover:bg-white transition-all">
+                    Send
+                  </button>
                 </div>
-
-                <button type="button" className="w-full py-4 bg-yellow-500 text-black font-black uppercase tracking-[0.2em] text-xs rounded-xl hover:bg-white transition-all duration-300">
-                  Send Message
-                </button>
               </form>
             </div>
+
           </div>
         </div>
       </section>
