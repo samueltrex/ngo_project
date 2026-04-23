@@ -140,19 +140,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MODAL */}
-      {selectedImg && (
-        <div 
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 cursor-zoom-out"
-          onClick={() => setSelectedImg(null)}
-        >
-          <img src={selectedImg} className="max-w-full max-h-full object-contain shadow-2xl" alt="Full view" />
-        </div>
-      )}
+      {/* 4. CONTACT PORTAL - BOLD & FUNCTIONAL */}
+      <section className="py-24 px-6 md:px-12 bg-black text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            
+            {/* Left Side: Information */}
+            <div>
+              <div className="mb-12 border-l-[10px] border-yellow-500 pl-8">
+                <h2 className="text-sm font-black uppercase tracking-[0.5em] text-yellow-600 mb-2">Connect</h2>
+                <h3 className="text-5xl md:text-6xl font-black tracking-tighter uppercase">Contact <br/> Portal<span className="text-yellow-500">.</span></h3>
+              </div>
+              
+              <div className="space-y-10">
+                <div>
+                  <h4 className="text-yellow-500 font-mono uppercase tracking-widest text-xs mb-3">Headquarters</h4>
+                  <p className="text-2xl font-light text-gray-300">
+                    Jos, Plateau State,<br />
+                    Nigeria.
+                  </p>
+                </div>
 
-      <footer className="bg-black text-white py-12 px-6 text-center border-t border-white/10">
-        <p className="text-gray-500 text-sm italic mb-2">&quot;Strengthening community resilience at all levels.&quot;</p>
-        <p className="text-gray-600 text-[10px] uppercase tracking-widest">Jos, Plateau State, Nigeria</p>
+                <div>
+                  <h4 className="text-yellow-500 font-mono uppercase tracking-widest text-xs mb-3">Research & Partnerships</h4>
+                  <p className="text-2xl font-light text-gray-300">
+                    research@gicd.org.ng
+                  </p>
+                </div>
+
+                <div className="inline-block border border-white/20 px-6 py-4 rounded-2xl">
+                  <span className="flex items-center gap-3">
+                    <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                    <span className="text-sm font-bold uppercase tracking-widest">Portal Active</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side: Bold Form */}
+            <div className="bg-white/5 p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl">
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-yellow-500">Full Name</label>
+                    <input type="text" className="bg-white/10 border-b-2 border-white/20 p-4 outline-none focus:border-yellow-500 transition-colors text-white" placeholder="Name" />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-yellow-500">Email Address</label>
+                    <input type="email" className="bg-white/10 border-b-2 border-white/20 p-4 outline-none focus:border-yellow-500 transition-colors text-white" placeholder="Email" />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] font-black uppercase tracking-widest text-yellow-500">Message</label>
+                  <textarea rows={4} className="bg-white/10 border-b-2 border-white/20 p-4 outline-none focus:border-yellow-500 transition-colors text-white resize-none" placeholder="Message"></textarea>
+                </div>
+
+                <button type="button" className="w-full py-6 bg-yellow-500 text-black font-black uppercase tracking-[0.3em] rounded-2xl hover:bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-xl">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer / Bottom Bar */}
+      <footer className="bg-black py-12 px-6 border-t border-white/10 text-center">
+        <p className="text-gray-500 text-xs font-mono tracking-widest">
+          © 2026 THE GUARDIANS INITIATIVE FOR COMMUNITY DEVELOPMENT
+        </p>
       </footer>
     </main>
   );
