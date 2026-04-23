@@ -16,103 +16,107 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-black font-sans selection:bg-yellow-100">
       
-      {/* --- BOLDER HEADER --- */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-8 py-6">
+      {/* --- BOLD INSTITUTIONAL HEADER --- */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-[6px] border-black px-8 py-8">
         <div className="max-w-[2048px] mx-auto flex justify-between items-center lg:px-12">
           
-          {/* Logo & Name Group */}
-          <div className="flex items-center gap-6">
-            {/* SVG Logo for guaranteed visibility */}
-            <div className="w-16 h-16 bg-black flex items-center justify-center rounded-none transform rotate-3 shadow-xl">
-              <span className="text-yellow-500 font-black text-3xl">G</span>
-            </div>
-            <div className="border-l-4 border-black pl-6">
-              <h1 className="text-3xl font-black uppercase tracking-tighter leading-none mb-1">
+          <div className="flex items-center gap-8">
+            {/* Logo from public folder */}
+            <img 
+              src="/logo.jpeg" 
+              alt="GICD Logo" 
+              className="w-20 h-20 object-contain border-2 border-black p-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" 
+            />
+            <div className="border-l-[6px] border-black pl-8">
+              <h1 className="text-4xl font-black uppercase tracking-tighter leading-none mb-2">
                 The Guardian <span className="text-yellow-600">Initiative</span>
               </h1>
-              <p className="text-xs font-black text-gray-500 uppercase tracking-[0.3em]">
+              <p className="text-sm font-black text-gray-500 uppercase tracking-[0.4em]">
                 For Community Development
               </p>
             </div>
           </div>
 
-          {/* Navigation */}
-          <nav className="hidden xl:flex gap-12 text-sm font-black uppercase tracking-widest">
-            <a href="#who" className="hover:text-yellow-600 transition-colors border-b-2 border-transparent hover:border-yellow-600 pb-1">Who We Are</a>
-            <a href="#updates" className="hover:text-yellow-600 transition-colors border-b-2 border-transparent hover:border-yellow-600 pb-1">Updates</a>
-            <a href="#" className="bg-black text-white px-8 py-4 rounded-none hover:bg-yellow-500 hover:text-black transition-all shadow-[8px_8px_0px_0px_rgba(234,179,8,1)]">
+          <nav className="hidden xl:flex items-center gap-16 text-md font-black uppercase tracking-widest">
+            <a href="#who" className="hover:text-yellow-600 transition-colors">Who We Are</a>
+            <a href="#updates" className="hover:text-yellow-600 transition-colors">Updates</a>
+            <button className="bg-yellow-500 text-black border-4 border-black px-10 py-5 hover:bg-black hover:text-white transition-all shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1">
               Work With Us
-            </a>
+            </button>
           </nav>
         </div>
       </header>
 
-      {/* --- SECTION 1: WHO WE ARE (Layout Item 1) --- */}
-      <section id="who" className="pt-72 pb-40 px-6 bg-black text-white">
+      {/* --- SECTION 1: WHO WE ARE (2048x1336 Layout) --- */}
+      <section id="who" className="pt-80 pb-40 px-6 bg-black text-white">
         <div className="max-w-[2048px] mx-auto lg:px-20">
-          <div className="mb-32">
-            <h1 className="text-9xl md:text-[15rem] font-black tracking-tighter leading-[0.75] uppercase italic">
-              Who We <br /> <span className="text-yellow-500">Are.</span>
+          <div className="mb-40">
+            <h1 className="text-9xl md:text-[16rem] font-black tracking-tighter leading-[0.7] uppercase italic">
+              Who We <br /> <span className="text-yellow-500 underline decoration-[20px] underline-offset-[20px]">Are.</span>
             </h1>
           </div>
 
-          {/* PROFESSIONAL BOARD GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {/* BOARD GRID - Optimized for 2048px Resolution */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
             {trustees.map((t, i) => (
-              <div key={i} className="group bg-neutral-900 border-l-4 border-white/10 p-10 hover:border-yellow-500 transition-all duration-500 hover:bg-neutral-800">
-                <div className="mb-8 overflow-hidden rounded-none grayscale group-hover:grayscale-0 transition-all duration-700 aspect-square border-2 border-white/5 shadow-2xl">
+              <div key={i} className="group bg-neutral-900 border-2 border-white/10 p-0 overflow-hidden hover:border-yellow-500 transition-all duration-500 shadow-2xl">
+                <div className="overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 aspect-[2048/1336]">
                   <img 
                     src={t.img} 
                     alt={t.name} 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[2000ms]"
                   />
                 </div>
-                <h4 className="text-2xl font-black uppercase tracking-tighter mb-3 leading-none group-hover:text-yellow-500 transition-colors">
-                  {t.name}
-                </h4>
-                <p className="text-[11px] text-gray-500 font-black uppercase tracking-[0.2em] leading-relaxed">
-                  {t.role}
-                </p>
+                <div className="p-10 border-t-4 border-yellow-500">
+                  <h4 className="text-3xl font-black uppercase tracking-tighter mb-4 leading-none group-hover:text-yellow-500 transition-colors">
+                    {t.name}
+                  </h4>
+                  <p className="text-xs text-gray-500 font-black uppercase tracking-[0.3em] leading-relaxed">
+                    {t.role}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* --- SECTION 2: PROGRAMME UPDATES (Laughs at Last!) --- */}
-      <section id="updates" className="py-48 px-6 bg-white">
-        <div className="max-w-[2048px] mx-auto lg:px-20 grid lg:grid-cols-12 gap-24 items-center">
+      {/* --- SECTION 2: PROGRAMME UPDATES --- */}
+      <section id="updates" className="py-56 px-6 bg-white">
+        <div className="max-w-[2048px] mx-auto lg:px-20 grid lg:grid-cols-12 gap-32 items-center">
           <div className="lg:col-span-7">
-            <div className="relative p-4 border-4 border-black">
+            <div className="relative p-6 border-[8px] border-black shadow-[30px_30px_0px_0px_rgba(234,179,8,1)]">
               <img 
                 src="/part a 2.jpg" 
                 alt="Ministry Meeting" 
-                className="w-full grayscale hover:grayscale-0 transition-all duration-700" 
+                className="w-full grayscale hover:grayscale-0 transition-all duration-1000" 
               />
             </div>
           </div>
 
           <div className="lg:col-span-5">
-            <span className="text-yellow-600 font-black text-sm uppercase tracking-[0.5em] mb-8 block underline decoration-4 underline-offset-8">Field Updates</span>
-            <h2 className="text-8xl font-black uppercase tracking-tighter leading-[0.8] mb-12">
+            <span className="bg-black text-white font-black text-sm uppercase tracking-[0.5em] px-6 py-2 mb-10 inline-block">
+              Field Updates 2026
+            </span>
+            <h2 className="text-9xl font-black uppercase tracking-tighter leading-[0.75] mb-16">
               Laughs <br /> at <span className="text-yellow-500 italic">Last!</span>
             </h2>
-            <div className="space-y-8 text-2xl text-gray-600 leading-tight italic border-l-8 border-black pl-10">
+            <div className="space-y-10 text-3xl text-gray-700 leading-tight italic border-l-[12px] border-yellow-500 pl-12">
               <p className="font-black text-black">
-                &quot;The Commissioner&apos;s signing of the Research Protocol marks a milestone for Plateau State.&quot;
+                &quot;The Commissioner&apos;s signing of the Research Protocol marks a milestone for children in Plateau State.&quot;
               </p>
             </div>
             
-            <div className="mt-16 flex items-center gap-8 p-8 bg-gray-50 border-2 border-black w-fit shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-              <img src="/part a 1.jpg" className="w-20 h-28 object-cover shadow-lg" alt="Document" />
+            <div className="mt-20 flex items-center gap-10 p-10 bg-gray-50 border-4 border-black w-fit shadow-[15px_15px_0px_0px_rgba(0,0,0,1)]">
+              <img src="/part a 1.jpg" className="w-24 h-32 object-cover shadow-2xl" alt="Document" />
               <div>
-                <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-1">Status: Verified</p>
-                <p className="text-sm font-black text-black uppercase">Research_Protocol_2026.pdf</p>
+                <p className="text-xs font-black uppercase tracking-[0.4em] text-gray-400 mb-2">Verified Protocol</p>
+                <p className="text-lg font-black text-black uppercase underline decoration-4 underline-offset-4">GICD_Protocol_Signed.pdf</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+</section>
 
 {/* SECTION 3: PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
 <section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
