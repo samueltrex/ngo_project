@@ -83,6 +83,7 @@ export default function Home() {
       </section>
 
       {/* 3. PROGRAMME UPDATES */}
+{/* 3. PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
       <section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -91,53 +92,55 @@ export default function Home() {
           </div>
 
           <div className="space-y-24">
-            {/* ARTICLE 1: TUDUN WADA */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* URGENT UPDATE: SAFE SCHOOLS ADVOCACY */}
+            <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-yellow-500 shadow-xl">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="lg:col-span-4">
+                  <img src="/part c 1.jpg" alt="Insecurity Affects Education Advocacy" className="w-full rounded-2xl shadow-lg" />
+                </div>
+                <div className="lg:col-span-8">
+                  <span className="bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block animate-pulse">Urgent Action</span>
+                  <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">Safe Schools Now: <br /><span className="text-gray-400 text-2xl">A Call to Government</span></h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                    With 47 Unity schools closed nationwide and closures effective Nov 22-24 in Plateau State, insecurity is denying many Nigerian children their right to safe, quality education.
+                  </p>
+                  <p className="text-base font-bold text-black mb-8 italic">
+                    &quot;Our children deserve safe classrooms, not crises.&quot;
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <span className="text-[10px] font-black text-gray-400">#SafeSchoolsNow</span>
+                    <span className="text-[10px] font-black text-gray-400">#RightToEducation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* PREVIOUS UPDATE: TUDUN WADA */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-12">
               <div className="lg:col-span-7">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-4">
                     <img src="/part b 1.jpg" className="rounded-3xl shadow-lg grayscale hover:grayscale-0 transition-all duration-500" alt="Community Leaders" />
-                    <img src="/part b 3.jpg" className="rounded-3xl shadow-lg grayscale hover:grayscale-0 transition-all duration-500" alt="Interaction" />
+                    <img src="/part b 3.jpg" className="rounded-3xl shadow-lg grayscale hover:grayscale-0 transition-all duration-500" alt="Consultation Meeting" />
                   </div>
                   <div className="pt-12">
-                    <img src="/part b 2.jpg" className="rounded-3xl shadow-lg grayscale hover:grayscale-0 transition-all duration-500" alt="Consultation" />
+                    <img src="/part b 2.jpg" className="rounded-3xl shadow-lg grayscale hover:grayscale-0 transition-all duration-500" alt="Sarkin Tudun Wada Discussion" />
                   </div>
                 </div>
               </div>
               <div className="lg:col-span-5">
-                <span className="text-[10px] font-black text-yellow-600 uppercase tracking-[0.4em] mb-4 block">October 22, 2025</span>
+                <span className="text-[10px] font-black text-yellow-600 uppercase tracking-[0.4em] mb-4 block">Field Consultation</span>
                 <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-[0.9]">Safe Futures <br /> in Tudun Wada</h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                  We sat with the Sarkin Tudun Wada and community leaders to incorporate their insights into the GICD Safe Futures Project.
-                </p>
-                <div className="bg-white p-6 rounded-2xl border border-gray-100 italic text-xs text-gray-500 mb-8">
-                  &quot;The communities openness to ask and discuss tough questions assures of readiness to lead a change.&quot;
-                </div>
-                <div className="flex gap-4">
-                  <span className="text-[9px] font-bold text-gray-400">#SafeFutures</span>
-                  <span className="text-[9px] font-bold text-gray-400">#YouthEmpowerment</span>
-                </div>
-              </div>
-            </div>
-
-            <hr className="border-gray-200" />
-
-            {/* ARTICLE 2: MINISTRY ENGAGEMENT */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-5 order-2 lg:order-1 text-right">
-                <span className="text-[10px] font-black text-yellow-600 uppercase tracking-[0.4em] mb-4 block">Recent Achievement</span>
-                <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-[0.9]">Laughs at Last: <br /> Ministry Approval</h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-8">
-                  The Honorable Commissioner approved our Research Protocol, signifying a cornerstone for evidence-based child protection in the State.
+                  Integrating community insights from the Sarkin Tudun Wada into the design of the GICD Safe Futures Project to combat drug abuse and teenage pregnancy.
                 </p>
-                <button className="px-8 py-3 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-yellow-500 transition-all">Read Full Report</button>
-              </div>
-              <div className="lg:col-span-7 order-1 lg:order-2">
-                <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
-                  <img src="/part a 2.jpg" alt="Ministry Engagement" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <div className="bg-white p-6 rounded-2xl border border-gray-100 italic text-xs text-gray-500">
+                  &quot;The community&apos;s openness to discuss tough questions assures readiness to take ownership.&quot;
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
