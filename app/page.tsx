@@ -81,30 +81,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- SECTION 2: UPDATES --- */}
-      <section id="updates" className="py-24 md:py-40 px-4 md:px-10 bg-white">
-        <div className="max-w-[1800px] mx-auto grid lg:grid-cols-2 gap-12 md:gap-24 items-center">
-          <div className="w-full">
-            <img 
-              src="/part a 2.jpg" 
-              alt="Ministry Meeting" 
-              className="w-full rounded-2xl md:rounded-[3rem] shadow-xl grayscale hover:grayscale-0 transition-all duration-700" 
-            />
-          </div>
-
-          <div className="w-full">
-            <span className="text-yellow-600 font-black text-xs md:text-sm uppercase tracking-[0.4em] mb-4 md:mb-6 block">Updates</span>
-            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.8] mb-8 md:mb-10">
-              Laughs <br /> at <span className="text-yellow-500 italic">Last!</span>
-            </h2>
-            <div className="space-y-4 md:space-y-6 text-lg md:text-xl text-gray-600 italic border-l-4 border-yellow-500 pl-6 md:pl-8">
-              <p className="font-bold text-black text-xl md:text-2xl">
-                &quot;The Commissioner&apos;s signing marks a milestone.&quot;
-              </p>
+{/* --- SECTION 2: UPDATES (Compact & Professional) --- */}
+      <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">
+        <div className="max-w-[1400px] mx-auto">
+          
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left: Image with a tighter frame */}
+            <div className="lg:col-span-6 relative">
+              <div className="relative border-4 border-black p-2 bg-white shadow-lg">
+                <img 
+                  src="/part a 2.jpg" 
+                  alt="Ministry Meeting" 
+                  className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                />
+              </div>
+              {/* Floating Badge */}
+              <div className="absolute -bottom-4 -right-4 bg-yellow-500 text-black font-black px-6 py-2 border-2 border-black text-xs uppercase tracking-widest shadow-md">
+                Protocol Approved
+              </div>
             </div>
+
+            {/* Right: Content with smaller, cleaner typography */}
+            <div className="lg:col-span-6 lg:pl-10">
+              <div className="inline-block bg-black text-white text-[10px] font-black uppercase tracking-[0.4em] px-4 py-1.5 mb-6">
+                Latest Engagement
+              </div>
+              
+              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-8">
+                Laughs <br /> <span className="text-yellow-600 italic">at Last!</span>
+              </h2>
+
+              <div className="space-y-6">
+                <blockquote className="border-l-4 border-yellow-500 pl-6 text-lg md:text-xl font-medium text-gray-800 leading-snug italic">
+                  &quot;The Commissioner&apos;s signing marks a major milestone for child protection research in Plateau State.&quot;
+                </blockquote>
+                
+                <p className="text-sm text-gray-500 leading-relaxed font-medium">
+                  We have concluded high-level discussions with the Honorable Commissioner, Plateau State Ministry of Women Affairs and Social Development, ensuring local research is grounded in official policy.
+                </p>
+
+                {/* Compact Document Link */}
+                <div className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-lg w-fit mt-8">
+                  <div className="w-10 h-12 bg-black flex items-center justify-center text-yellow-500 font-bold text-xs">PDF</div>
+                  <div>
+                    <p className="text-[9px] font-black uppercase tracking-widest text-gray-400">View Signed File</p>
+                    <p className="text-xs font-bold text-black uppercase hover:text-yellow-600 cursor-pointer transition-colors">
+                      Research_Protocol_2026.pdf
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-</section>
+      </section>
 
 {/* SECTION 3: PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
       <section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
