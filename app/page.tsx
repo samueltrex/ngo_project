@@ -77,22 +77,58 @@ export default function Home() {
       </section>
 
       {/* 3. PROGRAMME UPDATES */}
-      <section id="updates" className="py-24 px-6 bg-gray-50">
+      {/* 3. PROGRAMME UPDATES - LATEST LAUNCH */}
+      <section id="updates" className="py-24 px-6 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-black uppercase tracking-tighter mb-12 text-center">Programme <span className="text-yellow-600">Updates</span></h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[1, 2, 3].map((post) => (
-              <div key={post} className="bg-white p-4 rounded-3xl shadow-sm border border-gray-100">
-                <div className="aspect-video bg-gray-100 rounded-2xl mb-6" />
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-yellow-600 mb-2">Activity Log</p>
-                <h4 className="font-black uppercase text-sm mb-4 italic">Latest Outreach Report</h4>
-                <div className="w-8 h-1 bg-black mx-auto" />
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+            <div>
+              <h2 className="text-4xl font-black uppercase tracking-tighter">Programme <span className="text-yellow-600">Updates</span></h2>
+              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em] mt-2">Latest activity from the field</p>
+            </div>
+            <div className="hidden md:block h-px flex-1 bg-gray-200 mx-8 mb-4"></div>
+            <span className="text-[10px] font-black uppercase bg-black text-white px-4 py-2 rounded-full">April 2026</span>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            {/* Featured Post: Laughs at Last! */}
+            <div className="lg:col-span-8 group">
+              <div className="relative aspect-video overflow-hidden rounded-[2.5rem] bg-gray-200 mb-8 shadow-2xl border border-gray-100">
+                <img 
+                  src="/part a 2.jpg" 
+                  alt="GICD Team with Honorable Commissioner" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                />
+                <div className="absolute top-6 left-6 bg-yellow-500 text-black font-black text-[10px] px-4 py-2 rounded-full uppercase">New Launch</div>
               </div>
-            ))}
+              <h3 className="text-3xl font-black uppercase tracking-tighter mb-4 group-hover:text-yellow-600 transition-colors">Laughs at Last!</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-6 italic border-l-4 border-yellow-500 pl-6">
+                &quot;The Commissioner&apos;s signing and approval of the Research Protocol signifies that the assessment will spotlight the critical knowledge gaps in the situation of children.&quot;
+              </p>
+              <p className="text-sm text-gray-500 leading-relaxed mb-8">
+                We are happy to complete a series of engagement with the Honorable Commissioner, Plateau State Ministry of Women Affairs and Social Development, as part of our preparatory activities for the launch of GICD&apos;s Child Protection Assessment in Jos North.
+              </p>
+              <div className="flex gap-3 text-[9px] font-black uppercase tracking-widest text-gray-400">
+                <span>#ChildProtection</span>
+                <span>•</span>
+                <span>#CommunityDevelopment</span>
+              </div>
+            </div>
+
+            {/* Sidebar: Research Protocol */}
+            <div className="lg:col-span-4 space-y-6">
+              <div className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm">
+                <h4 className="text-xs font-black uppercase mb-6 tracking-widest">Research Protocol</h4>
+                <div className="aspect-[3/4] bg-gray-50 rounded-xl mb-6 overflow-hidden border border-gray-100">
+                  <img src="/part a 1.jpg" alt="Research Protocol Document" className="w-full h-full object-cover" />
+                </div>
+                <button className="w-full py-4 bg-black text-white text-[10px] font-black uppercase tracking-widest rounded-xl hover:bg-yellow-500 hover:text-black transition-all">
+                  View Protocol
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
       {/* 4. RESOURCES */}
       <section id="resources" className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
