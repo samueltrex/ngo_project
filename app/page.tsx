@@ -51,7 +51,7 @@ export default function Home() {
       </section>
 
       {/* 2. RESEARCH DATA - MAP RIGIDLY MATCHING CARD HEIGHT */}
-      <section className="py-24 px-6 md:px-12 bg-gray-50">
+      <section id="impact" className="relative z-10 py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-xs font-black uppercase tracking-[0.4em] text-yellow-600 mb-2">Research Analysis</h2>
@@ -140,24 +140,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. CONTACT PORTAL - ULTRA LEAN */}
-      <section className="py-8 md:py-12 px-6 bg-black text-white border-t border-white/5">
-        <div className="max-w-5xl mx-auto"> {/* Narrowed the container from 7xl to 5xl */}
-          <div className="flex flex-col lg:flex-row gap-8 items-center">
+      {/* 4. CONTACT PORTAL & MAP - CLICKABLE FIX */}
+      <section className="relative z-20 py-12 px-6 bg-black text-white border-t border-white/5">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-12">
             
-            {/* Left: Heading & Info (Minimal) */}
-            <div className="w-full lg:w-1/3">
-              <h3 className="text-3xl font-black tracking-tighter uppercase mb-4">
+            {/* Contact Details */}
+            <div className="w-full lg:w-1/3 space-y-6">
+              <h3 className="text-3xl font-black tracking-tighter uppercase">
                 Contact<span className="text-yellow-500">.</span>
               </h3>
-              <div className="space-y-2 text-sm text-gray-400 font-light">
+              <div className="text-sm text-gray-400 font-light space-y-2">
                 <p>Jos, Plateau State, Nigeria</p>
                 <p className="text-yellow-500 font-medium">research@gicd.org.ng</p>
               </div>
+              
+              {/* If you have a map iframe, put it here */}
+              <div className="w-full h-48 rounded-xl overflow-hidden grayscale contrast-125 opacity-70 hover:opacity-100 transition-opacity border border-white/10">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125740.92543883712!2d8.819389977823547!3d9.899732104033282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1053730e7195f201%3A0xc3f8e5610214a1f9!2sJos!5e0!3m2!1sen!2sng!4v1713880000000!5m2!1sen!2sng" 
+                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" 
+                ></iframe>
+              </div>
             </div>
 
-            {/* Right: The Tightest Form */}
-            <div className="w-full lg:w-2/3 bg-white/5 p-5 md:p-6 rounded-2xl border border-white/10">
+            {/* The Form */}
+            <div className="w-full lg:w-2/3 bg-white/5 p-6 rounded-2xl border border-white/10 relative z-30">
               <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input type="text" className="bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Full Name" />
                 <input type="email" className="bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Email" />
@@ -165,7 +173,7 @@ export default function Home() {
                    <input type="text" className="w-full bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Message" />
                 </div>
                 <div className="md:col-span-2 flex justify-end">
-                  <button type="button" className="px-8 py-3 bg-yellow-500 text-black font-black uppercase tracking-widest text-[10px] rounded-lg hover:bg-white transition-all">
+                  <button type="submit" className="px-8 py-3 bg-yellow-500 text-black font-black uppercase tracking-widest text-[10px] rounded-lg hover:bg-white transition-all cursor-pointer">
                     Send
                   </button>
                 </div>
