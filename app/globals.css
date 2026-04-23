@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ensure these names are exactly like this */
+  --color-gicd-yellow: #FFD200;
+  --color-gicd-dark: #111111;
+  --color-gicd-gray: #f4f4f4;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+}
+
+body {
+  background: white;
+  color: #111111;
+}
