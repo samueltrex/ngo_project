@@ -30,47 +30,62 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 1. WHO WE ARE - HERO & FULL BOARD (2048x1336 Optimized) */}
-      <section id="who" className="pt-32 pb-24 px-6 bg-black text-white">
-        <div className="max-w-[2048px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+      {/* 1. WHO WE ARE - HERO & ENLARGED BOARD (2048x1336 Optimized) */}
+      <section id="who" className="pt-40 pb-32 px-6 bg-black text-white">
+        <div className="max-w-[2048px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
           
           {/* Vision Statement */}
-          <div className="lg:col-span-5">
-            <h2 className="text-yellow-500 text-[10px] font-black uppercase tracking-[0.5em] mb-6">Section 01</h2>
-            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.85] mb-10 uppercase italic">
+          <div className="lg:col-span-5 lg:sticky lg:top-40">
+            <h2 className="text-yellow-500 text-[12px] font-black uppercase tracking-[0.6em] mb-8">Section 01</h2>
+            <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-12 uppercase italic">
               Who We <br /> <span className="text-yellow-500">Are.</span>
             </h1>
-            <div className="space-y-8 border-l-4 border-yellow-500 pl-10">
-              <p className="text-2xl font-light italic text-gray-300 leading-tight">
+            <div className="space-y-10 border-l-8 border-yellow-500 pl-12">
+              <p className="text-3xl md:text-4xl font-light italic text-gray-200 leading-tight tracking-tight">
                 &quot;Protection for Every Child; Empowerment for Every Youth; Resilience for Every Community.&quot;
               </p>
-              <p className="text-sm leading-relaxed text-gray-400 max-w-md">
+              <p className="text-lg leading-relaxed text-gray-400 max-w-md font-medium">
                 GICD is a community-driven organization committed to advancing locally grounded research and ethically responsive development initiatives in Plateau State.
               </p>
             </div>
           </div>
 
-          {/* Complete 7-Member Board Grid */}
-          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
+          {/* Enlarged 7-Member Board Grid */}
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8">
             {trustees.map((t, i) => (
-              <div key={i} className="group bg-white/5 p-5 rounded-[2.5rem] border border-white/10 text-center hover:bg-yellow-500 hover:border-yellow-500 transition-all duration-500">
-                <div className="relative w-16 h-16 mx-auto mb-4">
-                   <img src={t.img} className="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" alt={t.name} />
-                   <div className="absolute inset-0 rounded-full border border-white/20 group-hover:border-black/20 transition-all"></div>
+              <div 
+                key={i} 
+                className="group bg-white/5 p-10 rounded-[3.5rem] border border-white/10 flex flex-col items-center text-center hover:bg-yellow-500 hover:border-yellow-500 transition-all duration-700"
+              >
+                <div className="relative w-32 h-32 mb-8">
+                   <img 
+                    src={t.img} 
+                    className="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110" 
+                    alt={t.name} 
+                   />
+                   <div className="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-black/20 transition-all"></div>
                 </div>
-                <p className="text-[10px] font-black uppercase leading-tight group-hover:text-black transition-colors">{t.name}</p>
-                <p className="text-[8px] text-yellow-500 font-bold uppercase tracking-widest mt-2 group-hover:text-black/60 transition-colors">{t.role}</p>
+                <h4 className="text-xl font-black uppercase tracking-tighter leading-tight group-hover:text-black transition-colors">
+                  {t.name}
+                </h4>
+                <div className="w-12 h-1 bg-yellow-500 my-4 group-hover:bg-black transition-colors"></div>
+                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.3em] group-hover:text-black/70 transition-colors">
+                  {t.role}
+                </p>
               </div>
             ))}
-            {/* Design Filler to balance the grid if needed */}
-            <div className="hidden lg:flex border border-white/5 rounded-[2.5rem] items-center justify-center opacity-20 italic text-[10px] uppercase font-black">
-              GICD Leadership
+            
+            {/* Design Filler to keep the grid looking intentional */}
+            <div className="hidden md:flex flex-col items-center justify-center p-10 border-2 border-dashed border-white/10 rounded-[3.5rem] opacity-30">
+               <span className="text-yellow-500 text-4xl mb-4">⭐</span>
+               <p className="text-[10px] font-black uppercase tracking-widest text-center leading-relaxed">
+                 Leadership & <br />Governance
+               </p>
             </div>
           </div>
 
         </div>
       </section>
-
       {/* 3. PROGRAMME UPDATES */}
 {/* 3. PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
       <section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
