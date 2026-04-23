@@ -114,12 +114,8 @@ export default function Home() {
         </div>
       </section>
 
-    </main>
-  );
-}
-
 {/* SECTION 3: PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
-      <section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
+<section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 italic">Programme <span className="text-yellow-600">Updates</span></h2>
