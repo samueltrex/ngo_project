@@ -123,24 +123,54 @@ export default function Home() {
       </section>
 
       {/* 4. CONTACT PORTAL */}
+      {/* 4. CONTACT PORTAL - SOCIAL FOCUS */}
       <section className="relative z-30 bg-black text-white py-16 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            {/* Left Side: Info & Socials */}
             <div>
               <h3 className="text-3xl font-black uppercase tracking-tighter mb-6 underline decoration-yellow-500 decoration-4">Contact Portal.</h3>
-              <div className="space-y-4 text-sm text-gray-400">
-                <p>📍 Jos, Plateau State, Nigeria</p>
-                <p>📧 research@gicd.org.ng</p>
-                <div className="h-40 w-full rounded-xl overflow-hidden grayscale mt-6 border border-white/10">
+              <div className="space-y-6 text-sm text-gray-400">
+                <p className="flex items-center gap-3">
+                  <span className="text-yellow-500 text-xl">📍</span> Jos, Plateau State, Nigeria
+                </p>
+
+                {/* Social Buttons */}
+                <div className="flex flex-col gap-3 pt-2">
+                  <a 
+                    href="https://www.facebook.com/share/1BqVaP3TVA/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-blue-600 hover:border-blue-500 transition-all group"
+                  >
+                    <span className="text-xl group-hover:scale-110 transition-transform">f</span>
+                    <span className="font-bold uppercase tracking-widest text-[10px] text-white">Follow on Facebook</span>
+                  </a>
+
+                  <a 
+                    href="https://www.linkedin.com/company/thegicd/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-blue-700 hover:border-blue-600 transition-all group"
+                  >
+                    <span className="text-xl group-hover:scale-110 transition-transform">in</span>
+                    <span className="font-bold uppercase tracking-widest text-[10px] text-white">Connect on LinkedIn</span>
+                  </a>
+                </div>
+
+                {/* Map Wrapper */}
+                <div className="h-40 w-full rounded-xl overflow-hidden grayscale mt-4 border border-white/10 opacity-70 hover:opacity-100 transition-opacity">
                   <iframe 
                     title="GICD Office Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125712.56942004246!2d8.82194680227181!3d9.890352220455208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1089201979b9b18b%3A0xc3311894d0752f9!2sJos!5e0!3m2!1sen!2sng!4v1713872100000!5m2!1sen!2sng" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125712.3456789!2d8.8916!3d9.8965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105373a62f5f65cf%3A0x6280b067a35e2195!2sJos!5e0!3m2!1sen!2sng!4v1234567890" 
                     width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy">
                   </iframe>
                 </div>
               </div>
             </div>
 
+            {/* Right Side: Form */}
             <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
               <form className="space-y-4">
                 <input type="text" className="w-full bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 text-sm text-white" placeholder="Full Name" />
@@ -149,18 +179,10 @@ export default function Home() {
                 <button type="button" className="w-full py-4 bg-yellow-500 text-black font-black uppercase tracking-widest text-xs rounded-xl hover:bg-white transition-all">Send Message</button>
               </form>
             </div>
+
           </div>
         </div>
       </section>
-
-      {/* MODAL */}
-      {selectedImg && (
-        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4" onClick={() => setSelectedImg(null)}>
-          <img src={selectedImg} className="max-w-full max-h-full rounded-lg shadow-2xl" alt="Preview" />
-          <button type="button" className="absolute top-10 right-10 text-white text-4xl font-light">×</button>
-        </div>
-      )}
-
       <footer className="relative z-30 bg-black py-8 border-t border-white/5 text-center">
         <p className="text-gray-600 text-[10px] font-mono tracking-[0.3em]">© 2026 GICD NIGERIA</p>
       </footer>
