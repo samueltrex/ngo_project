@@ -16,62 +16,63 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-black font-sans selection:bg-yellow-100">
       
-      {/* --- BOLD INSTITUTIONAL HEADER --- */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-[6px] border-black px-8 py-8">
-        <div className="max-w-[2048px] mx-auto flex justify-between items-center lg:px-12">
+      {/* --- BOLD HEADER --- */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-6 py-4">
+        <div className="max-w-[2048px] mx-auto flex justify-between items-center lg:px-10">
           
-          <div className="flex items-center gap-8">
-            {/* Logo from public folder */}
+          <div className="flex items-center gap-6">
             <img 
               src="/logo.jpeg" 
               alt="GICD Logo" 
-              className="w-20 h-20 object-contain border-2 border-black p-1 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]" 
+              className="w-14 h-14 object-contain border-2 border-black p-0.5" 
             />
-            <div className="border-l-[6px] border-black pl-8">
-              <h1 className="text-4xl font-black uppercase tracking-tighter leading-none mb-2">
+            <div className="border-l-4 border-black pl-6">
+              <h1 className="text-2xl font-black uppercase tracking-tighter leading-none mb-1">
                 The Guardian <span className="text-yellow-600">Initiative</span>
               </h1>
-              <p className="text-sm font-black text-gray-500 uppercase tracking-[0.4em]">
+              <p className="text-[9px] font-black text-gray-500 uppercase tracking-[0.3em]">
                 For Community Development
               </p>
             </div>
           </div>
 
-          <nav className="hidden xl:flex items-center gap-16 text-md font-black uppercase tracking-widest">
+          <nav className="hidden lg:flex items-center gap-10 text-[11px] font-black uppercase tracking-widest">
             <a href="#who" className="hover:text-yellow-600 transition-colors">Who We Are</a>
             <a href="#updates" className="hover:text-yellow-600 transition-colors">Updates</a>
-            <button className="bg-yellow-500 text-black border-4 border-black px-10 py-5 hover:bg-black hover:text-white transition-all shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1">
+            <button className="bg-black text-white px-6 py-3 hover:bg-yellow-500 hover:text-black transition-all">
               Work With Us
             </button>
           </nav>
         </div>
       </header>
 
-      {/* --- SECTION 1: WHO WE ARE (2048x1336 Layout) --- */}
-      <section id="who" className="pt-80 pb-40 px-6 bg-black text-white">
+      {/* --- SECTION 1: WHO WE ARE (Reduced Title Size) --- */}
+      <section id="who" className="pt-60 pb-32 px-6 bg-black text-white">
         <div className="max-w-[2048px] mx-auto lg:px-20">
-          <div className="mb-40">
-            <h1 className="text-9xl md:text-[16rem] font-black tracking-tighter leading-[0.7] uppercase italic">
-              Who We <br /> <span className="text-yellow-500 underline decoration-[20px] underline-offset-[20px]">Are.</span>
-            </h1>
+          
+          <div className="mb-24 border-l-8 border-yellow-500 pl-10">
+            {/* Title reduced from 16rem to a more professional 6xl/8xl scale */}
+            <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.85] uppercase italic">
+              Who We <br /> <span className="text-yellow-500 underline decoration-[10px] underline-offset-[12px]">Are.</span>
+            </h2>
           </div>
 
-          {/* BOARD GRID - Optimized for 2048px Resolution */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+          {/* BOARD GRID - Still using 2048x1336 aspect ratio */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {trustees.map((t, i) => (
-              <div key={i} className="group bg-neutral-900 border-2 border-white/10 p-0 overflow-hidden hover:border-yellow-500 transition-all duration-500 shadow-2xl">
+              <div key={i} className="group bg-neutral-900 border border-white/5 hover:border-yellow-500 transition-all duration-500 shadow-xl overflow-hidden">
                 <div className="overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 aspect-[2048/1336]">
                   <img 
                     src={t.img} 
                     alt={t.name} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[2000ms]"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                   />
                 </div>
-                <div className="p-10 border-t-4 border-yellow-500">
-                  <h4 className="text-3xl font-black uppercase tracking-tighter mb-4 leading-none group-hover:text-yellow-500 transition-colors">
+                <div className="p-8">
+                  <h4 className="text-xl font-black uppercase tracking-tighter mb-3 leading-tight group-hover:text-yellow-500 transition-colors">
                     {t.name}
                   </h4>
-                  <p className="text-xs text-gray-500 font-black uppercase tracking-[0.3em] leading-relaxed">
+                  <p className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em] leading-relaxed italic">
                     {t.role}
                   </p>
                 </div>
@@ -116,10 +117,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-</section>
+      </section>
 
-{/* SECTION 3: PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
-<section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
+      {/* SECTION 3: PROGRAMME UPDATES - ADVOCACY & FIELD WORK */}
+      <section id="updates" className="py-28 px-6 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 italic">Programme <span className="text-yellow-600">Updates</span></h2>
