@@ -22,7 +22,7 @@ export default function Home() {
           
           <div className="flex items-center gap-6">
             <img 
-              src="/logo.jpeg" 
+              src="/logo.jpg" 
               alt="GICD Logo" 
               className="w-14 h-14 object-contain border-2 border-black p-0.5" 
             />
