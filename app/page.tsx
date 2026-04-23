@@ -35,7 +35,7 @@ export default function Home() {
 
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6 uppercase">
-              The Guardians Initiative <span className="text-yellow-500">for</span> Community <br />
+              The Guardians Initiative <span className="text-yellow-500"> <br/> for </span> Community <br />
               Development<span className="text-yellow-500">.</span>
             </h1>
             <p className="text-lg text-gray-400 max-w-2xl font-light border-l-4 border-yellow-500 pl-6 leading-relaxed">
@@ -84,18 +84,37 @@ export default function Home() {
       </section>
 
       {/* 3. BOARD OF TRUSTEES */}
-      <section className="relative z-20 bg-gray-50 py-16 px-6">
+      {/* 3. BOARD OF TRUSTEES - 3 PER ROW VERSION */}
+      <section className="relative z-20 bg-gray-50 py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-black uppercase tracking-tighter mb-12">Board of <span className="text-yellow-500">Trustees</span></h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="mb-12 border-l-8 border-yellow-500 pl-8">
+             <h2 className="text-5xl font-black uppercase tracking-tighter">Board of <br/> <span className="text-yellow-500">Trustees</span></h2>
+          </div>
+
+          {/* grid-cols-3 forces 3 per row on desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {trustees.map((person, i) => (
-              <div key={i} className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100">
-                <div className="aspect-[3/4] overflow-hidden">
-                  <img src={person.img} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110" />
+              <div key={i} className="group relative bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200">
+                
+                {/* Fixed Aspect Ratio for 2048x1336 images */}
+                <div className="relative aspect-[3/2] overflow-hidden bg-gray-200">
+                  <img 
+                    src={person.img} 
+                    alt={person.name} 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" 
+                  />
+                  {/* Decorative overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <div className="p-4 bg-white">
-                  <h4 className="text-sm font-black uppercase leading-tight">{person.name}</h4>
-                  <p className="text-[10px] text-yellow-600 font-bold uppercase mt-1 tracking-widest">{person.role}</p>
+
+                <div className="p-6 bg-white relative">
+                  <h4 className="text-lg font-black uppercase leading-tight tracking-tight group-hover:text-yellow-600 transition-colors">
+                    {person.name}
+                  </h4>
+                  <div className="w-12 h-1 bg-yellow-500 my-3 group-hover:w-24 transition-all duration-500" />
+                  <p className="text-[11px] text-gray-500 font-bold uppercase tracking-[0.2em]">
+                    {person.role}
+                  </p>
                 </div>
               </div>
             ))}
