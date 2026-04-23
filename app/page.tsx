@@ -32,10 +32,9 @@ export default function Home() {
              <div className="absolute -inset-1 bg-yellow-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
              <img src="/logo.jpg" alt="GICD Logo" className="relative w-32 md:w-48 rounded-3xl border border-white/10 shadow-2xl" />
           </div>
-
           <div className="text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6 uppercase">
-              The Guardians Initiative <span className="text-yellow-500"> <br/> for </span> Community <br />
+              The Guardians Initiative <span className="text-yellow-500">for</span> Community <br />
               Development<span className="text-yellow-500">.</span>
             </h1>
             <p className="text-lg text-gray-400 max-w-2xl font-light border-l-4 border-yellow-500 pl-6 leading-relaxed">
@@ -45,76 +44,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. RESEARCH DATA */}
-      <section className="relative z-20 py-16 px-6 bg-white">
+      {/* 2. RESEARCH DATA - HORIZONTAL CARDS (NO MAP) */}
+      <section className="relative z-20 py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-10">
+          <div className="mb-12 text-center md:text-left">
             <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-600 mb-2">Research Analysis</h2>
-            <h3 className="text-4xl font-black italic tracking-tight text-black">Angwan Rukuba Findings</h3>
+            <h3 className="text-5xl font-black italic tracking-tight text-black">Angwan Rukuba Findings</h3>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            <div className="lg:col-span-4 flex flex-col gap-3">
-              {stats.map((stat, i) => (
-                <button 
-                  key={i} 
-                  type="button"
-                  onClick={() => setSelectedImg(stat.img)}
-                  className="w-full text-left bg-white p-4 shadow-sm border-l-4 border-yellow-500 hover:bg-yellow-50 transition-all flex flex-col justify-center group"
-                >
-                  <h4 className="text-2xl font-black text-black group-hover:text-yellow-600">{stat.val}</h4>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{stat.label}</p>
-                </button>
-              ))}
-            </div>
-
-            <div className="lg:col-span-8 relative min-h-[400px]">
-              <div 
-                className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl border border-gray-200 cursor-zoom-in group"
-                onClick={() => setSelectedImg("/ss.jpg")}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {stats.map((stat, i) => (
+              <button 
+                key={i} 
+                type="button" 
+                onClick={() => setSelectedImg(stat.img)} 
+                className="w-full text-left bg-white p-6 shadow-md border-t-4 border-yellow-500 hover:bg-yellow-50 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between min-h-[160px] group"
               >
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center">
-                   <span className="bg-black text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-bold uppercase tracking-widest">View Map Data</span>
-                </div>
-                <img src="/ss.jpg" alt="Research Map" className="w-full h-full object-cover" />
-              </div>
-            </div>
+                <h4 className="text-3xl font-black text-black group-hover:text-yellow-600 transition-colors">{stat.val}</h4>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mt-4 leading-relaxed">{stat.label}</p>
+              </button>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 3. BOARD OF TRUSTEES */}
-      {/* 3. BOARD OF TRUSTEES - 3 PER ROW VERSION */}
-      <section className="relative z-20 bg-gray-50 py-20 px-6">
+      {/* 3. BOARD OF TRUSTEES - 3 PER ROW (3:2 RATIO) */}
+      <section className="relative z-20 bg-gray-50 py-24 px-6 border-y border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 border-l-8 border-yellow-500 pl-8">
              <h2 className="text-5xl font-black uppercase tracking-tighter">Board of <br/> <span className="text-yellow-500">Trustees</span></h2>
           </div>
-
-          {/* grid-cols-3 forces 3 per row on desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {trustees.map((person, i) => (
-              <div key={i} className="group relative bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200">
-                
-                {/* Fixed Aspect Ratio for 2048x1336 images */}
+              <div key={i} className="group relative bg-white overflow-hidden shadow-xl border border-gray-200">
                 <div className="relative aspect-[3/2] overflow-hidden bg-gray-200">
-                  <img 
-                    src={person.img} 
-                    alt={person.name} 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" 
-                  />
-                  {/* Decorative overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <img src={person.img} alt={person.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" />
                 </div>
-
-                <div className="p-6 bg-white relative">
-                  <h4 className="text-lg font-black uppercase leading-tight tracking-tight group-hover:text-yellow-600 transition-colors">
-                    {person.name}
-                  </h4>
-                  <div className="w-12 h-1 bg-yellow-500 my-3 group-hover:w-24 transition-all duration-500" />
-                  <p className="text-[11px] text-gray-500 font-bold uppercase tracking-[0.2em]">
-                    {person.role}
-                  </p>
+                <div className="p-6 bg-white">
+                  <h4 className="text-lg font-black uppercase leading-tight group-hover:text-yellow-600 transition-colors">{person.name}</h4>
+                  <div className="w-12 h-1 bg-yellow-500 my-3 group-hover:w-24 transition-all" />
+                  <p className="text-[11px] text-gray-500 font-bold uppercase tracking-[0.2em]">{person.role}</p>
                 </div>
               </div>
             ))}
@@ -122,71 +91,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. CONTACT PORTAL */}
-      {/* 4. CONTACT PORTAL - SOCIAL FOCUS */}
-      <section className="relative z-30 bg-black text-white py-16 px-6">
+      {/* 4. CONTACT PORTAL - UPDATED SOCIAL LINKS */}
+      <section className="relative z-30 bg-black text-white py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
-            {/* Left Side: Info & Socials */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <h3 className="text-3xl font-black uppercase tracking-tighter mb-6 underline decoration-yellow-500 decoration-4">Contact Portal.</h3>
-              <div className="space-y-6 text-sm text-gray-400">
-                <p className="flex items-center gap-3">
-                  <span className="text-yellow-500 text-xl">📍</span> Jos, Plateau State, Nigeria
-                </p>
-
-                {/* Social Buttons */}
-                <div className="flex flex-col gap-3 pt-2">
-                  <a 
-                    href="https://www.facebook.com/share/1BqVaP3TVA/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-blue-600 hover:border-blue-500 transition-all group"
-                  >
-                    <span className="text-xl group-hover:scale-110 transition-transform">f</span>
-                    <span className="font-bold uppercase tracking-widest text-[10px] text-white">Follow on Facebook</span>
+              <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 underline decoration-yellow-500 decoration-4">Contact Portal.</h3>
+              <div className="space-y-6">
+                <p className="text-gray-400">📍 Jos, Plateau State, Nigeria</p>
+                
+                <div className="flex flex-col gap-4 pt-4">
+                  <a href="https://www.facebook.com/share/1BqVaP3TVA/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-blue-600 transition-all group">
+                    <span className="font-black uppercase tracking-widest text-xs">Facebook</span>
+                    <span className="text-xl">→</span>
                   </a>
-
-                  <a 
-                    href="https://www.linkedin.com/company/thegicd/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-blue-700 hover:border-blue-600 transition-all group"
-                  >
-                    <span className="text-xl group-hover:scale-110 transition-transform">in</span>
-                    <span className="font-bold uppercase tracking-widest text-[10px] text-white">Connect on LinkedIn</span>
+                  <a href="https://www.linkedin.com/company/thegicd/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-blue-700 transition-all group">
+                    <span className="font-black uppercase tracking-widest text-xs">LinkedIn</span>
+                    <span className="text-xl">→</span>
                   </a>
-                </div>
-
-                {/* Map Wrapper */}
-                <div className="h-40 w-full rounded-xl overflow-hidden grayscale mt-4 border border-white/10 opacity-70 hover:opacity-100 transition-opacity">
-                  <iframe 
-                    title="GICD Office Location"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125712.3456789!2d8.8916!3d9.8965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105373a62f5f65cf%3A0x6280b067a35e2195!2sJos!5e0!3m2!1sen!2sng!4v1234567890" 
-                    width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy">
-                  </iframe>
                 </div>
               </div>
             </div>
 
-            {/* Right Side: Form */}
-            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <form className="space-y-4">
-                <input type="text" className="w-full bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 text-sm text-white" placeholder="Full Name" />
-                <input type="email" className="w-full bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 text-sm text-white" placeholder="Email" />
-                <textarea rows={3} className="w-full bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 text-sm text-white resize-none" placeholder="Message"></textarea>
-                <button type="button" className="w-full py-4 bg-yellow-500 text-black font-black uppercase tracking-widest text-xs rounded-xl hover:bg-white transition-all">Send Message</button>
+            <div className="bg-white/5 p-8 rounded-3xl border border-white/10 shadow-2xl">
+              <form className="space-y-6">
+                <input type="text" className="w-full bg-transparent border-b border-white/20 p-3 outline-none focus:border-yellow-500 text-sm text-white" placeholder="Full Name" />
+                <input type="email" className="w-full bg-transparent border-b border-white/20 p-3 outline-none focus:border-yellow-500 text-sm text-white" placeholder="Email Address" />
+                <textarea rows={4} className="w-full bg-transparent border-b border-white/20 p-3 outline-none focus:border-yellow-500 text-sm text-white resize-none" placeholder="Your Message"></textarea>
+                <button type="button" className="w-full py-5 bg-yellow-500 text-black font-black uppercase tracking-[0.2em] text-xs rounded-2xl hover:bg-white transition-all transform active:scale-95">Send Message</button>
               </form>
             </div>
-
           </div>
         </div>
       </section>
-      <footer className="relative z-30 bg-black py-8 border-t border-white/5 text-center">
-        <p className="text-gray-600 text-[10px] font-mono tracking-[0.3em]">© 2026 GICD NIGERIA</p>
-      </footer>
 
+      {/* MODAL FOR IMAGE VIEWING */}
+      {selectedImg && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 cursor-pointer" onClick={() => setSelectedImg(null)}>
+          <div className="relative max-w-5xl w-full">
+            <img src={selectedImg} className="w-full h-auto rounded-lg shadow-2xl animate-in zoom-in-95 duration-300" alt="Full Preview" />
+            <p className="text-white/50 text-center mt-4 text-[10px] uppercase tracking-widest font-bold">Click anywhere to close</p>
+          </div>
+        </div>
+      )}
+
+      <footer className="relative z-30 bg-black py-10 border-t border-white/5 text-center">
+        <p className="text-gray-600 text-[10px] font-mono tracking-[0.4em] uppercase">© 2026 The Guardians Initiative • GICD Nigeria</p>
+      </footer>
     </main>
   );
 }
