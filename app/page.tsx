@@ -36,7 +36,6 @@ export default function Home() {
           
           {/* Vision Statement */}
           <div className="lg:col-span-5 lg:sticky lg:top-40">
-            <h2 className="text-yellow-500 text-[12px] font-black uppercase tracking-[0.6em] mb-8">Section 01</h2>
             <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-12 uppercase italic">
               Who We <br /> <span className="text-yellow-500">Are.</span>
             </h1>
