@@ -96,84 +96,51 @@ export default function Home() {
       </section>
 
       {/* 3. TRUSTEES SECTION */}
-{/* 3. BOARD OF TRUSTEES - WIDE 3-PER-ROW LAYOUT */}
-      <section className="py-24 px-6 md:px-12 bg-white">
+{/* 3. BOARD OF TRUSTEES - CLEAN STACK */}
+      <section className="relative z-10 bg-white py-16 px-6 border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="mb-20 border-l-[10px] border-yellow-500 pl-8">
-            <h2 className="text-sm font-black uppercase tracking-[0.5em] text-yellow-600 mb-2">The Leadership</h2>
-            <h3 className="text-5xl md:text-6xl font-black tracking-tighter text-black uppercase">Board of Trustees</h3>
-          </div>
-
-          {/* Grid: Exactly 3 per row on large screens */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-20">
-            {trustees.map((member, index) => (
-              <div key={index} className="group flex flex-col">
-                
-                {/* IMAGE CONTAINER 
-                   We use aspect-video (16/9) or a custom 3/2 aspect 
-                   to perfectly fit 2048 x 1336 images without cropping.
-                */}
-                <div className="relative w-full aspect-[3/2] mb-8 overflow-hidden bg-gray-100 rounded-[2rem] border-4 border-black/5 group-hover:border-yellow-500 transition-all duration-500 shadow-xl">
-                  <img 
-                    src={member.img} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-                
-                {/* TEXT CONTENT */}
-                <div className="px-2">
-                  <h4 className="text-2xl font-black leading-tight mb-2 text-black uppercase tracking-tighter">
-                    {member.name}
-                  </h4>
-                  <div className="w-12 h-1.5 bg-yellow-500 mb-4 transition-all duration-500 group-hover:w-20"></div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-yellow-600 font-mono leading-relaxed">
-                    {member.role}
-                  </p>
-                </div>
-
-              </div>
-            ))}
+          <h2 className="text-4xl font-black uppercase tracking-tighter mb-12">Board of <span className="text-yellow-500">Trustees</span></h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Your Trustee Cards here */}
           </div>
         </div>
       </section>
 
-      {/* 4. CONTACT PORTAL & MAP - CLICKABLE FIX */}
-      <section className="relative z-20 py-12 px-6 bg-black text-white border-t border-white/5">
+      {/* 4. IMPACT DATA (THE 5 CARDS) - FORCED CLICKABLE */}
+      <section className="relative z-20 bg-gray-50 py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 pointer-events-auto">
+            {/* Your 5 Impact Cards here */}
+            {/* Make sure each card has "relative z-30" inside it */}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CONTACT PORTAL & MAP - TOP LAYER */}
+      <section className="relative z-40 bg-black text-white py-12 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-12">
+          <div className="flex flex-col lg:flex-row gap-10">
             
-            {/* Contact Details */}
+            {/* Map & Info */}
             <div className="w-full lg:w-1/3 space-y-6">
-              <h3 className="text-3xl font-black tracking-tighter uppercase">
-                Contact<span className="text-yellow-500">.</span>
-              </h3>
-              <div className="text-sm text-gray-400 font-light space-y-2">
-                <p>Jos, Plateau State, Nigeria</p>
-                <p className="text-yellow-500 font-medium">research@gicd.org.ng</p>
-              </div>
-              
-              {/* If you have a map iframe, put it here */}
-              <div className="w-full h-48 rounded-xl overflow-hidden grayscale contrast-125 opacity-70 hover:opacity-100 transition-opacity border border-white/10">
+              <h3 className="text-3xl font-black uppercase tracking-tighter">Contact<span className="text-yellow-500">.</span></h3>
+              <div className="w-full h-48 rounded-xl overflow-hidden border border-white/10 relative z-50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125740.92543883712!2d8.819389977823547!3d9.899732104033282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1053730e7195f201%3A0xc3f8e5610214a1f9!2sJos!5e0!3m2!1sen!2sng!4v1713880000000!5m2!1sen!2sng" 
-                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125745.02424848033!2d8.818163539062503!3d9.89047910000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10890e0904770147%3A0x6335198039fe65e6!2sJos!5e0!3m2!1sen!2sng!4v1710000000000!5m2!1sen!2sng" 
+                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
+                  className="pointer-events-auto"
                 ></iframe>
               </div>
             </div>
 
-            {/* The Form */}
-            <div className="w-full lg:w-2/3 bg-white/5 p-6 rounded-2xl border border-white/10 relative z-30">
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" className="bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Full Name" />
-                <input type="email" className="bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Email" />
-                <div className="md:col-span-2">
-                   <input type="text" className="w-full bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 transition-colors text-white text-sm" placeholder="Message" />
-                </div>
+            {/* Form */}
+            <div className="w-full lg:w-2/3 bg-white/5 p-6 rounded-2xl border border-white/10 relative z-50">
+              <form className="grid grid-cols-1 md:grid-cols-2 gap-4 pointer-events-auto">
+                <input type="text" className="bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 text-white text-sm" placeholder="Name" />
+                <input type="email" className="bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 text-white text-sm" placeholder="Email" />
+                <input type="text" className="md:col-span-2 bg-transparent border-b border-white/20 p-2 outline-none focus:border-yellow-500 text-white text-sm" placeholder="Message" />
                 <div className="md:col-span-2 flex justify-end">
-                  <button type="submit" className="px-8 py-3 bg-yellow-500 text-black font-black uppercase tracking-widest text-[10px] rounded-lg hover:bg-white transition-all cursor-pointer">
+                  <button type="button" className="px-8 py-3 bg-yellow-500 text-black font-black uppercase text-[10px] rounded-lg hover:bg-white transition-all cursor-pointer">
                     Send
                   </button>
                 </div>
@@ -183,3 +150,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <footer className="relative z-40 bg-black py-8 border-t border-white/5 text-center">
+        <p className="text-gray-600 text-[10px] font-mono tracking-[0.3em]">© 2026 GICD NIGERIA</p>
+      </footer>
+    </main>
+  );
+}
