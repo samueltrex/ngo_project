@@ -40,9 +40,9 @@ export default function Home() {
       <section id="who" className="pt-60 pb-32 px-6 bg-black text-white">
         <div className="max-w-[2048px] mx-auto lg:px-20">
           <div className="mb-24">
-            <h1 className="text-8xl md:text-[12rem] font-black tracking-tighter leading-[0.75] uppercase italic">
+            <h2 className="text-8xl md:text-[12rem] font-black tracking-tighter leading-[0.75] uppercase italic">
               Who We <span className="text-yellow-500">Are.</span>
-            </h1>
+            </h2>
           </div>
 
           {/* REFINED BOARD GRID: Minimal & Professional */}
