@@ -16,7 +16,7 @@ export default function Home() {
       
       {/* --- NAVIGATION --- */}
       <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="max-w-[2048px] mx-auto flex justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-black rounded flex items-center justify-center text-yellow-500 font-black text-xs">G</div>
             <span className="font-black uppercase tracking-tighter text-sm">GICD <span className="text-yellow-600">Nigeria</span></span>
@@ -25,18 +25,19 @@ export default function Home() {
             <a href="#who" className="hover:text-yellow-600 transition-colors">Who We Are</a>
             <a href="#what" className="hover:text-yellow-600 transition-colors">What We Do</a>
             <a href="#updates" className="hover:text-yellow-600 transition-colors">Updates</a>
-            <a href="#resources" className="hover:text-yellow-600 transition-colors">Resources</a>
-            <a href="#work" className="bg-black text-white px-4 py-2 rounded-full hover:bg-yellow-500 hover:text-black transition-all">Work With Us</a>
+            <a href="#work" className="bg-black text-white px-4 py-2 rounded-full hover:bg-yellow-500 transition-all">Work With Us</a>
           </div>
         </div>
       </nav>
 
-      {/* 1. WHO WE ARE */}
+      {/* 1. WHO WE ARE - HERO & FULL BOARD (2048x1336 Optimized) */}
       <section id="who" className="pt-32 pb-24 px-6 bg-black text-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div>
+        <div className="max-w-[2048px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          
+          {/* Vision Statement */}
+          <div className="lg:col-span-5">
             <h2 className="text-yellow-500 text-[10px] font-black uppercase tracking-[0.5em] mb-6">Section 01</h2>
-            <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-10 uppercase italic">
+            <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.85] mb-10 uppercase italic">
               Who We <br /> <span className="text-yellow-500">Are.</span>
             </h1>
             <div className="space-y-8 border-l-4 border-yellow-500 pl-10">
@@ -44,41 +45,29 @@ export default function Home() {
                 &quot;Protection for Every Child; Empowerment for Every Youth; Resilience for Every Community.&quot;
               </p>
               <p className="text-sm leading-relaxed text-gray-400 max-w-md">
-                GICD is a community-driven organization committed to advancing locally grounded research and context-specific development initiatives in Plateau State.
+                GICD is a community-driven organization committed to advancing locally grounded research and ethically responsive development initiatives in Plateau State.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            {trustees.slice(0, 4).map((t, i) => (
-              <div key={i} className="bg-white/5 p-6 rounded-[2rem] border border-white/10 text-center hover:bg-white/10 transition-colors">
-                <img src={t.img} className="w-16 h-16 rounded-full mx-auto mb-4 object-cover grayscale" alt={t.name} />
-                <p className="text-[11px] font-black uppercase leading-tight">{t.name}</p>
-                <p className="text-[9px] text-yellow-500 font-bold uppercase tracking-widest mt-2">{t.role}</p>
+
+          {/* Complete 7-Member Board Grid */}
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
+            {trustees.map((t, i) => (
+              <div key={i} className="group bg-white/5 p-5 rounded-[2.5rem] border border-white/10 text-center hover:bg-yellow-500 hover:border-yellow-500 transition-all duration-500">
+                <div className="relative w-16 h-16 mx-auto mb-4">
+                   <img src={t.img} className="w-full h-full rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" alt={t.name} />
+                   <div className="absolute inset-0 rounded-full border border-white/20 group-hover:border-black/20 transition-all"></div>
+                </div>
+                <p className="text-[10px] font-black uppercase leading-tight group-hover:text-black transition-colors">{t.name}</p>
+                <p className="text-[8px] text-yellow-500 font-bold uppercase tracking-widest mt-2 group-hover:text-black/60 transition-colors">{t.role}</p>
               </div>
             ))}
+            {/* Design Filler to balance the grid if needed */}
+            <div className="hidden lg:flex border border-white/5 rounded-[2.5rem] items-center justify-center opacity-20 italic text-[10px] uppercase font-black">
+              GICD Leadership
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* 2. WHAT WE DO */}
-      <section id="what" className="py-28 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
-            <h2 className="text-6xl font-black uppercase tracking-tighter italic leading-none">What <br /><span className="text-yellow-500 underline decoration-[12px] underline-offset-8">We Do.</span></h2>
-            <p className="text-[11px] font-bold text-gray-400 uppercase tracking-[0.4em] mb-2">Impact Areas</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="p-16 bg-gray-50 rounded-[4rem] border border-gray-100 hover:shadow-2xl transition-all duration-500">
-              <div className="text-5xl mb-8">🛡️</div>
-              <h3 className="text-4xl font-black mb-6 uppercase tracking-tighter">Child Protection</h3>
-              <p className="text-base text-gray-500 leading-relaxed">Implementing community-based protection risk assessments and safeguarding measures to amplify the voices of children and families.</p>
-            </div>
-            <div className="p-16 bg-gray-50 rounded-[4rem] border border-gray-100 hover:shadow-2xl transition-all duration-500">
-              <div className="text-5xl mb-8">🧪</div>
-              <h3 className="text-4xl font-black mb-6 uppercase tracking-tighter">Education</h3>
-              <p className="text-base text-gray-500 leading-relaxed">Driving science literacy and chemistry performance through school-based research and targeted academic interventions.</p>
-            </div>
-          </div>
         </div>
       </section>
 
