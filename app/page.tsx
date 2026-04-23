@@ -41,7 +41,7 @@ export default function Home() {
         <div className="max-w-[2048px] mx-auto lg:px-20">
           <div className="mb-24">
             <h1 className="text-8xl md:text-[12rem] font-black tracking-tighter leading-[0.75] uppercase italic">
-              Who We <br /> <span className="text-yellow-500">Are.</span>
+              Who We <span className="text-yellow-500">Are.</span>
             </h1>
           </div>
 
