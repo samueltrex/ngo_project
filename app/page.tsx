@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<string>("home");
   const trustees = [
     { name: "Rev Fr Hilary Naankot Longs", role: "Catholic Priest / Leadership", img: "/a.jpg" },
     { name: "Ejilayomi Omokorede Damoeroem", role: "PHD Science Educator", img: "/b.jpg" },
@@ -21,16 +22,22 @@ const stats = [
     { val: "88%", label: "Education Aspiration", img: "/1.jpg" },
     { val: "0.0%", label: "Health Access", img: "/3.jpg" }
   ];
+  // Helper to change section and close menu
+  const navigateTo = (section: string) => {
+    setActiveSection(section);
+    setMenuOpen(false);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden">
-      
       {/* --- RESPONSIVE HEADER --- */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 md:px-8 py-4">
-        <div className="max-w-[1800px] mx-auto flex justify-between items-center">    
-          
+        <div className="max-w-[1800px] mx-auto flex justify-between items-center">
+
           {/* Menu Button */}
           <div className="relative">
-            <button 
+            <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="bg-black text-white px-6 py-2 font-black uppercase tracking-widest text-[11px] flex items-center gap-3 hover:bg-yellow-500 hover:text-black transition-all border-2 border-black"
             >
@@ -39,17 +46,12 @@ const stats = [
 
             {/* THE DROPDOWN MENU */}
             {menuOpen && (
-              <div className="absolute right-0 mt-4 w-64 bg-white border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] z-50">
+              <div className="absolute right-0 mt-4 w-72 bg-white border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] z-50">
                 <nav className="flex flex-col">
-                  <a href="#who" onClick={() => setMenuOpen(false)} className="px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[12px] tracking-widest hover:bg-yellow-500 transition-colors">
-                    Who We Are
-                  </a>
-                  <a href="#updates" onClick={() => setMenuOpen(false)} className="px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[12px] tracking-widest hover:bg-yellow-500 transition-colors">
-                    Updates
-                  </a>
-                  <a href="#" onClick={() => setMenuOpen(false)} className="px-6 py-4 font-black uppercase text-[12px] tracking-widest bg-black text-white hover:bg-yellow-500 hover:text-black transition-colors">
-                    Work With Us
-                  </a>
+                  <button onClick={() => navigateTo('home')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Home & Findings</button>
+                  <button onClick={() => navigateTo('who')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Who We Are</button>
+                  <button onClick={() => navigateTo('evidence')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Community Evidence</button>
+                  <button onClick={() => navigateTo('updates')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Updates</button>
                 </nav>
               </div>
             )}
@@ -86,8 +88,8 @@ const stats = [
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             <div className="lg:col-span-4 flex flex-col gap-3">
               {stats.map((stat, i) => (
-                <button 
-                  key={i} 
+                <button
+                  key={i}
                   type="button"
                   onClick={() => setSelectedImg(stat.img)}
                   className="w-full text-left bg-white p-4 shadow-sm border-l-4 border-yellow-500 hover:bg-yellow-50 transition-all flex flex-col justify-center group"
@@ -99,7 +101,7 @@ const stats = [
             </div>
 
             <div className="lg:col-span-8 relative min-h-[400px]">
-              <div 
+              <div
                 className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl border border-gray-200 cursor-zoom-in group"
                 onClick={() => setSelectedImg("/ss.jpg")}
               >
@@ -124,13 +126,13 @@ const stats = [
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {trustees.map((person, i) => (
               <div key={i} className="group relative bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200">
-                
+
                 {/* Fixed Aspect Ratio for 2048x1336 images */}
                 <div className="relative aspect-[3/2] overflow-hidden bg-gray-200">
-                  <img 
-                    src={person.img} 
-                    alt={person.name} 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" 
+                  <img
+                    src={person.img}
+                    alt={person.name}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
                   />
                   {/* Decorative overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -153,16 +155,16 @@ const stats = [
 {/* --- SECTION 2: UPDATES (Compact & Professional) --- */}
       <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">
         <div className="max-w-[1400px] mx-auto">
-          
+
           <div className="grid lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left: Image with a tighter frame */}
             <div className="lg:col-span-6 relative">
               <div className="relative border-4 border-black p-2 bg-white shadow-lg">
-                <img 
-                  src="/part a 2.jpg" 
-                  alt="Ministry Meeting" 
-                  className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700" 
+                <img
+                  src="/part a 2.jpg"
+                  alt="Ministry Meeting"
+                  className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </div>
               {/* Floating Badge */}
@@ -176,7 +178,7 @@ const stats = [
               <div className="inline-block bg-black text-white text-[10px] font-black uppercase tracking-[0.4em] px-4 py-1.5 mb-6">
                 Latest Engagement
               </div>
-              
+
               <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-8">
                 Laughs <br /> <span className="text-yellow-600 italic">at Last!</span>
               </h2>
@@ -185,7 +187,7 @@ const stats = [
                 <blockquote className="border-l-4 border-yellow-500 pl-6 text-lg md:text-xl font-medium text-gray-800 leading-snug italic">
                   &quot;The Commissioner&apos;s signing marks a major milestone for child protection research in Plateau State.&quot;
                 </blockquote>
-                
+
                 <p className="text-sm text-gray-500 leading-relaxed font-medium">
                   We have concluded high-level discussions with the Honorable Commissioner, Plateau State Ministry of Women Affairs and Social Development, ensuring local research is grounded in official policy.
                 </p>
@@ -306,13 +308,13 @@ const stats = [
 
       {/* IMAGE MODAL */}
       {selectedImg && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-pointer"
           onClick={() => setSelectedImg(null)}
         >
-          <img 
-            src={selectedImg} 
-            alt="Enlarged view" 
+          <img
+            src={selectedImg}
+            alt="Enlarged view"
             className="max-w-4xl max-h-[90vh] object-contain rounded-lg shadow-2xl"
           />
         </div>
