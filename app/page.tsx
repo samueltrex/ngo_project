@@ -76,55 +76,73 @@ const stats = [
       </section>
 
       {/* 2. RESEARCH DATA - HORIZONTAL CARDS (NO MAP) */}
-      <section className="relative z-20 py-20 px-6 bg-white">
+      <section className="relative z-20 py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12 text-center md:text-left">
+          <div className="mb-10">
             <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-600 mb-2">Research Analysis</h2>
-            <h3 className="text-5xl font-black italic tracking-tight text-black">Angwan Rukuba Findings</h3>
+            <h3 className="text-4xl font-black italic tracking-tight text-black">Angwan Rukuba Findings</h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {stats.map((stat, i) => (
-              <button 
-                key={i} 
-                type="button" 
-                onClick={() => setSelectedImg(stat.img)} 
-                className="w-full text-left bg-white p-6 shadow-md border-t-4 border-yellow-500 hover:bg-yellow-50 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between min-h-[160px] group"
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            <div className="lg:col-span-4 flex flex-col gap-3">
+              {stats.map((stat, i) => (
+                <button 
+                  key={i} 
+                  type="button"
+                  onClick={() => setSelectedImg(stat.img)}
+                  className="w-full text-left bg-white p-4 shadow-sm border-l-4 border-yellow-500 hover:bg-yellow-50 transition-all flex flex-col justify-center group"
+                >
+                  <h4 className="text-2xl font-black text-black group-hover:text-yellow-600">{stat.val}</h4>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{stat.label}</p>
+                </button>
+              ))}
+            </div>
+
+            <div className="lg:col-span-8 relative min-h-[400px]">
+              <div 
+                className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl border border-gray-200 cursor-zoom-in group"
+                onClick={() => setSelectedImg("/ss.jpg")}
               >
-                <h4 className="text-3xl font-black text-black group-hover:text-yellow-600 transition-colors">{stat.val}</h4>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mt-4 leading-relaxed">{stat.label}</p>
-              </button>
-            ))}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center">
+                   <span className="bg-black text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-bold uppercase tracking-widest">View Map Data</span>
+                </div>
+                <img src="/ss.jpg" alt="Research Map" className="w-full h-full object-cover" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
       {/* --- SECTION 1: WHO WE ARE (Responsive Layout) --- */}
-      <section id="who" className="pt-48 md:pt-60 pb-24 md:pb-32 px-4 md:px-10 bg-gray-50 text-black">
-        <div className="max-w-[1800px] mx-auto">
-          
-          <div className="mb-16 md:mb-24 border-l-8 border-yellow-500 pl-6 md:pl-10">
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.85] uppercase italic">
-              Who We <br /> <span className="text-yellow-500 underline decoration-[6px] md:decoration-[10px] underline-offset-[8px]">Are.</span>
-            </h2>
+      {/* 3. BOARD OF TRUSTEES - 3 PER ROW VERSION */}
+      <section className="relative z-20 bg-gray-50 py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12 border-l-8 border-yellow-500 pl-8">
+             <h2 className="text-5xl font-black uppercase tracking-tighter">Board of <br/> <span className="text-yellow-500">Trustees</span></h2>
           </div>
 
-          {/* BOARD GRID - Auto-responsive columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-            {trustees.map((t, i) => (
-              <div key={i} className="group bg-neutral-900 border border-white/5 hover:border-yellow-500 transition-all duration-500 shadow-xl overflow-hidden">
-                <div className="overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 aspect-[2048/1336] w-full">
+          {/* grid-cols-3 forces 3 per row on desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {trustees.map((person, i) => (
+              <div key={i} className="group relative bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200">
+                
+                {/* Fixed Aspect Ratio for 2048x1336 images */}
+                <div className="relative aspect-[3/2] overflow-hidden bg-gray-200">
                   <img 
-                    src={t.img} 
-                    alt={t.name} 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                    src={person.img} 
+                    alt={person.name} 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" 
                   />
+                  {/* Decorative overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <div className="p-6 md:p-8">
-                  <h4 className="text-lg md:text-xl font-black uppercase tracking-tighter mb-2 md:mb-3 leading-tight group-hover:text-yellow-500 transition-colors">
-                    {t.name}
+
+                <div className="p-6 bg-white relative">
+                  <h4 className="text-lg font-black uppercase leading-tight tracking-tight group-hover:text-yellow-600 transition-colors">
+                    {person.name}
                   </h4>
-                  <p className="text-[9px] md:text-[10px] text-gray-500 font-black uppercase tracking-[0.2em] leading-relaxed italic">
-                    {t.role}
+                  <div className="w-12 h-1 bg-yellow-500 my-3 group-hover:w-24 transition-all duration-500" />
+                  <p className="text-[11px] text-gray-500 font-bold uppercase tracking-[0.2em]">
+                    {person.role}
                   </p>
                 </div>
               </div>
@@ -132,7 +150,6 @@ const stats = [
           </div>
         </div>
       </section>
-
 {/* --- SECTION 2: UPDATES (Compact & Professional) --- */}
       <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">
         <div className="max-w-[1400px] mx-auto">
