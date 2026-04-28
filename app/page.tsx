@@ -1,8 +1,9 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const trustees = [
     { name: "Rev Fr Hilary Naankot Longs", role: "Catholic Priest / Leadership", img: "/a.jpg" },
     { name: "Ejilayomi Omokorede Damoeroem", role: "PHD Science Educator", img: "/b.jpg" },
@@ -35,17 +36,34 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <nav className="hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest">
-            <a href="#who" className="hover:text-yellow-600 transition-colors">Who We Are</a>
-            <a href="#updates" className="hover:text-yellow-600 transition-colors">Updates</a>
-            <button className="bg-black text-white px-6 py-3 hover:bg-yellow-500 hover:text-black transition-all">
-              Work With Us
+          {/* Menu Button */}
+          <div className="relative">
+            <button 
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="bg-black text-white px-6 py-2 font-black uppercase tracking-widest text-[11px] flex items-center gap-3 hover:bg-yellow-500 hover:text-black transition-all border-2 border-black"
+            >
+              Menu {menuOpen ? "✕" : "▼"}
             </button>
-          </nav>
+
+            {/* THE DROPDOWN MENU */}
+            {menuOpen && (
+              <div className="absolute right-0 mt-4 w-64 bg-white border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] z-50">
+                <nav className="flex flex-col">
+                  <a href="#who" onClick={() => setMenuOpen(false)} className="px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[12px] tracking-widest hover:bg-yellow-500 transition-colors">
+                    Who We Are
+                  </a>
+                  <a href="#updates" onClick={() => setMenuOpen(false)} className="px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[12px] tracking-widest hover:bg-yellow-500 transition-colors">
+                    Updates
+                  </a>
+                  <a href="#" onClick={() => setMenuOpen(false)} className="px-6 py-4 font-black uppercase text-[12px] tracking-widest bg-black text-white hover:bg-yellow-500 hover:text-black transition-colors">
+                    Work With Us
+                  </a>
+                </nav>
+              </div>
+            )}
+          </div>
         </div>
       </header>
-
       {/* --- SECTION 1: WHO WE ARE (Responsive Layout) --- */}
       <section id="who" className="pt-48 md:pt-60 pb-24 md:pb-32 px-4 md:px-10 bg-black text-white">
         <div className="max-w-[1800px] mx-auto">
@@ -221,7 +239,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 5: WORK WITH US */}
-      <section id="work" className="py-28 px-6 bg-gray-400 text-black">
+      <section id="work" className="py-28 px-6 bg-gray-50 text-black">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">Work With <br /><span className="text-yellow-500 underline decoration-[10px] underline-offset-8">Us.</span></h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
