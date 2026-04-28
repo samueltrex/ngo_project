@@ -96,7 +96,7 @@ const stats = [
       </section>
       
       {/* --- SECTION 1: WHO WE ARE (Responsive Layout) --- */}
-      <section id="who" className="pt-48 md:pt-60 pb-24 md:pb-32 px-4 md:px-10 bg-black text-white">
+      <section id="who" className="pt-48 md:pt-60 pb-24 md:pb-32 px-4 md:px-10 bg-gray-50 text-black">
         <div className="max-w-[1800px] mx-auto">
           
           <div className="mb-16 md:mb-24 border-l-8 border-yellow-500 pl-6 md:pl-10">
