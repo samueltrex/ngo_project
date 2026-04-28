@@ -2,8 +2,62 @@
 
 import React, { useState } from 'react';
 
+// Reusable Stat Card Component for consistency
+type StatCardProps = {
+  number: string;
+  primaryText: string;
+  secondaryText: string;
+  highlightWord?: string;
+  className?: string;
+};
+
+const StatCard = ({ number, primaryText, secondaryText, highlightWord, className }: StatCardProps) => (
+  <div className={`relative p-10 md:p-16 border-b-8 border-black flex flex-col justify-between aspect-[3/4] ${className}`}>
+    
+    {/* Number and Arrow (Top Left) */}
+    <div className="flex items-center gap-3">
+      <span className="text-3xl font-bold opacity-30">{number}</span>
+      {/* Down Arrow Icon from your images */}
+      <svg className="w-8 h-8 opacity-30" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2l-5.5 5.5h3.5v9h4v-9h3.5z" transform="rotate(180 12 12)"/>
+      </svg>
+    </div>
+
+    {/* Primary Text (Central, White) */}
+    <div className="flex-grow flex items-center justify-center py-10">
+      <h2 className="text-4xl md:text-6xl font-extralight tracking-tight text-white leading-tight text-center">
+        {/* If highlightWord is set, split the text to make it stand out */}
+        {highlightWord ? (
+          <>
+            {primaryText.split(highlightWord)[0]}
+            <strong className="font-extrabold uppercase">{highlightWord}</strong>
+            {primaryText.split(highlightWord)[1]}
+          </>
+        ) : primaryText}
+      </h2>
+    </div>
+
+    {/* Secondary Text and Logo (Bottom, Black) */}
+    <div className="space-y-6 md:space-y-10">
+      <p className="text-lg md:text-2xl font-bold text-black leading-tight text-center">
+        {secondaryText}
+      </p>
+      {/* Centered GICD Logo/Ichthys Icon */}
+      <div className="flex flex-col items-center gap-2">
+        <svg className="w-16 h-8 text-black" viewBox="0 0 100 50">
+          <path d="M5,25 Q35,5 65,25 Q35,45 5,25" fill="none" stroke="currentColor" strokeWidth="3"/>
+          <path d="M60,25 Q75,40 95,25 Q75,10 60,25" fill="none" stroke="currentColor" strokeWidth="3"/>
+        </svg>
+        <span className="text-2xl font-black uppercase text-black tracking-widest">GICD</span>
+      </div>
+    </div>
+  </div>
+);
+
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Trustees array remains for later use
   const trustees = [
     { name: "Rev Fr Hilary Naankot Longs", role: "Catholic Priest / Leadership", img: "/a.jpg" },
     { name: "Ejilayomi Omokorede Damoeroem", role: "PHD Science Educator", img: "/b.jpg" },
@@ -15,8 +69,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden">
-      
+    <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden pt-[110px]">
       {/* --- RESPONSIVE HEADER --- */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 md:px-8 py-4">
         <div className="max-w-[1800px] mx-auto flex justify-between items-center">
@@ -64,35 +117,52 @@ export default function Home() {
           </div>
         </div>
       </header>
-      {/* --- NEW SECTION: EVIDENCE ON CHILD PROTECTION (Angwan Rukuba) --- */}
-      <section id="evidence" className="py-24 px-6 bg-gray-50">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <div className="max-w-2xl">
-              <span className="text-yellow-600 font-black text-[10px] uppercase tracking-[0.4em] mb-4 block italic">Case Study: Community Risks</span>
-              <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
-                Angwan <span className="italic">Rukuba</span>
-              </h2>
-              <p className="text-lg text-gray-600 font-medium leading-relaxed">
-                Direct evidence gathered regarding child protection risks, highlighting environmental vulnerabilities and the urgent need for community-led resilience frameworks.
-              </p>
-            </div>
-            <div className="bg-black text-white p-6 border-l-4 border-yellow-500">
-              <p className="text-xs font-black uppercase tracking-widest leading-none">Location</p>
-              <p className="text-xl font-bold uppercase tracking-tighter mt-1">Plateau State, NG</p>
-            </div>
-          </div>
+      {/* --- SITE INTRO: THE CRITICAL RISKS (NEW HOME PAGE STARTER) --- */}
+      <section id="risks" className="bg-yellow-500">
+        {/* No padding-top, let the header handle it. Aspect ratios maintain card structure. */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 border-t-8 border-black">
+          
+          {/* Card 01: School */}
+          <StatCard 
+            number="01"
+            primaryText="9 in 10 children WANT to go to school"
+            highlightWord="WANT"
+            secondaryText="But 1 in every 2 faces a structural barrier (school fees, materials, and work for survival)."
+            className="border-r-4 border-black lg:border-r-0 xl:border-r-4"
+          />
 
-          {/* EVIDENCE GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="md:col-span-2">
-              <img src="/part b 2.jpg" alt="Field Evidence 1" className="w-full h-[450px] object-cover border-2 border-black grayscale hover:grayscale-0 transition-all" />
-            </div>
-            <div className="space-y-4">
-              <img src="/part b 1.jpg" alt="Field Evidence 2" className="w-full h-[217px] object-cover border-2 border-black grayscale" />
-              <img src="/part b 3.jpg" alt="Field Evidence 3" className="w-full h-[217px] object-cover border-2 border-black grayscale" />
-            </div>
-          </div>
+          {/* Card 02: Safety */}
+          <StatCard 
+            number="02"
+            primaryText="More than 5 out of 10 children do not feel safe at home and school"
+            secondaryText="43.8% do not live with both biological parents."
+            className="border-r-4 border-black lg:border-r-4 xl:border-r-4"
+          />
+
+          {/* Card 03: Health */}
+          <StatCard 
+            number="03"
+            primaryText="0 children have access to professional health workers, parents and teachers fill the gap"
+            secondaryText="37.5% not comfortable seeking services. A major SRH and mental health access gap."
+            className="border-r-0 md:border-r-4 lg:border-r-0 xl:border-r-4"
+          />
+
+          {/* Card 04: Child Marriage */}
+          <StatCard 
+            number="04"
+            primaryText="About 1 in 5 adolescents faces risk of child marriage."
+            secondaryText="18.8% of respondents report knowing a child who married as a result of early pregnancy."
+            className="border-r-4 border-black lg:border-r-4 xl:border-r-4"
+          />
+
+          {/* Card 05: Active Risks */}
+          <StatCard 
+            number="05"
+            primaryText="Only 1 in 10 children report feeling safe in their daily lives."
+            secondaryText="96.9% of children face atleast ONE active protection risk."
+            className="border-r-0 md:border-r-0 lg:border-r-0 xl:border-r-0"
+          />
+
         </div>
       </section>
       {/* --- SECTION 1: WHO WE ARE (Responsive Layout) --- */}
