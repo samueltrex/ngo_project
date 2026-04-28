@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   const trustees = [
     { name: "Rev Fr Hilary Naankot Longs", role: "Catholic Priest / Leadership", img: "/a.jpg" },
     { name: "Ejilayomi Omokorede Damoeroem", role: "PHD Science Educator", img: "/b.jpg" },
@@ -18,49 +16,33 @@ export default function Home() {
   return (
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden">
       
-      {/* --- BOLDER HEADER WITH DROPDOWN --- */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-6 py-4">
-        <div className="max-w-[1400px] mx-auto flex justify-between items-center">
+      {/* --- RESPONSIVE HEADER --- */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 md:px-8 py-4">
+        <div className="max-w-[1800px] mx-auto flex justify-between items-center">
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 md:gap-6">
             <img 
               src="/logo.jpg" 
               alt="GICD Logo" 
-              className="w-16 h-16 object-contain border-2 border-black" 
+              className="w-12 h-12 md:w-14 md:h-14 object-contain border-2 border-black p-0.5" 
             />
-            <div className="border-l-4 border-black pl-4">
-              <h1 className="text-xl font-black uppercase tracking-tighter leading-none">
+            <div className="border-l-4 border-black pl-4 md:pl-6">
+              <h1 className="text-xl md:text-2xl font-black uppercase tracking-tighter leading-none mb-1">
                 The Guardian <span className="text-yellow-600">Initiative</span>
               </h1>
+              <p className="text-[8px] md:text-[9px] font-black text-gray-500 uppercase tracking-[0.3em]">
+                For Community Development
+              </p>
             </div>
           </div>
 
-          {/* Menu Button */}
-          <div className="relative">
-            <button 
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="bg-black text-white px-6 py-2 font-black uppercase tracking-widest text-[11px] flex items-center gap-3 hover:bg-yellow-500 hover:text-black transition-all border-2 border-black"
-            >
-              Menu {menuOpen ? "✕" : "▼"}
+          <nav className="hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-widest">
+            <a href="#who" className="hover:text-yellow-600 transition-colors">Who We Are</a>
+            <a href="#updates" className="hover:text-yellow-600 transition-colors">Updates</a>
+            <button className="bg-black text-white px-6 py-3 hover:bg-yellow-500 hover:text-black transition-all">
+              Work With Us
             </button>
-
-            {/* THE DROPDOWN MENU */}
-            {menuOpen && (
-              <div className="absolute right-0 mt-4 w-64 bg-white border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] z-50">
-                <nav className="flex flex-col">
-                  <a href="#who" onClick={() => setMenuOpen(false)} className="px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[12px] tracking-widest hover:bg-yellow-500 transition-colors">
-                    Who We Are
-                  </a>
-                  <a href="#updates" onClick={() => setMenuOpen(false)} className="px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[12px] tracking-widest hover:bg-yellow-500 transition-colors">
-                    Updates
-                  </a>
-                  <a href="#" onClick={() => setMenuOpen(false)} className="px-6 py-4 font-black uppercase text-[12px] tracking-widest bg-black text-white hover:bg-yellow-500 hover:text-black transition-colors">
-                    Work With Us
-                  </a>
-                </nav>
-              </div>
-            )}
-          </div>
+          </nav>
         </div>
       </header>
 
