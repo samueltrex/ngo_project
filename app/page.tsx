@@ -36,11 +36,9 @@ const stats = [
             />
             <div className="border-l-4 border-black pl-4 md:pl-6">
               <h1 className="text-xl md:text-2xl font-black uppercase tracking-tighter leading-none mb-1">
-                The Guardian <span className="text-yellow-600">Initiative</span>
+                The Guardian <span className="text-yellow-600">Initiative</span>For Community Development
               </h1>
-              <p className="text-[8px] md:text-[9px] font-black text-gray-500 uppercase tracking-[0.3em]">
-                For Community Development
-              </p>
+             
             </div>
           </div>
           {/* Menu Button */}
@@ -71,6 +69,25 @@ const stats = [
           </div>
         </div>
       </header>
+     {/* 1. HERO SECTION */}
+      <section className="relative z-10 bg-black text-white py-20 px-6 md:px-12 border-b-8 border-yellow-500">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="relative group">
+             <div className="absolute -inset-1 bg-yellow-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+             <img src="/logo.jpg" alt="GICD Logo" className="relative w-32 md:w-48 rounded-3xl border border-white/10 shadow-2xl" />
+          </div>
+          <div className="text-center md:text-left">
+            <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6 uppercase">
+              The Guardians Initiative <span className="text-yellow-500">for</span> Community <br />
+              Development<span className="text-yellow-500">.</span>
+            </h1>
+            <p className="text-lg text-gray-400 max-w-2xl font-light border-l-4 border-yellow-500 pl-6 leading-relaxed">
+              Empowering vulnerable populations and strengthening community resilience through evidence-based research in Plateau State.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 2. RESEARCH DATA - HORIZONTAL CARDS (NO MAP) */}
       <section className="relative z-20 py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -94,7 +111,6 @@ const stats = [
           </div>
         </div>
       </section>
-      
       {/* --- SECTION 1: WHO WE ARE (Responsive Layout) --- */}
       <section id="who" className="pt-48 md:pt-60 pb-24 md:pb-32 px-4 md:px-10 bg-gray-50 text-black">
         <div className="max-w-[1800px] mx-auto">
