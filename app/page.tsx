@@ -64,6 +64,37 @@ export default function Home() {
           </div>
         </div>
       </header>
+      {/* --- NEW SECTION: EVIDENCE ON CHILD PROTECTION (Angwan Rukuba) --- */}
+      <section id="evidence" className="py-24 px-6 bg-gray-50">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div className="max-w-2xl">
+              <span className="text-yellow-600 font-black text-[10px] uppercase tracking-[0.4em] mb-4 block italic">Case Study: Community Risks</span>
+              <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-6">
+                Angwan <span className="italic">Rukuba</span>
+              </h2>
+              <p className="text-lg text-gray-600 font-medium leading-relaxed">
+                Direct evidence gathered regarding child protection risks, highlighting environmental vulnerabilities and the urgent need for community-led resilience frameworks.
+              </p>
+            </div>
+            <div className="bg-black text-white p-6 border-l-4 border-yellow-500">
+              <p className="text-xs font-black uppercase tracking-widest leading-none">Location</p>
+              <p className="text-xl font-bold uppercase tracking-tighter mt-1">Plateau State, NG</p>
+            </div>
+          </div>
+
+          {/* EVIDENCE GRID */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="md:col-span-2">
+              <img src="/part b 2.jpg" alt="Field Evidence 1" className="w-full h-[450px] object-cover border-2 border-black grayscale hover:grayscale-0 transition-all" />
+            </div>
+            <div className="space-y-4">
+              <img src="/part b 1.jpg" alt="Field Evidence 2" className="w-full h-[217px] object-cover border-2 border-black grayscale" />
+              <img src="/part b 3.jpg" alt="Field Evidence 3" className="w-full h-[217px] object-cover border-2 border-black grayscale" />
+            </div>
+          </div>
+        </div>
+      </section>
       {/* --- SECTION 1: WHO WE ARE (Responsive Layout) --- */}
       <section id="who" className="pt-48 md:pt-60 pb-24 md:pb-32 px-4 md:px-10 bg-black text-white">
         <div className="max-w-[1800px] mx-auto">
