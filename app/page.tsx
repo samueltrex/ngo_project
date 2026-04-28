@@ -26,28 +26,15 @@ const stats = [
       
       {/* --- RESPONSIVE HEADER --- */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 md:px-8 py-4">
-        <div className="max-w-[1800px] mx-auto flex justify-between items-center">
+        <div className="max-w-[1800px] mx-auto flex justify-between items-center">    
           
-          <div className="flex items-center gap-4 md:gap-6">
-            <img 
-              src="/logo.jpg" 
-              alt="GICD Logo" 
-              className="w-16 h-16 md:w-14 md:h-14 object-contain border-2 border-black p-0.5" 
-            />
-            <div className="border-l-4 border-black pl-4 md:pl-6">
-              <h1 className="text-xl md:text-2xl font-black uppercase tracking-tighter leading-none mb-1">
-                The Guardian <span className="text-yellow-600">Initiative</span>For Community Development
-              </h1>
-             
-            </div>
-          </div>
           {/* Menu Button */}
           <div className="relative">
             <button 
               onClick={() => setMenuOpen(!menuOpen)}
               className="bg-black text-white px-6 py-2 font-black uppercase tracking-widest text-[11px] flex items-center gap-3 hover:bg-yellow-500 hover:text-black transition-all border-2 border-black"
             >
-              Menu {menuOpen ? "✕" : "▼"}
+              ☰ {menuOpen ? "✕" : "▼"}
             </button>
 
             {/* THE DROPDOWN MENU */}
