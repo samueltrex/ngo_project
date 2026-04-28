@@ -24,7 +24,7 @@ export default function Home() {
             <img 
               src="/logo.jpg" 
               alt="GICD Logo" 
-              className="w-12 h-12 md:w-14 md:h-14 object-contain border-2 border-black p-0.5" 
+              className="w-16 h-16 md:w-14 md:h-14 object-contain border-2 border-black p-0.5" 
             />
             <div className="border-l-4 border-black pl-4 md:pl-6">
               <h1 className="text-xl md:text-2xl font-black uppercase tracking-tighter leading-none mb-1">
@@ -221,7 +221,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 5: WORK WITH US */}
-      <section id="work" className="py-28 px-6 bg-white text-black">
+      <section id="work" className="py-28 px-6 bg-gray-400 text-black">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">Work With <br /><span className="text-yellow-500 underline decoration-[10px] underline-offset-8">Us.</span></h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
