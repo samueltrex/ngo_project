@@ -221,7 +221,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 5: WORK WITH US */}
-      <section id="work" className="py-28 px-6 bg-black text-white">
+      <section id="work" className="py-28 px-6 bg-white text-black">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">Work With <br /><span className="text-yellow-500 underline decoration-[10px] underline-offset-8">Us.</span></h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
