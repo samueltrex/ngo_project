@@ -304,6 +304,20 @@ const stats = [
         </div>
       </section>
 
+      {/* IMAGE MODAL */}
+      {selectedImg && (
+        <div 
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setSelectedImg(null)}
+        >
+          <img 
+            src={selectedImg} 
+            alt="Enlarged view" 
+            className="max-w-4xl max-h-[90vh] object-contain rounded-lg shadow-2xl"
+          />
+        </div>
+      )}
+
       {/* FOOTER */}
       <footer className="bg-black py-16 px-6 border-t border-white/10 text-center">
         <div className="flex justify-center gap-12 mb-12">
