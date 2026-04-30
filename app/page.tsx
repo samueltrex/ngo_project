@@ -139,7 +139,6 @@ const navigateTo = (page: string) => {
    {/* Insert Footer content here */}
 </footer>
      {/* 1. HERO SECTION */}
-    const HeroSection = () ={'>'} (
       <section className="relative z-10 bg-black text-white py-20 px-6 md:px-12 border-b-8 border-yellow-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="relative group">
@@ -160,7 +159,6 @@ const navigateTo = (page: string) => {
     );
 
       {/* 2. RESEARCH DATA - HORIZONTAL CARDS (NO MAP) */}
-      const FindingsSection = () ={'>'} (
       <section className="relative z-20 py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
