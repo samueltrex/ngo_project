@@ -31,10 +31,12 @@ const stats = [
     
   ];
   // Helper to change section and close menu
-  const navigateTo = (section: string) => {
-    setActiveSection(section);
-    setMenuOpen(false);
-    window.scrollTo(0, 0);
+  const [currentPage, setCurrentPage] = useState('landing'); 
+
+const navigateTo = (page: string) => {
+  setCurrentPage(page);
+  setMenuOpen(false);
+  window.scrollTo(0, 0);
   };
 
   return (
@@ -59,18 +61,60 @@ const stats = [
             {menuOpen && (
               <div className="absolute right-0 mt-4 w-72 bg-white border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] z-50">
                 <nav className="flex flex-col">
-                  <button onClick={() => navigateTo('home')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Home & Findings</button>
-                  <button onClick={() => navigateTo('who')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Who We Are</button>
-                  <button onClick={() => navigateTo('capacity')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 text-yellow-600">Capacity Building</button>
-                  <button onClick={() => navigateTo('evidence')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Community Evidence</button>
-                  <button onClick={() => navigateTo('updates')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Updates</button>
-                </nav>
+  {/* Takes user to the main landing page */}
+  <button onClick={() => navigateTo('landing')} className="...">Home (Main View)</button>
+  
+  {/* These now act as "Internal Pages" hidden from the landing view */}
+  <button onClick={() => navigateTo('evidence')} className="...">Community Evidence</button>
+  <button onClick={() => navigateTo('updates')} className="...">Field Updates</button>
+  <button onClick={() => navigateTo('capacity')} className="...">Capacity Building</button>
+</nav>
               </div>
             )}
           </div>
         </div>
       </header>
+      {/* --- CONDITIONAL RENDERING ENGINE --- */}
+
+{currentPage === 'landing' ? (
+  <>
+    {/* 1. HERO SECTION */}
+    <section className="pt-32 pb-10 bg-white">
+       {/* Insert your Hero Text/Branding here */}
+    </section>
+
+    {/* 2. FINDINGS (The 01-05 Cards) */}
+    <section id="findings" className="bg-yellow-500 border-t-8 border-black">
+       {/* Insert your 5-card grid here */}
+    </section>
+
+    {/* 3. TRUSTEES (Board Members) */}
+    <section id="trustees" className="py-20 bg-black text-white">
+       {/* Insert your Trustee Grid here */}
+    </section>
+
+    {/* 4. WORK WITH US (The Rounded Buttons + Donation Flow) */}
+    
+    <section id="work" className="py-28 bg-gray-50">
+       {/* Insert the code for Partnership/Donation/Volunteer/Jobs here */}
+    </section>
+  </>
+) : (
+  /* --- INTERNAL PAGES (Shown only when selected from Menu) --- */
+  <div className="pt-40">
+    // eslint-disable-next-line react/jsx-no-undef
+    {currentPage === 'evidence' && <EvidenceSection />} 
+    {currentPage === 'updates' && <UpdatesSection />}
+    {currentPage === 'capacity' && <CapacitySection />}
+  </div>
+)}
+
+{/* FOOTER (Always visible) */}
+<footer className="py-10 border-t-4 border-black bg-white">
+   {/* Insert Footer content here */}
+</footer>
      {/* 1. HERO SECTION */}
+    const HeroSection = () => (
       <section className="relative z-10 bg-black text-white py-20 px-6 md:px-12 border-b-8 border-yellow-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="relative group">
@@ -88,8 +132,10 @@ const stats = [
           </div>
         </div>
       </section>
+    )
 
       {/* 2. RESEARCH DATA - HORIZONTAL CARDS (NO MAP) */}
+      const FindingsSection = () => (
       <section className="relative z-20 py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
@@ -126,8 +172,11 @@ const stats = [
           </div>
         </div>
       </section>
+      )
       {/* --- NEW SECTION: CAPACITY BUILDING --- */}
+      
       {activeSection === 'capacity' && (
+        
         <section className="pt-40 pb-20 px-6 bg-white min-h-screen">
           <div className="max-w-[1200px] mx-auto">
             <div className="mb-16">
