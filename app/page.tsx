@@ -1,7 +1,32 @@
 "use client";
 
 import React, { useState } from 'react';
+const EvidenceSection = () => (
+  <section className="px-6 bg-white py-24">
+    <div className="max-w-7xl mx-auto">
+      <h2 className="text-6xl font-black uppercase mb-12 italic">Community <span className="text-yellow-500">Evidence</span></h2>
+      {/* Paste your specific Community Evidence content/images here */}
+    </div>
+  </section>
+);
 
+const UpdatesSection = () => (
+  <section className="px-6 bg-gray-50 py-24">
+    <div className="max-w-7xl mx-auto">
+      <h2 className="text-6xl font-black uppercase mb-12 italic">Field <span className="text-yellow-500">Updates</span></h2>
+      {/* Paste your specific Updates content/images here */}
+    </div>
+  </section>
+);
+
+const CapacitySection = () => (
+  <section className="px-6 bg-white py-24 border-t-8 border-black">
+    <div className="max-w-7xl mx-auto">
+      <h2 className="text-6xl font-black uppercase mb-12 italic">Capacity <span className="text-yellow-500">Building</span></h2>
+      {/* Paste your Capacity Building content/images here */}
+    </div>
+  </section>
+);
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
@@ -40,6 +65,7 @@ const navigateTo = (page: string) => {
   };
 
   return (
+    
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden">
       {/* --- RESPONSIVE HEADER --- */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-6 py-4">
@@ -102,7 +128,6 @@ const navigateTo = (page: string) => {
 ) : (
   /* --- INTERNAL PAGES (Shown only when selected from Menu) --- */
   <div className="pt-40">
-    // eslint-disable-next-line react/jsx-no-undef
     {currentPage === 'evidence' && <EvidenceSection />} 
     {currentPage === 'updates' && <UpdatesSection />}
     {currentPage === 'capacity' && <CapacitySection />}
@@ -114,7 +139,7 @@ const navigateTo = (page: string) => {
    {/* Insert Footer content here */}
 </footer>
      {/* 1. HERO SECTION */}
-    const HeroSection = () => (
+    const HeroSection = () ={'>'} (
       <section className="relative z-10 bg-black text-white py-20 px-6 md:px-12 border-b-8 border-yellow-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="relative group">
@@ -132,10 +157,10 @@ const navigateTo = (page: string) => {
           </div>
         </div>
       </section>
-    )
+    );
 
       {/* 2. RESEARCH DATA - HORIZONTAL CARDS (NO MAP) */}
-      const FindingsSection = () => (
+      const FindingsSection = () ={'>'} (
       <section className="relative z-20 py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-10">
@@ -174,9 +199,10 @@ const navigateTo = (page: string) => {
       </section>
       )
       {/* --- NEW SECTION: CAPACITY BUILDING --- */}
+
       
       {activeSection === 'capacity' && (
-        
+
         <section className="pt-40 pb-20 px-6 bg-white min-h-screen">
           <div className="max-w-[1200px] mx-auto">
             <div className="mb-16">
