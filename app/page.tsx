@@ -32,9 +32,12 @@ const stats = [
   return (
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden">
       {/* --- RESPONSIVE HEADER --- */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 md:px-8 py-4">
-        <div className="max-w-[1800px] mx-auto flex justify-between items-center">
-
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-6 py-4">
+        <div className="max-w-[1400px] mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-4 cursor-pointer" onClick={() => navigateTo('home')}>
+            <div className="border-l-4 border-black pl-4">
+            </div>
+          </div> 
           {/* Menu Button */}
           <div className="relative">
             <button
@@ -50,6 +53,7 @@ const stats = [
                 <nav className="flex flex-col">
                   <button onClick={() => navigateTo('home')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Home & Findings</button>
                   <button onClick={() => navigateTo('who')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Who We Are</button>
+                  <button onClick={() => navigateTo('capacity')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 text-yellow-600">Capacity Building</button>
                   <button onClick={() => navigateTo('evidence')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Community Evidence</button>
                   <button onClick={() => navigateTo('updates')} className="text-left px-6 py-4 border-b-2 border-gray-100 font-black uppercase text-[11px] tracking-widest hover:bg-yellow-500 transition-colors">Updates</button>
                 </nav>
@@ -114,6 +118,43 @@ const stats = [
           </div>
         </div>
       </section>
+      {/* --- NEW SECTION: CAPACITY BUILDING --- */}
+      {activeSection === 'capacity' && (
+        <section className="pt-40 pb-20 px-6 bg-white min-h-screen">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="mb-16">
+              <span className="bg-black text-white px-4 py-1 font-black uppercase text-xs tracking-widest">Nov 27, 2025</span>
+              <h2 className="text-6xl md:text-7xl font-black uppercase tracking-tighter mt-4 leading-none">
+                Strengthening <br /><span className="text-yellow-500 italic">Leadership.</span>
+              </h2>
+              <p className="mt-8 text-xl font-bold max-w-3xl leading-relaxed">
+                GICD participated in a two-phased capacity development programme led by the 
+                <span className="underline decoration-yellow-500 decoration-4"> Nigeria Network of NGOs </span> 
+                with support from the <span className="underline decoration-yellow-500 decoration-4"> TY Danjuma Foundation</span>.
+              </p>
+            </div>
+
+            {/* Photo Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="border-4 border-black hover:-rotate-1 transition-transform">
+                <img src="/cap1.jpg" className="w-full h-80 object-cover" alt="Training" />
+              </div>
+              <div className="border-4 border-black hover:rotate-1 transition-transform">
+                <img src="/cap2.jpg" className="w-full h-80 object-cover" alt="Training" />
+              </div>
+              <div className="border-4 border-black md:col-span-2 lg:col-span-1">
+                <img src="/cap3.jpg" className="w-full h-80 object-cover" alt="Group Photo" />
+              </div>
+            </div>
+
+            <div className="mt-12 p-8 border-l-8 border-black bg-gray-50">
+              <p className="text-sm uppercase font-black tracking-widest text-gray-500 mb-4">Core Focus</p>
+              <h3 className="text-2xl font-black uppercase">Governance & Accountability</h3>
+              <p className="mt-4 text-gray-700 italic">&ldquo;This opportunity aligns strongly with our aspirations to strengthen leadership systems for greater community impact.&rdquo;</p>
+            </div>
+          </div>
+        </section>
+      )}
       {/* --- SECTION 1: WHO WE ARE (Responsive Layout) --- */}
       {/* 3. BOARD OF TRUSTEES - 3 PER ROW VERSION */}
       <section className="relative z-20 bg-gray-50 py-20 px-6">
