@@ -6,6 +6,13 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>("home");
+  const [showDonationFlow, setShowDonationFlow] = useState(false);
+  const [selectedAmount, setSelectedAmount] = useState<string>('');
+  const REMITA_URL = "https://www.remita.net/pay-a-biller";
+  const handleRemitaRedirect = () => {
+    // Opens Remita in a new tab
+    window.open(REMITA_URL, "_blank");
+  };
   const trustees = [
     { name: "Rev Fr Hilary Naankot Longs", role: "Catholic Priest / Leadership", img: "/a.jpg" },
     { name: "Ejilayomi Omokorede Damoeroem", role: "PHD Science Educator", img: "/b.jpg" },
@@ -21,6 +28,7 @@ const stats = [
     { val: "1 in 5", label: "Child Marriage Risk", img: "/4.jpg" },
     { val: "88%", label: "Education Aspiration", img: "/1.jpg" },
     { val: "0.0%", label: "Health Access", img: "/3.jpg" }
+    
   ];
   // Helper to change section and close menu
   const navigateTo = (section: string) => {
@@ -335,15 +343,69 @@ const stats = [
       {/* SECTION 5: WORK WITH US */}
       <section id="work" className="py-28 px-6 bg-gray-50 text-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">Work With <br /><span className="text-yellow-500 underline decoration-[10px] underline-offset-8">Us.</span></h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {["Partnership", "Donation", "Volunteer", "Jobs"].map((item) => (
-              <button key={item} className="aspect-square border border-white/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group">
-                <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">{item}</h4>
-                <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
+          
+          {/* Dynamic Heading based on state */}
+          <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">
+            {showDonationFlow ? "Support" : "Work With"} <br />
+            <span className="text-yellow-500 underline decoration-[10px] underline-offset-8">
+              {showDonationFlow ? "GICD." : "Us."}
+            </span>
+          </h2>
+
+          {!showDonationFlow ? (
+            /* ORIGINAL TEMPLATE GRID */
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {["Partnership", "Donation", "Volunteer", "Jobs"].map((item) => (
+                <button 
+                  key={item} 
+                  onClick={() => item === "Donation" && setShowDonationFlow(true)}
+                  className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
+                >
+                  <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">{item}</h4>
+                  <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
+                </button>
+              ))}
+            </div>
+          ) : (
+            /* FUNCTIONAL DONATION FLOW */
+            <div className="max-w-2xl mx-auto bg-white border-8 border-black p-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+              <button 
+                onClick={() => setShowDonationFlow(false)} 
+                className="mb-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500"
+              >
+                ← Back to options
               </button>
-            ))}
-          </div>
+
+              <h3 className="text-3xl font-black uppercase mb-8">Select Amount (NGN)</h3>
+              
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {['5000', '10000', '25000', '50000'].map((amt) => (
+                  <button 
+                    key={amt}
+                    onClick={() => setSelectedAmount(amt)}
+                    className={`py-6 border-4 border-black font-black text-2xl transition-all ${selectedAmount === amt ? 'bg-yellow-500' : 'bg-white hover:bg-gray-50'}`}
+                  >
+                    ₦{parseInt(amt).toLocaleString()}
+                  </button>
+                ))}
+              </div>
+
+              <input 
+                type="number" 
+                value={selectedAmount}
+                onChange={(e) => setSelectedAmount(e.target.value)}
+                className="w-full p-4 border-4 border-black font-black text-2xl mb-8 focus:bg-yellow-50 outline-none"
+                placeholder="Custom Amount"
+              />
+
+              <button 
+                onClick={handleRemitaRedirect}
+                className="w-full py-6 bg-black text-white font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-yellow-500 hover:text-black transition-all"
+              >
+                Pay with Remita
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
