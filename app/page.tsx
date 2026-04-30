@@ -137,13 +137,13 @@ const stats = [
             {/* Photo Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="border-4 border-black hover:-rotate-1 transition-transform">
-                <img src="/cap1.jpg" className="w-full h-80 object-cover" alt="Training" />
+                <img src="/hon 2.jpg" className="w-full h-80 object-cover" alt="Training" />
               </div>
               <div className="border-4 border-black hover:rotate-1 transition-transform">
-                <img src="/cap2.jpg" className="w-full h-80 object-cover" alt="Training" />
+                <img src="/hon 7.jpg" className="w-full h-80 object-cover" alt="Training" />
               </div>
               <div className="border-4 border-black md:col-span-2 lg:col-span-1">
-                <img src="/cap3.jpg" className="w-full h-80 object-cover" alt="Group Photo" />
+                <img src="/hon 5.jpg" className="w-full h-80 object-cover" alt="Group Photo" />
               </div>
             </div>
 
