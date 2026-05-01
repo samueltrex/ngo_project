@@ -313,7 +313,7 @@ const CapacitySection = () => (
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
-  const [activeFlow, setActiveFlow] = useState('menu'); // options: 'menu', 'donation', 'procurement'
+  const [activeFlow, setActiveFlow] = useState('menu'); // options: 'menu','partners', 'donation', 'procurement'
   const [selectedAmount, setSelectedAmount] = useState('');
   const [currentPage, setCurrentPage] = useState<'landing' | 'evidence' | 'updates' | 'capacity'>('landing'); 
   const REMITA_URL = "https://www.remita.net/pay-a-biller";
@@ -523,16 +523,59 @@ export default function Home() {
         {["Partnership", "Donation", "Procurement", "Jobs"].map((item) => (
           <button 
             key={item} 
-            onClick={() => {
-              if (item === "Donation") setActiveFlow('donation');
-              if (item === "Procurement") setActiveFlow('procurement');
-            }}
+            onClick={() => setActiveFlow(item.toLowerCase())}
             className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
           >
             <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">{item}</h4>
             <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
           </button>
         ))}
+      </div>
+    ) : activeFlow === 'partnership' ? (
+      /* PARTNERSHIP ANNOUNCEMENT VIEW */
+      <div className="max-w-5xl mx-auto bg-white border-8 border-black p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+        <button 
+          onClick={() => setActiveFlow('menu')} 
+          className="mb-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500"
+        >
+          ← Back to options
+        </button>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="bg-black text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
+              Strategic Collaboration
+            </span>
+            <h3 className="text-4xl font-black uppercase mb-6 leading-tight tracking-tighter">
+              Kavod Relief <span className="text-yellow-500">×</span> GICD
+            </h3>
+            <div className="prose prose-sm text-gray-600 font-medium leading-relaxed space-y-4">
+              <p>
+                We are proud to announce the signing of a Memorandum of Understanding (MoU) formalizing a strategic collaboration to expand access to protection and skills for adolescents in Plateau State.
+              </p>
+              <p>
+                This partnership anchors <strong> &quot;Goals for Skills: Football Meets Tech,&quot;</strong> an integrated programme combining sport-based engagement with digital skills training and mentorship.
+              </p>
+              <p className="border-l-4 border-yellow-500 pl-4 italic">
+                &quot;This MoU represents more than a partnership; it reflects strong governance and a joint commitment to measurable impact &quot;.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {["#YouthDevelopment", "#ChildProtection", "#FootballMeetsTech"].map(tag => (
+                <span key={tag} className="text-[10px] font-black uppercase text-gray-400">{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-2 bg-yellow-500 -z-10 rounded-2xl transform rotate-2"></div>
+            <img 
+              src="/partners.jpg" 
+              alt="GICD and Kavod Relief MoU Signing" 
+              className="w-full h-auto rounded-xl border-4 border-black shadow-lg"
+            />
+          </div>
+        </div>
       </div>
     ) : activeFlow === 'procurement' ? (
       /* PROCUREMENT FLOW */
