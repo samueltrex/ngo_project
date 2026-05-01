@@ -242,6 +242,7 @@ const CapacitySection = () => (
                 </div>
               </div>
             </div>
+          </div>
             
             <div className="lg:col-span-6 grid grid-cols-2 gap-3">
               <img 
