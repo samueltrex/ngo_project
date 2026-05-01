@@ -210,44 +210,64 @@ const CapacitySection = () => (
       </div>
     </div>
 
-    {/* CAPACITY BUILDING: COMMUNITY MENTOR TRAINING */}
-<div className="bg-slate-50 rounded-[3rem] p-8 md:p-16 border-l-8 border-yellow-500 shadow-lg">
-  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-    <div className="lg:col-span-7">
-      <span className="text-yellow-600 text-[10px] font-black px-4 py-1 border-2 border-yellow-600 rounded-full uppercase tracking-widest mb-6 inline-block">
-        Professional Development • 18 Dec 2025
-      </span>
-      <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
-        Onboarding <span className="text-gray-400">Community Mentors</span>
-      </h3>
-      <p className="text-sm text-gray-600 leading-relaxed mb-6">
-        We have officially concluded the training of our Community Mentors using the <strong>Save the Children Youth Resilience Program</strong>. This framework equips our team with psychosocial support skills—including decision-making, emotion management, and effective communication—to help adolescents thrive in Angwan Rukuba.
-      </p>
-      <div className="space-y-4 mb-8">
-        <div className="flex items-center gap-3">
-          <div className="h-2 w-2 bg-yellow-500 rounded-full" />
-          <p className="text-xs font-bold text-gray-500 uppercase">8-Themed Framework Implementation</p>
-        </div>
-        <div className="flex items-center gap-3">
-          <div className="h-2 w-2 bg-yellow-500 rounded-full" />
-          <p className="text-xs font-bold text-gray-500 uppercase">Parent & Caregiver Engagement Integration</p>
+    {/* NEW UPDATE: YOUTH RESILIENCE MENTORS */}
+        <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-6">
+              <span className="text-black text-[10px] font-black px-4 py-1 border-2 border-black rounded-full uppercase tracking-widest mb-6 inline-block">
+                18 December 2025
+              </span>
+              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
+                Building Resilience: <br />
+                <span className="text-yellow-500 text-2xl italic">Community Mentors</span>
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                We successfully onboarded and trained Community Mentors for adolescents using the Save the Children Youth Resilience Program. Moving beyond direct outreach, we are establishing structured safety nets and psychosocial support in the Angwan Rukuba community, reinforced by continuous parent and caregiver engagements.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {['#YouthResilience', '#ChildProtection', '#PositiveParenting'].map((tag) => (
+                  <span key={tag} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-md text-gray-600">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 gap-4 border-t-2 border-gray-100 pt-6">
+                <div>
+                  <p className="text-[10px] font-black uppercase text-gray-400">Framework</p>
+                  <p className="text-xl font-black">Save the Children</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-black uppercase text-gray-400">Location</p>
+                  <p className="text-xl font-black">Angwan Rukuba</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img 
+                src="/onboard 1.jpg" 
+                alt="Facilitator leading the mentor training" 
+                className="w-full h-48 object-cover rounded-tl-[2rem] border-2 border-gray-100" 
+              />
+              <img 
+                src="/onboard 2.jpg" 
+                alt="Mentors collaborating on community maps" 
+                className="w-full h-48 object-cover rounded-tr-[2rem] border-2 border-gray-100" 
+              />
+              <img 
+                src="/onboard 3.jpg" 
+                alt="Small group discussion" 
+                className="w-full h-48 object-cover rounded-bl-[2rem] border-2 border-gray-100" 
+              />
+              <img 
+                src="/onboard 4.jpg" 
+                alt="Presentation on psychosocial support" 
+                className="w-full h-48 object-cover rounded-br-[2rem] border-2 border-gray-100" 
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-    
-    <div className="lg:col-span-5">
-      <div className="grid grid-cols-2 gap-2">
-        <img src="/onboard 2.jpg" alt="Mentors in training" className="w-full h-32 object-cover rounded-tl-2xl" />
-        <img src="/onboard 3.jpg" alt="Onboarding session" className="w-full h-32 object-cover rounded-tr-2xl" />
-        <img src="/onboard 4.jpg" alt="Training workshop" className="w-full h-32 object-cover" />
-        <img src="/onboard 5.jpg" alt="Psychosocial support training" className="w-full h-32 object-cover rounded-br-2xl" />
-        <div className="col-span-2">
-          <img src="/onboard 6.jpg" alt="GICD Mentor team" className="w-full h-40 object-cover rounded-bl-2xl" />
-        </div>
-      </div>
-    </div>
-  </div>
   </section>
 );
 
