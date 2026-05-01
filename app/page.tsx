@@ -62,10 +62,10 @@ const EvidenceSection = () => (
         </div>
 
 {/* NEW IMPACT MOMENT: GSS FOBUR */}
-        <div className="bg-black text-black rounded-[3rem] p-8 md:p-16 border-2 border-gray-40 shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+        <div className="bg-black text-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
-              <span className="text-yellow-500 text-[10px] font-black px-4 py-1 border-2 border-gray-400 rounded-full uppercase tracking-widest mb-6 inline-block">
+              <span className="text-yellow-500 text-[10px] font-black px-4 py-1 border-2 border-yellow-500 rounded-full uppercase tracking-widest mb-6 inline-block">
                 9 December 2026
               </span>
               <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
