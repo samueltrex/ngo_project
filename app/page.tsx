@@ -38,9 +38,9 @@ const EvidenceSection = () => (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 order-2 lg:order-1">
               <div className="grid grid-cols-2 gap-3">
-                <img src="/donor_1.jpg" alt="Children receiving support" className="w-full h-40 object-cover rounded-2xl shadow-md" />
-                <img src="/donor_4.jpg" alt="Delivered food and school items" className="w-full h-40 object-cover rounded-2xl shadow-md" />
-                <img src="/donor_3.jpg" alt="Group photo at orphanage" className="w-full h-64 object-cover col-span-2 rounded-2xl shadow-md" />
+                <img src="/orph 1.jpg" alt="Children receiving support" className="w-full h-40 object-cover rounded-2xl shadow-md" />
+                <img src="/orph 4.jpg" alt="Delivered food and school items" className="w-full h-40 object-cover rounded-2xl shadow-md" />
+                <img src="/orph 5.jpg" alt="Group photo at orphanage" className="w-full h-64 object-cover col-span-2 rounded-2xl shadow-md" />
               </div>
             </div>
             
@@ -56,7 +56,7 @@ const EvidenceSection = () => (
                 Aunty, we are speechless… we won&apos;t fail you
               </p>
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                On a donor&apos;s goodwill, we visited orphanages in Jos East and Jos North. Beyond delivering essential food items to ensure &lsqou;warm stomachs&lsqou; we removed financial barriers for 16 students by covering their WAEC and JAMB registrations, placing them on a vantage position for higher learning.
+                On a donor&apos;s goodwill, we visited orphanages in Jos East and Jos North. Beyond delivering essential food items to ensure &quot;warm stomachs&quot; we removed financial barriers for 16 students by covering their WAEC and JAMB registrations, placing them on a vantage position for higher learning.
               </p>
               
               <div className="grid grid-cols-3 gap-4 border-t border-gray-200 pt-6">
@@ -313,8 +313,8 @@ const CapacitySection = () => (
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
-  const [showDonationFlow, setShowDonationFlow] = useState(false);
-  const [selectedAmount, setSelectedAmount] = useState<string>('');
+  const [activeFlow, setActiveFlow] = useState('menu'); // options: 'menu', 'donation', 'procurement'
+  const [selectedAmount, setSelectedAmount] = useState('');
   const [currentPage, setCurrentPage] = useState<'landing' | 'evidence' | 'updates' | 'capacity'>('landing'); 
   const REMITA_URL = "https://www.remita.net/pay-a-biller";
 
@@ -509,64 +509,123 @@ export default function Home() {
 
           {/* 5. WORK WITH US / DONATION */}
           <section id="work" className="py-28 px-6 bg-gray-50 text-black">
-            <div className="max-w-7xl mx-auto">
-              <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">
-                {showDonationFlow ? "Support" : "Work With"} <br />
-                <span className="text-yellow-500 underline decoration-[10px] underline-offset-8">
-                  {showDonationFlow ? "GICD." : "Us."}
-                </span>
-              </h2>
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">
+      {activeFlow === 'donation' ? "Support" : "Work With"} <br />
+      <span className="text-yellow-500 underline decoration-[10px] underline-offset-8">
+        {activeFlow === 'donation' ? "GICD." : "Us."}
+      </span>
+    </h2>
 
-              {!showDonationFlow ? (
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  {["Partnership", "Donation", "Volunteer", "Jobs"].map((item) => (
-                    <button 
-                      key={item} 
-                      onClick={() => item === "Donation" && setShowDonationFlow(true)}
-                      className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
-                    >
-                      <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">{item}</h4>
-                      <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
-                    </button>
-                  ))}
-                </div>
-              ) : (
-                <div className="max-w-2xl mx-auto bg-white border-8 border-black p-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
-                  <button 
-                    onClick={() => setShowDonationFlow(false)} 
-                    className="mb-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500"
-                  >
-                    ← Back to options
-                  </button>
-                  <h3 className="text-3xl font-black uppercase mb-8">Select Amount (NGN)</h3>
-                  <div className="grid grid-cols-2 gap-4 mb-8">
-                    {['5000', '10000', '25000', '50000'].map((amt) => (
-                      <button 
-                        key={amt}
-                        onClick={() => setSelectedAmount(amt)}
-                        className={`py-6 border-4 border-black font-black text-2xl transition-all ${selectedAmount === amt ? 'bg-yellow-500' : 'bg-white hover:bg-gray-50'}`}
-                      >
-                        ₦{parseInt(amt).toLocaleString()}
-                      </button>
-                    ))}
-                  </div>
-                  <input 
-                    type="number" 
-                    value={selectedAmount}
-                    onChange={(e) => setSelectedAmount(e.target.value)}
-                    className="w-full p-4 border-4 border-black font-black text-2xl mb-8 focus:bg-yellow-50 outline-none"
-                    placeholder="Custom Amount"
-                  />
-                  <button 
-                    onClick={handleRemitaRedirect}
-                    className="w-full py-6 bg-black text-white font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-yellow-500 hover:text-black transition-all"
-                  >
-                    Pay with Remita
-                  </button>
-                </div>
-              )}
+    {activeFlow === 'menu' ? (
+      /* MAIN MENU */
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {["Partnership", "Donation", "Procurement", "Jobs"].map((item) => (
+          <button 
+            key={item} 
+            onClick={() => {
+              if (item === "Donation") setActiveFlow('donation');
+              if (item === "Procurement") setActiveFlow('procurement');
+            }}
+            className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
+          >
+            <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">{item}</h4>
+            <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
+          </button>
+        ))}
+      </div>
+    ) : activeFlow === 'procurement' ? (
+      /* PROCUREMENT FLOW */
+      <div className="max-w-4xl mx-auto bg-white border-8 border-black p-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+        <button 
+          onClick={() => setActiveFlow('menu')} 
+          className="mb-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500"
+        >
+          ← Back to options
+        </button>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div>
+            <span className="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block">
+              Open: 9th – 20th Feb 2026
+            </span>
+            <h3 className="text-4xl font-black uppercase mb-6 leading-tight">Vendor <br/>Prequalification</h3>
+            <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+              The Guardian Initiative for Community Development (GICD) seeks reputable vendors for ICT, Hospitality, and General Supplies to support child protection and education programs.
+            </p>
+            
+            <div className="space-y-4 mb-8">
+              <div className="flex gap-3 items-center">
+                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">01</div>
+                <p className="text-xs font-black uppercase tracking-tight">ICT Supplies & Services</p>
+              </div>
+              <div className="flex gap-3 items-center">
+                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">02</div>
+                <p className="text-xs font-black uppercase tracking-tight">Food & Event Management</p>
+              </div>
+              <div className="flex gap-3 items-center">
+                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">03</div>
+                <p className="text-xs font-black uppercase tracking-tight">General Printing & Branding</p>
+              </div>
             </div>
-          </section>
+
+            <a 
+              href="mailto:gicdprocurements@gmail.com?subject=EOI – Vendor Prequalification"
+              className="block text-center py-6 bg-black text-white font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-yellow-500 hover:text-black transition-all"
+            >
+              Submit EOI Email
+            </a>
+          </div>
+
+          <div className="space-y-4">
+             <p className="text-[10px] font-black uppercase text-gray-400 text-center">Reference Documents</p>
+             <div className="grid grid-cols-2 gap-2">
+                <img src="/vol 1.jpg" alt="vol 1.jpg" className="w-full h-32 object-cover border-2 border-black hover:scale-105 transition-transform cursor-pointer" />
+                <img src="/vol 2.jpg" alt="vol 2.jpg" className="w-full h-32 object-cover border-2 border-black hover:scale-105 transition-transform cursor-pointer" />
+                <img src="/vol 3.jpg" alt="vol 3.jpg" className="w-full h-32 object-cover border-2 border-black col-span-2 hover:scale-105 transition-transform cursor-pointer" />
+             </div>
+             <p className="text-[9px] text-gray-400 italic text-center uppercase font-bold">Registration Period: Feb 9th - 20th 2026</p>
+          </div>
+        </div>
+      </div>
+    ) : (
+      /* DONATION FLOW */
+      <div className="max-w-2xl mx-auto bg-white border-8 border-black p-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+        <button 
+          onClick={() => setActiveFlow('menu')} 
+          className="mb-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500"
+        >
+          ← Back to options
+        </button>
+        <h3 className="text-3xl font-black uppercase mb-8">Select Amount (NGN)</h3>
+        <div className="grid grid-cols-2 gap-4 mb-8">
+          {['5000', '10000', '25000', '50000'].map((amt) => (
+            <button 
+              key={amt}
+              onClick={() => setSelectedAmount(amt)}
+              className={`py-6 border-4 border-black font-black text-2xl transition-all ${selectedAmount === amt ? 'bg-yellow-500' : 'bg-white hover:bg-gray-50'}`}
+            >
+              ₦{parseInt(amt).toLocaleString()}
+            </button>
+          ))}
+        </div>
+        <input 
+          type="number" 
+          value={selectedAmount}
+          onChange={(e) => setSelectedAmount(e.target.value)}
+          className="w-full p-4 border-4 border-black font-black text-2xl mb-8 focus:bg-yellow-50 outline-none"
+          placeholder="Custom Amount"
+        />
+        <button 
+          onClick={handleRemitaRedirect}
+          className="w-full py-6 bg-black text-white font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-yellow-500 hover:text-black transition-all"
+        >
+          Pay with Remita
+        </button>
+      </div>
+    )}
+  </div>
+</section>
 
           {/* Map Modal */}
           {selectedImg && (
