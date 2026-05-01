@@ -6,28 +6,53 @@ const EvidenceSection = () => (
   <section className="px-6 bg-white py-24">
     <div className="max-w-7xl mx-auto">
       <h2 className="text-6xl font-black uppercase mb-12 italic">Community <span className="text-yellow-500">Evidence</span></h2>
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 italic">Programme <span className="text-yellow-600">Updates</span></h2>
-          <div className="h-1.5 w-24 bg-yellow-500 mx-auto rounded-full" />
-        </div>
+      
+      <div className="text-center mb-20">
+        <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 italic">Programme <span className="text-yellow-600">Updates</span></h2>
+        <div className="h-1.5 w-24 bg-yellow-500 mx-auto rounded-full" />
       </div>
 
       <div className="space-y-24">
-        {/* URGENT UPDATE: SAFE SCHOOLS ADVOCACY */}
+        {/* NEW OUTREACH: TIK TAK YEAR-END COUNTDOWN */}
+        <div className="bg-gray-50 rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(0,0,0,1)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5 grid grid-cols-2 gap-2">
+              <img src="/tik 1.jpg" alt="Outreach group" className="w-full h-48 object-cover rounded-tl-[2rem]" />
+              <img src="/tik 2.jpg" alt="Student engagement" className="w-full h-48 object-cover rounded-tr-lg" />
+              <img src="/tik 7.jpg" alt="Distribution" className="w-full h-48 object-cover rounded-bl-lg" />
+              <img src="/tik 4.jpg" alt="Classroom session" className="w-full h-48 object-cover rounded-br-[2rem]" />
+            </div>
+            <div className="lg:col-span-7">
+              <span className="text-yellow-600 text-[10px] font-black px-4 py-1 border-2 border-yellow-600 rounded-full uppercase tracking-widest mb-6 inline-block">6 December 2025</span>
+              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">Tik... Tak... <br /><span className="text-gray-400 text-2xl">Countdown to Year-End</span></h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                Engaged 167 girls and boys from United Faith Tabernacle School (Jarawan Kogi) and GSS Federe (Angware) on reproductive health and SGBV prevention. We are building a future where informed children are better protected.
+              </p>
+              <div className="grid grid-cols-2 gap-4 border-t-2 border-gray-200 pt-6">
+                <div>
+                  <p className="text-[10px] font-black uppercase text-gray-400">Reach</p>
+                  <p className="text-xl font-black">167 Students</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-black uppercase text-gray-400">Location</p>
+                  <p className="text-xl font-black">Angware, Plateau</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* PREVIOUS UPDATE: SAFE SCHOOLS ADVOCACY */}
         <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-yellow-500 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-4">
               <img src="/part c 1.jpg" alt="Insecurity Affects Education Advocacy" className="w-full rounded-2xl shadow-lg" />
             </div>
             <div className="lg:col-span-8">
-              <span className="bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block animate-pulse">Urgent Action</span>
+              <span className="bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">Urgent Action</span>
               <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">Safe Schools Now: <br /><span className="text-gray-400 text-2xl">A Call to Government</span></h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                With 47 Unity schools closed nationwide and closures effective Nov 22-24 in Plateau State, insecurity is denying many Nigerian children their right to safe, quality education.
-              </p>
-              <p className="text-base font-bold text-black mb-8 italic">
-                &quot;Our children deserve safe classrooms, not crises.&quot;
+                With 47 Unity schools closed nationwide, insecurity is denying many Nigerian children their right to safe, quality education.
               </p>
               <div className="flex flex-wrap gap-4">
                 <span className="text-[10px] font-black text-gray-400">#SafeSchoolsNow</span>
@@ -186,13 +211,21 @@ export default function Home() {
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden"> 
       
       {/* HEADER */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-6 py-4">
+     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 md:px-6 py-3">
         <div className="max-w-[1400px] mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-4 cursor-pointer" onClick={() => navigateTo('landing')}>
-            <div className="border-l-4 border-black pl-4">
-              <span className="font-black text-xl tracking-tighter">GICD.</span>
+          
+          {/* UPDATED LOGO & FULL NAME AREA */}
+          <div className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => navigateTo('landing')}>
+            <img src="/logo.jpg" alt="GICD Logo" className="w-10 h-10 md:w-12 md:h-12 rounded-lg shadow-sm border border-gray-100" />
+            <div className="border-l-2 border-yellow-500 pl-3 flex flex-col justify-center">
+              <span className="font-black text-[10px] md:text-xs uppercase tracking-widest leading-tight text-black">
+                The Guardians Initiative
+              </span>
+              <span className="font-bold text-[8px] md:text-[9px] text-gray-500 uppercase tracking-widest leading-tight">
+                For Community Development
+              </span>
             </div>
-          </div> 
+          </div>
           
           {/* Added a toggle button so the menu can actually be opened! */}
           <button 
