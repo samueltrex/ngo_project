@@ -141,6 +141,7 @@ const navigateTo = (page: 'landing' | 'evidence' | 'updates' | 'capacity') => {
 
 {currentPage === 'landing' ? (
   <>
+
        {/* 1. HERO SECTION */}
       <section className="relative z-10 bg-black text-white py-20 px-6 md:px-12 border-b-8 border-yellow-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
