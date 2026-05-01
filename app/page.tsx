@@ -13,6 +13,25 @@ const EvidenceSection = () => (
       </div>
 
       <div className="space-y-24">
+        {/* PREVIOUS UPDATE: SAFE SCHOOLS ADVOCACY */}
+        <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-yellow-500 shadow-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-4">
+              <img src="/part c 1.jpg" alt="Insecurity Affects Education Advocacy" className="w-full rounded-2xl shadow-lg" />
+            </div>
+            <div className="lg:col-span-8">
+              <span className="bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">Urgent Action</span>
+              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">Safe Schools Now: <br /><span className="text-gray-400 text-2xl">A Call to Government</span></h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                With 47 Unity schools closed nationwide, insecurity is denying many Nigerian children their right to safe, quality education.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <span className="text-[10px] font-black text-gray-400">#SafeSchoolsNow</span>
+                <span className="text-[10px] font-black text-gray-400">#RightToEducation</span>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* NEW OUTREACH: TIK TAK YEAR-END COUNTDOWN */}
         <div className="bg-gray-50 rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(0,0,0,1)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -42,26 +61,54 @@ const EvidenceSection = () => (
           </div>
         </div>
 
-        {/* PREVIOUS UPDATE: SAFE SCHOOLS ADVOCACY */}
-        <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-yellow-500 shadow-xl">
+{/* NEW IMPACT MOMENT: GSS FOBUR */}
+        <div className="bg-black text-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-4">
-              <img src="/part c 1.jpg" alt="Insecurity Affects Education Advocacy" className="w-full rounded-2xl shadow-lg" />
-            </div>
-            <div className="lg:col-span-8">
-              <span className="bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">Urgent Action</span>
-              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">Safe Schools Now: <br /><span className="text-gray-400 text-2xl">A Call to Government</span></h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                With 47 Unity schools closed nationwide, insecurity is denying many Nigerian children their right to safe, quality education.
+            <div className="lg:col-span-7">
+              <span className="text-yellow-500 text-[10px] font-black px-4 py-1 border-2 border-yellow-500 rounded-full uppercase tracking-widest mb-6 inline-block">
+                9 December 2026
+              </span>
+              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
+                Impact Moments: <br />
+                <span className="text-yellow-500 text-2xl italic">Empowering GSS Fobur</span>
+              </h3>
+              <p className="text-sm text-gray-300 leading-relaxed mb-6">
+                On the invitation of the First Lady (Jos East LGA), we reached over 150 adolescent girls. We dismantled myths surrounding SGBV and reproductive health, equipping them with the knowledge to protect their rights and personal safety in rural settings.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <span className="text-[10px] font-black text-gray-400">#SafeSchoolsNow</span>
-                <span className="text-[10px] font-black text-gray-400">#RightToEducation</span>
+              <div className="flex flex-wrap gap-3 mb-8">
+                {['#SGBVPrevention', '#RuralImpact', '#GirlsEmpowerment'].map((tag) => (
+                  <span key={tag} className="text-[10px] font-bold bg-white/10 px-3 py-1 rounded-md">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 gap-4 border-t border-white/20 pt-6">
+                <div>
+                  <p className="text-[10px] font-black uppercase text-yellow-500">Reach</p>
+                  <p className="text-xl font-black">150+ Girls</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-black uppercase text-yellow-500">Partner</p>
+                  <p className="text-xl font-black">First Lady, Jos East</p>
+                </div>
+              </div>
+            </div>
+            <div className="lg:col-span-5 relative">
+              <div className="absolute -inset-4 bg-yellow-500/20 blur-xl rounded-full" />
+              <div className="relative space-y-4">
+                <img 
+                  src="/fobur_1.jpg" 
+                  alt="High impact learning session at GSS Fobur" 
+                  className="w-full h-64 object-cover rounded-[2rem] border-2 border-white/10 shadow-2xl" 
+                />
+                <div className="grid grid-cols-2 gap-4">
+                  <img src="/fobur_2.jpg" alt="Girls engaged in session" className="w-full h-32 object-cover rounded-2xl" />
+                  <img src="/fobur_3.jpg" alt="Facilitator presentation" className="w-full h-32 object-cover rounded-2xl" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-
         {/* PREVIOUS UPDATE: TUDUN WADA */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-12">
           <div className="lg:col-span-7">
