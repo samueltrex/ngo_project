@@ -552,6 +552,31 @@ export default function Home() {
     ${currentPage === page ? 'bg-yellow-500 text-black' : 'bg-white text-black hover:bg-gray-100'}
   `;
 
+  const Reveal = ({ children }: { children: React.ReactNode }) => {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const ref = React.useRef(null);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 } // Triggers when 10% of the section is visible
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={isVisible ? "reveal-visible" : "reveal-hidden"}>
+      {children}
+    </div>
+  );
+};
+
   return (    
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden"> 
       
@@ -606,14 +631,14 @@ export default function Home() {
             </nav>
           </div>
         )}
-      </header>
+     </header>
+  
   {/* The 'key' attribute here is the secret—it restarts the 'animate-reveal' every time you switch pages */}
 <div 
   key={currentPage} 
   className={`animate-reveal ${currentPage === "landing" ? "" : "pt-32 pb-20 min-h-screen bg-white"}`}
 >  
       {/* --- CONDITIONAL ROUTING (Cleaned up the logic) --- */}
-      
       {currentPage === "landing" && (
         <>
           {/* 1. HERO SECTION */}
@@ -634,8 +659,10 @@ export default function Home() {
               </div>
             </div>
           </section>
-
-          {/* 2. RESEARCH DATA */}
+        </>
+)})
+        {/* 2. RESEARCH DATA */}
+         
           <section className="relative z-20 py-16 px-6 bg-white">
             <div className="max-w-7xl mx-auto">
               <div className="mb-10">
@@ -674,6 +701,7 @@ export default function Home() {
           </section>
 
           {/* 3. TRUSTEES */}
+
           <section className="relative z-20 bg-gray-50 py-20 px-6">
             <div className="max-w-7xl mx-auto">
               <div className="mb-12 border-l-8 border-yellow-500 pl-8">
@@ -704,7 +732,7 @@ export default function Home() {
               </div>
             </div>
           </section>
-
+</div>
           {/* 4. RESOURCE HUB */}
           <section id="resources" className="py-28 px-6 bg-white">
             <div className="max-w-4xl mx-auto">
@@ -726,7 +754,7 @@ export default function Home() {
           </section>
 
           {/* 5. WORK WITH US / DONATION */}
-          <section id="work" className="py-28 px-6 bg-gray-50 text-black">
+ <section id="work" className="py-28 px-6 bg-gray-50 text-black">
   <div className="max-w-7xl mx-auto">
     <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">
       Work With <br />
@@ -776,7 +804,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
           {/* Map Modal */}
           {selectedImg && (
             <div
@@ -789,10 +816,8 @@ export default function Home() {
                 className="max-w-4xl max-h-[90vh] object-contain rounded-lg shadow-2xl"
               />
             </div>
-          )}
-        </>
-      )}
-
+          )} 
+      )
       {/* --- INTERNAL PAGES --- */}
   {currentPage === "evidence" && <EvidenceSection />}
   {currentPage === "updates" && <UpdatesSection />}
@@ -806,7 +831,7 @@ export default function Home() {
         throw new Error('Function not implemented.');
       } } />}
   {currentPage === "procurement" && <ProcurementSection />}
-</div>
+
       {/* FOOTER (Shows on all pages) */}
       <footer className="bg-black py-16 px-6 border-t border-white/10 text-center mt-auto">
         <div className="flex justify-center gap-12 mb-12">
