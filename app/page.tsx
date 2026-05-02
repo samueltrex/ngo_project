@@ -790,23 +790,18 @@ export default function Home() {
       )}
 
       {/* --- INTERNAL PAGES --- */}
-      {currentPage === "evidence" && (
-        <div className="pt-24">
-          <EvidenceSection />
-        </div>
-      )}
-      
-      {currentPage === "updates" && (
-        <div className="pt-24">
-          <UpdatesSection />
-        </div>
-      )}
-      
-      {currentPage === "capacity" && (
-        <div className="pt-24">
-          <CapacitySection />
-        </div>
-      )}
+  {currentPage === "evidence" && <EvidenceSection />}
+  {currentPage === "updates" && <UpdatesSection />}
+  {currentPage === "capacity" && <CapacitySection />}
+  {currentPage === "partnership" && <PartnershipSection />}
+  {currentPage === "donation" && <DonationSection selectedAmount={''} setSelectedAmount={function (val: string): void {
+        throw new Error('Function not implemented.');
+      } } onClose={function (): void {
+        throw new Error('Function not implemented.');
+      } } handleRemitaRedirect={function (): void {
+        throw new Error('Function not implemented.');
+      } } />}
+  {currentPage === "procurement" && <ProcurementSection />}
 
       {/* FOOTER (Shows on all pages) */}
       <footer className="bg-black py-16 px-6 border-t border-white/10 text-center mt-auto">
