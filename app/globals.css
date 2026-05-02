@@ -7,33 +7,39 @@
   --color-gicd-gray: #f4f4f4;
 
   /* Smooth Animations */
-  --animate-subtle-bounce: subtle-bounce 3s ease-in-out infinite;
+  --animate-reveal: reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 
-  @keyframes subtle-bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
-/* Base Styles */
 @layer base {
   html {
-    /* Ensures navigateTo scrolls are smooth and easy on the eye */
     scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
   }
-
   body {
     @apply bg-white text-gicd-dark antialiased;
-    /* Optimizes font rendering for academic research clarity */
-    text-rendering: optimizeLegibility;
   }
+}
+
+@layer utilities {
+  .animate-reveal {
+    animation: var(--animate-reveal);
+  }
+}
 
   /* Custom Selection Color to match GICD branding */
   ::selection {
     @apply bg-gicd-yellow/30 text-black;
   }
-}
 
 /* Utility for the 'Neobrutalist' border style used in your GICD components */
 @layer utilities {
