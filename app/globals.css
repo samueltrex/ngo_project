@@ -7,7 +7,7 @@
   --color-gicd-gray: #f4f4f4;
 
   /* Smooth Animations */
-  --animate-reveal: reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-reveal: reveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 
   @keyframes reveal {
     from {

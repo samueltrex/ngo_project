@@ -554,11 +554,7 @@ export default function Home() {
 
   return (    
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden"> 
-      {/* The 'key' attribute here is the secret—it restarts the 'animate-reveal' every time you switch pages */}
-<div 
-  key={currentPage} 
-  className={`animate-reveal ${currentPage === "landing" ? "" : "pt-32 pb-20 min-h-screen bg-white"}`}
->  
+      
       {/* HEADER */}
      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 md:px-6 py-3">
         <div className="max-w-[1400px] mx-auto flex justify-between items-center">
@@ -611,7 +607,11 @@ export default function Home() {
           </div>
         )}
       </header>
-  
+  {/* The 'key' attribute here is the secret—it restarts the 'animate-reveal' every time you switch pages */}
+<div 
+  key={currentPage} 
+  className={`animate-reveal ${currentPage === "landing" ? "" : "pt-32 pb-20 min-h-screen bg-white"}`}
+>  
       {/* --- CONDITIONAL ROUTING (Cleaned up the logic) --- */}
       
       {currentPage === "landing" && (
