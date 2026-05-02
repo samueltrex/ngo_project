@@ -106,7 +106,7 @@ const EvidenceSection = () => (
           </div>
         </div>
 
-{/* NEW IMPACT MOMENT: GSS FOBUR */}
+        {/* NEW IMPACT MOMENT: GSS FOBUR */}
         <div className="bg-black text-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
@@ -154,6 +154,7 @@ const EvidenceSection = () => (
             </div>
           </div>
         </div>
+
         {/* PREVIOUS UPDATE: TUDUN WADA */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-12">
           <div className="lg:col-span-7">
@@ -184,48 +185,48 @@ const EvidenceSection = () => (
 );
 
 const UpdatesSection = () => (
-      <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            {/* Left: Image */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative border-4 border-black p-2 bg-white shadow-lg">
-                <img src="/part a 2.jpg" alt="Ministry Meeting" className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700" />
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-yellow-500 text-black font-black px-6 py-2 border-2 border-black text-xs uppercase tracking-widest shadow-md">
-                Protocol Approved
-              </div>
-            </div>
+  <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">
+    <div className="max-w-[1400px] mx-auto">
+      <div className="grid lg:grid-cols-12 gap-12 items-center">
+        {/* Left: Image */}
+        <div className="lg:col-span-6 relative">
+          <div className="relative border-4 border-black p-2 bg-white shadow-lg">
+            <img src="/part a 2.jpg" alt="Ministry Meeting" className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+          </div>
+          <div className="absolute -bottom-4 -right-4 bg-yellow-500 text-black font-black px-6 py-2 border-2 border-black text-xs uppercase tracking-widest shadow-md">
+            Protocol Approved
+          </div>
+        </div>
 
-            {/* Right: Content */}
-            <div className="lg:col-span-6 lg:pl-10">
-              <div className="inline-block bg-black text-white text-[10px] font-black uppercase tracking-[0.4em] px-4 py-1.5 mb-6">
-                Latest Engagement
-              </div>
-              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-8">
-                Laughs <br /> <span className="text-yellow-600 italic">at Last!</span>
-              </h2>
-              <div className="space-y-6">
-                <blockquote className="border-l-4 border-yellow-500 pl-6 text-lg md:text-xl font-medium text-gray-800 leading-snug italic">
-                  &quot;The Commissioner&apos;s signing marks a major milestone for child protection research in Plateau State.&quot;
-                </blockquote>
-                <p className="text-sm text-gray-500 leading-relaxed font-medium">
-                  We have concluded high-level discussions with the Honorable Commissioner, Plateau State Ministry of Women Affairs and Social Development, ensuring local research is grounded in official policy.
+        {/* Right: Content */}
+        <div className="lg:col-span-6 lg:pl-10">
+          <div className="inline-block bg-black text-white text-[10px] font-black uppercase tracking-[0.4em] px-4 py-1.5 mb-6">
+            Latest Engagement
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-8">
+            Laughs <br /> <span className="text-yellow-600 italic">at Last!</span>
+          </h2>
+          <div className="space-y-6">
+            <blockquote className="border-l-4 border-yellow-500 pl-6 text-lg md:text-xl font-medium text-gray-800 leading-snug italic">
+              &quot;The Commissioner&apos;s signing marks a major milestone for child protection research in Plateau State.&quot;
+            </blockquote>
+            <p className="text-sm text-gray-500 leading-relaxed font-medium">
+              We have concluded high-level discussions with the Honorable Commissioner, Plateau State Ministry of Women Affairs and Social Development, ensuring local research is grounded in official policy.
+            </p>
+            <div className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-lg w-fit mt-8">
+              <div className="w-10 h-12 bg-black flex items-center justify-center text-yellow-500 font-bold text-xs">PDF</div>
+              <div>
+                <p className="text-[9px] font-black uppercase tracking-widest text-gray-400">View Signed File</p>
+                <p className="text-xs font-bold text-black uppercase hover:text-yellow-600 cursor-pointer transition-colors">
+                  Research_Protocol_2026.pdf
                 </p>
-                <div className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-lg w-fit mt-8">
-                  <div className="w-10 h-12 bg-black flex items-center justify-center text-yellow-500 font-bold text-xs">PDF</div>
-                  <div>
-                    <p className="text-[9px] font-black uppercase tracking-widest text-gray-400">View Signed File</p>
-                    <p className="text-xs font-bold text-black uppercase hover:text-yellow-600 cursor-pointer transition-colors">
-                      Research_Protocol_2026.pdf
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 );
 
 const CapacitySection = () => (
@@ -251,63 +252,262 @@ const CapacitySection = () => (
     </div>
 
     {/* NEW UPDATE: YOUTH RESILIENCE MENTORS */}
-        <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6">
-              <span className="text-black text-[10px] font-black px-4 py-1 border-2 border-black rounded-full uppercase tracking-widest mb-6 inline-block">
-                18 December 2025
-              </span>
-              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
-                Building Resilience: <br />
-                <span className="text-yellow-500 text-2xl italic">Community Mentors</span>
-              </h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                We successfully onboarded and trained Community Mentors for adolescents using the Save the Children Youth Resilience Program. Moving beyond direct outreach, we are establishing structured safety nets and psychosocial support in the Angwan Rukuba community, reinforced by continuous parent and caregiver engagements.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-8">
-                {['#YouthResilience', '#ChildProtection', '#PositiveParenting'].map((tag) => (
-                  <span key={tag} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-md text-gray-600">
-                    {tag}
-                  </span>
-                ))}
+    <div className="max-w-7xl mx-auto mt-24">
+      <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6">
+            <span className="text-black text-[10px] font-black px-4 py-1 border-2 border-black rounded-full uppercase tracking-widest mb-6 inline-block">
+              18 December 2025
+            </span>
+            <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
+              Building Resilience: <br />
+              <span className="text-yellow-500 text-2xl italic">Community Mentors</span>
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed mb-6">
+              We successfully onboarded and trained Community Mentors for adolescents using the Save the Children Youth Resilience Program. Moving beyond direct outreach, we are establishing structured safety nets and psychosocial support in the Angwan Rukuba community, reinforced by continuous parent and caregiver engagements.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {['#YouthResilience', '#ChildProtection', '#PositiveParenting'].map((tag) => (
+                <span key={tag} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-md text-gray-600">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 gap-4 border-t-2 border-gray-100 pt-6">
+              <div>
+                <p className="text-[10px] font-black uppercase text-gray-400">Framework</p>
+                <p className="text-xl font-black">Save the Children</p>
               </div>
-              <div className="grid grid-cols-2 gap-4 border-t-2 border-gray-100 pt-6">
-                <div>
-                  <p className="text-[10px] font-black uppercase text-gray-400">Framework</p>
-                  <p className="text-xl font-black">Save the Children</p>
-                </div>
-                <div>
-                  <p className="text-[10px] font-black uppercase text-gray-400">Location</p>
-                  <p className="text-xl font-black">Angwan Rukuba</p>
-                </div>
+              <div>
+                <p className="text-[10px] font-black uppercase text-gray-400">Location</p>
+                <p className="text-xl font-black">Angwan Rukuba</p>
               </div>
             </div>
-                      
-            <div className="lg:col-span-6 grid grid-cols-2 gap-3">
-              <img 
-                src="/onboard 1.jpg" 
-                alt="Facilitator leading the mentor training" 
-                className="w-full h-48 object-cover rounded-tl-[2rem] border-2 border-gray-100" 
-              />
-              <img 
-                src="/onboard 2.jpg" 
-                alt="Mentors collaborating on community maps" 
-                className="w-full h-48 object-cover rounded-tr-[2rem] border-2 border-gray-100" 
-              />
-              <img 
-                src="/onboard 3.jpg" 
-                alt="Small group discussion" 
-                className="w-full h-48 object-cover rounded-bl-[2rem] border-2 border-gray-100" 
-              />
-              <img 
-                src="/onboard 4.jpg" 
-                alt="Presentation on psychosocial support" 
-                className="w-full h-48 object-cover rounded-br-[2rem] border-2 border-gray-100" 
-              />
+          </div>
+                    
+          <div className="lg:col-span-6 grid grid-cols-2 gap-3">
+            <img 
+              src="/onboard 1.jpg" 
+              alt="Facilitator leading the mentor training" 
+              className="w-full h-48 object-cover rounded-tl-[2rem] border-2 border-gray-100" 
+            />
+            <img 
+              src="/onboard 2.jpg" 
+              alt="Mentors collaborating on community maps" 
+              className="w-full h-48 object-cover rounded-tr-[2rem] border-2 border-gray-100" 
+            />
+            <img 
+              src="/onboard 3.jpg" 
+              alt="Small group discussion" 
+              className="w-full h-48 object-cover rounded-bl-[2rem] border-2 border-gray-100" 
+            />
+            <img 
+              src="/onboard 4.jpg" 
+              alt="Presentation on psychosocial support" 
+              className="w-full h-48 object-cover rounded-br-[2rem] border-2 border-gray-100" 
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const PartnershipSection = () => (
+  <section className="px-6 bg-white py-24 border-t-8 border-black">
+    <div className="min-h-screen pt-32 pb-20 px-6 bg-gray-50 flex items-center justify-center">
+      <div className="max-w-5xl w-full bg-white border-8 border-black p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="bg-black text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
+              Strategic Collaboration
+            </span>
+            <h3 className="text-4xl font-black uppercase mb-6 leading-tight tracking-tighter">
+              Kavod Relief <span className="text-yellow-500">×</span> GICD
+            </h3>
+            <div className="prose prose-sm text-gray-600 font-medium leading-relaxed space-y-4">
+              <p>We are proud to announce the signing of a Memorandum of Understanding (MoU) formalizing a strategic collaboration to expand access to protection and skills for adolescents in Plateau State.</p>
+              <p>This partnership anchors <strong>&quot;Goals for Skills: Football Meets Tech,&quot;</strong> an integrated programme combining sport-based engagement with digital skills training and mentorship.</p>
+              <p className="border-l-4 border-yellow-500 pl-4 italic">&quot;This MoU represents more than a partnership; it reflects strong governance and a joint commitment to measurable impact&quot;.</p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {["#YouthDevelopment", "#ChildProtection", "#FootballMeetsTech"].map(tag => (
+                <span key={tag} className="text-[10px] font-black uppercase text-gray-400">{tag}</span>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-2 bg-yellow-500 -z-10 rounded-2xl transform rotate-2"></div>
+            <img src="/partners.jpg" alt="GICD and Kavod Relief MoU Signing" className="w-full h-auto rounded-xl border-4 border-black shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const ProcurementSection = () => (
+  <section className="px-6 bg-white py-24 border-t-8 border-black">
+    <div className="min-h-screen pt-32 pb-20 px-6 bg-gray-50 flex items-center justify-center">
+      <div className="max-w-4xl w-full bg-white border-8 border-black p-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div>
+            <span className="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block">Open: 9th – 20th Feb 2026</span>
+            <h3 className="text-4xl font-black uppercase mb-6 leading-tight">Vendor <br/>Prequalification</h3>
+            <p className="text-sm text-gray-600 mb-6 leading-relaxed">The Guardian Initiative for Community Development (GICD) seeks reputable vendors for ICT, Hospitality, and General Supplies.</p>
+            <div className="space-y-4 mb-8">
+              <div className="flex gap-3 items-center">
+                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">01</div>
+                <p className="text-xs font-black uppercase tracking-tight">ICT Supplies & Services</p>
+              </div>
+              <div className="flex gap-3 items-center">
+                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">02</div>
+                <p className="text-xs font-black uppercase tracking-tight">Food & Event Management</p>
+              </div>
+              <div className="flex gap-3 items-center">
+                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">03</div>
+                <p className="text-xs font-black uppercase tracking-tight">General Printing & Branding</p>
+              </div>
+            </div>
+            <a href="mailto:gicdprocurements@gmail.com?subject=EOI – Vendor Prequalification" className="block text-center py-6 bg-black text-white font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-yellow-500 hover:text-black transition-all">Submit EOI Email</a>
+          </div>
+          <div className="space-y-4">
+            <p className="text-[10px] font-black uppercase text-gray-400 text-center">Reference Documents</p>
+            <div className="grid grid-cols-2 gap-2">
+              <img src="/vol 1.jpg" alt="EOI Doc 1" className="w-full h-32 object-cover border-2 border-black hover:scale-105 transition-transform" />
+              <img src="/vol 2.jpg" alt="EOI Doc 2" className="w-full h-32 object-cover border-2 border-black hover:scale-105 transition-transform" />
+              <img src="/vol 3.jpg" alt="EOI Doc 3" className="w-full h-32 object-cover border-2 border-black col-span-2 hover:scale-105 transition-transform" />
+            </div>
+            <p className="text-[9px] text-gray-400 italic text-center uppercase font-bold">Registration Period: Feb 9th - 20th 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// Wrapped the floating Donation section into a proper React component
+const DonationSection = ({ 
+  selectedAmount, 
+  setSelectedAmount, 
+  onClose, 
+  handleRemitaRedirect 
+}: { 
+  selectedAmount: string, 
+  setSelectedAmount: (val: string) => void, 
+  onClose: () => void,
+  handleRemitaRedirect: () => void
+}) => (
+  <section className="px-6 bg-white py-24 border-t-8 border-black">
+    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row border-8 border-black shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+      {/* Left Column */}
+      <div className="lg:w-1/2 p-8 md:p-12 bg-yellow-500 text-black flex flex-col justify-between border-b-8 lg:border-b-0 lg:border-r-8 border-black">
+        <div>
+          <span className="bg-black text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
+            Support Our Mission
+          </span>
+          <h3 className="text-5xl font-black uppercase mb-6 leading-none tracking-tighter">
+            Your Support <br /> Creates Change.
+          </h3>
+          <p className="font-medium text-lg mb-8 leading-relaxed">
+            Every Naira you donate goes directly toward providing safe spaces, essential education, and vital psychosocial support for vulnerable children and adolescents in Plateau State.
+          </p>
+
+          <div className="space-y-6">
+            <div className="flex gap-4 items-start">
+              <div className="w-8 h-8 bg-black text-white flex-shrink-0 flex items-center justify-center font-black rounded-full">✓</div>
+              <div>
+                <h4 className="font-black uppercase text-sm">Education & Skills</h4>
+                <p className="text-sm font-medium opacity-90 mt-1">Funding WAEC/JAMB registrations and digital skills training.</p>
+              </div>
+            </div>
+            <div className="flex gap-4 items-start">
+              <div className="w-8 h-8 bg-black text-white flex-shrink-0 flex items-center justify-center font-black rounded-full">✓</div>
+              <div>
+                <h4 className="font-black uppercase text-sm">Child Protection</h4>
+                <p className="text-sm font-medium opacity-90 mt-1">Supporting our community mentors and SGBV prevention spaces.</p>
+              </div>
+            </div>
+            <div className="flex gap-4 items-start">
+              <div className="w-8 h-8 bg-black text-white flex-shrink-0 flex items-center justify-center font-black rounded-full">✓</div>
+              <div>
+                <h4 className="font-black uppercase text-sm">Nutrition & Care</h4>
+                <p className="text-sm font-medium opacity-90 mt-1">Providing basic welfare, food, and dignity for local orphanages.</p>
+              </div>
             </div>
           </div>
         </div>
-</section>
+
+        <div className="mt-12 pt-6 border-t-4 border-black/20">
+          <p className="text-xs font-black uppercase tracking-widest">
+            GICD is a transparent, registered non-profit.
+          </p>
+        </div>
+      </div>
+
+      {/* RIGHT COLUMN: THE FORM (How to Donate) */}
+      <div className="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white relative">
+        <button 
+          onClick={onClose} 
+          className="absolute top-8 right-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500 transition-colors"
+        >
+          ✕ Close
+        </button>
+
+        <h3 className="text-3xl font-black uppercase mb-2 mt-4 lg:mt-0">Select Amount</h3>
+        <p className="text-sm text-gray-500 mb-8 font-medium">All donations are securely processed via Remita (NGN).</p>
+        
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {['5000', '10000', '25000', '50000'].map((amt) => (
+            <button 
+              key={amt}
+              onClick={() => setSelectedAmount(amt)}
+              className={`py-4 border-4 border-black font-black text-2xl transition-all ${
+                selectedAmount === amt 
+                ? 'bg-black text-white shadow-[4px_4px_0px_0px_rgba(234,179,8,1)]' 
+                : 'bg-white hover:bg-gray-50'
+              }`}
+            >
+              ₦{parseInt(amt).toLocaleString()}
+            </button>
+          ))}
+        </div>
+
+        <div className="mb-8">
+          <label className="block text-xs font-black uppercase tracking-widest text-gray-400 mb-2">
+            Or enter custom amount
+          </label>
+          <div className="relative">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-xl text-gray-400">₦</span>
+            <input 
+              type="number" 
+              value={selectedAmount}
+              onChange={(e) => setSelectedAmount(e.target.value)}
+              className="w-full pl-10 p-4 border-4 border-black font-black text-xl focus:bg-yellow-50 outline-none transition-colors"
+              placeholder="0.00"
+            />
+          </div>
+        </div>
+
+        <button 
+          onClick={handleRemitaRedirect}
+          className="w-full py-5 bg-yellow-500 text-black font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-black hover:text-yellow-500 transition-all flex justify-center items-center gap-2"
+        >
+          Donate Securely 
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
+
+        <p className="text-center text-xs text-gray-400 mt-4 font-bold flex justify-center items-center gap-1 uppercase tracking-wider">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          100% Secure Payment Guarantee
+        </p>
+      </div>
+    </div>
+  </section>
 );
 
 export default function Home() {
@@ -315,9 +515,8 @@ export default function Home() {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const [activeFlow, setActiveFlow] = useState('menu'); // options: 'menu','partners', 'donation', 'procurement'
   const [selectedAmount, setSelectedAmount] = useState('');
-  const [currentPage, setCurrentPage] = useState<'landing' | 'evidence' | 'updates' | 'capacity'>('landing'); 
+  const [currentPage, setCurrentPage] = useState<'landing' | 'evidence' | 'updates' | 'capacity' | 'donation' | 'procurement' | 'partnership'>('landing');
   const REMITA_URL = "https://www.remita.net/pay-a-biller";
-
   const handleRemitaRedirect = () => {
     window.open(REMITA_URL, "_blank");
   };
@@ -340,13 +539,14 @@ export default function Home() {
     { val: "0.0%", label: "Health Access", img: "/3.jpg" }
   ];
 
-  const navigateTo = (page: 'landing' | 'evidence' | 'updates' | 'capacity') => {
+  const navigateTo = (page: 'landing' | 'evidence' | 'updates' | 'capacity' | 'donation' | 'procurement' | 'partnership') => {
     setCurrentPage(page);
+    setActiveFlow('menu');
     setMenuOpen(false);
     window.scrollTo(0, 0);
   };
 
-  const getLinkStyle = (page: 'landing' | 'evidence' | 'updates' | 'capacity') => `
+  const getLinkStyle = (page: 'landing' | 'evidence'|'donation'|'procurement'|'partnership'|'jods' | 'updates' | 'capacity') => `
     block w-full text-left px-8 py-4 font-black uppercase tracking-widest text-sm 
     border-b-2 border-black transition-colors
     ${currentPage === page ? 'bg-yellow-500 text-black' : 'bg-white text-black hover:bg-gray-100'}
@@ -389,6 +589,20 @@ export default function Home() {
               <button onClick={() => navigateTo('evidence')} className={getLinkStyle('evidence')}>Community Evidence</button>
               <button onClick={() => navigateTo('updates')} className={getLinkStyle('updates')}>Field Updates</button>
               <button onClick={() => navigateTo('capacity')} className={getLinkStyle('capacity')}>Capacity Building</button>
+              
+              {/* NEW LINKS ADDED BELOW */}
+              <div className="h-px bg-gray-200 my-2 mx-4" /> {/* Divider */}
+              <button onClick={() => navigateTo('partnership')} className={getLinkStyle('partnership')}>Partnership</button>
+              <button onClick={() => navigateTo('donation')} className={getLinkStyle('donation')}>Donate</button>
+              <button onClick={() => navigateTo('procurement')} className={getLinkStyle('procurement')}>Procurement (Vendors)</button>
+              <a 
+                href="https://www.linkedin.com/company/thegicd/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-left px-4 py-3 font-bold uppercase text-sm hover:bg-yellow-50 transition-colors"
+              >
+                Jobs (LinkedIn) ↗
+              </a>
             </nav>
           </div>
         )}
@@ -511,162 +725,51 @@ export default function Home() {
           <section id="work" className="py-28 px-6 bg-gray-50 text-black">
   <div className="max-w-7xl mx-auto">
     <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">
-      {activeFlow === 'donation' ? "Support" : "Work With"} <br />
+      Work With <br />
       <span className="text-yellow-500 underline decoration-[10px] underline-offset-8">
-        {activeFlow === 'donation' ? "GICD." : "Us."}
+        Us.
       </span>
     </h2>
 
-    {activeFlow === 'menu' ? (
-      /* MAIN MENU */
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {["Partnership", "Donation", "Procurement", "Jobs"].map((item) => (
-          <button 
-            key={item} 
-            onClick={() => setActiveFlow(item.toLowerCase())}
-            className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
-          >
-            <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">{item}</h4>
-            <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
-          </button>
-        ))}
-      </div>
-    ) : activeFlow === 'partnership' ? (
-      /* PARTNERSHIP ANNOUNCEMENT VIEW */
-      <div className="max-w-5xl mx-auto bg-white border-8 border-black p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
-        <button 
-          onClick={() => setActiveFlow('menu')} 
-          className="mb-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500"
-        >
-          ← Back to options
-        </button>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      {/* PARTNERSHIP BUTTON */}
+      <button 
+        onClick={() => navigateTo('partnership')}
+        className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
+      >
+        <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">Partnership</h4>
+        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
+      </button>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="bg-black text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
-              Strategic Collaboration
-            </span>
-            <h3 className="text-4xl font-black uppercase mb-6 leading-tight tracking-tighter">
-              Kavod Relief <span className="text-yellow-500">×</span> GICD
-            </h3>
-            <div className="prose prose-sm text-gray-600 font-medium leading-relaxed space-y-4">
-              <p>
-                We are proud to announce the signing of a Memorandum of Understanding (MoU) formalizing a strategic collaboration to expand access to protection and skills for adolescents in Plateau State.
-              </p>
-              <p>
-                This partnership anchors <strong> &quot;Goals for Skills: Football Meets Tech,&quot;</strong> an integrated programme combining sport-based engagement with digital skills training and mentorship.
-              </p>
-              <p className="border-l-4 border-yellow-500 pl-4 italic">
-                &quot;This MoU represents more than a partnership; it reflects strong governance and a joint commitment to measurable impact &quot;.
-              </p>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {["#YouthDevelopment", "#ChildProtection", "#FootballMeetsTech"].map(tag => (
-                <span key={tag} className="text-[10px] font-black uppercase text-gray-400">{tag}</span>
-              ))}
-            </div>
-          </div>
+      {/* DONATION BUTTON */}
+      <button 
+        onClick={() => navigateTo('donation')}
+        className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
+      >
+        <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">Donation</h4>
+        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
+      </button>
 
-          <div className="relative">
-            <div className="absolute -inset-2 bg-yellow-500 -z-10 rounded-2xl transform rotate-2"></div>
-            <img 
-              src="/partners.jpg" 
-              alt="GICD and Kavod Relief MoU Signing" 
-              className="w-full h-auto rounded-xl border-4 border-black shadow-lg"
-            />
-          </div>
-        </div>
-      </div>
-    ) : activeFlow === 'procurement' ? (
-      /* PROCUREMENT FLOW */
-      <div className="max-w-4xl mx-auto bg-white border-8 border-black p-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
-        <button 
-          onClick={() => setActiveFlow('menu')} 
-          className="mb-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500"
-        >
-          ← Back to options
-        </button>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div>
-            <span className="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block">
-              Open: 9th – 20th Feb 2026
-            </span>
-            <h3 className="text-4xl font-black uppercase mb-6 leading-tight">Vendor <br/>Prequalification</h3>
-            <p className="text-sm text-gray-600 mb-6 leading-relaxed">
-              The Guardian Initiative for Community Development (GICD) seeks reputable vendors for ICT, Hospitality, and General Supplies to support child protection and education programs.
-            </p>
-            
-            <div className="space-y-4 mb-8">
-              <div className="flex gap-3 items-center">
-                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">01</div>
-                <p className="text-xs font-black uppercase tracking-tight">ICT Supplies & Services</p>
-              </div>
-              <div className="flex gap-3 items-center">
-                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">02</div>
-                <p className="text-xs font-black uppercase tracking-tight">Food & Event Management</p>
-              </div>
-              <div className="flex gap-3 items-center">
-                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">03</div>
-                <p className="text-xs font-black uppercase tracking-tight">General Printing & Branding</p>
-              </div>
-            </div>
+      {/* PROCUREMENT BUTTON */}
+      <button 
+        onClick={() => navigateTo('procurement')}
+        className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
+      >
+        <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">Procurement</h4>
+        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
+      </button>
 
-            <a 
-              href="mailto:gicdprocurements@gmail.com?subject=EOI – Vendor Prequalification"
-              className="block text-center py-6 bg-black text-white font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-yellow-500 hover:text-black transition-all"
-            >
-              Submit EOI Email
-            </a>
-          </div>
-
-          <div className="space-y-4">
-             <p className="text-[10px] font-black uppercase text-gray-400 text-center">Reference Documents</p>
-             <div className="grid grid-cols-2 gap-2">
-                <img src="/vol 1.jpg" alt="vol 1.jpg" className="w-full h-32 object-cover border-2 border-black hover:scale-105 transition-transform cursor-pointer" />
-                <img src="/vol 2.jpg" alt="vol 2.jpg" className="w-full h-32 object-cover border-2 border-black hover:scale-105 transition-transform cursor-pointer" />
-                <img src="/vol 3.jpg" alt="vol 3.jpg" className="w-full h-32 object-cover border-2 border-black col-span-2 hover:scale-105 transition-transform cursor-pointer" />
-             </div>
-             <p className="text-[9px] text-gray-400 italic text-center uppercase font-bold">Registration Period: Feb 9th - 20th 2026</p>
-          </div>
-        </div>
-      </div>
-    ) : (
-      /* DONATION FLOW */
-      <div className="max-w-2xl mx-auto bg-white border-8 border-black p-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
-        <button 
-          onClick={() => setActiveFlow('menu')} 
-          className="mb-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500"
-        >
-          ← Back to options
-        </button>
-        <h3 className="text-3xl font-black uppercase mb-8">Select Amount (NGN)</h3>
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          {['5000', '10000', '25000', '50000'].map((amt) => (
-            <button 
-              key={amt}
-              onClick={() => setSelectedAmount(amt)}
-              className={`py-6 border-4 border-black font-black text-2xl transition-all ${selectedAmount === amt ? 'bg-yellow-500' : 'bg-white hover:bg-gray-50'}`}
-            >
-              ₦{parseInt(amt).toLocaleString()}
-            </button>
-          ))}
-        </div>
-        <input 
-          type="number" 
-          value={selectedAmount}
-          onChange={(e) => setSelectedAmount(e.target.value)}
-          className="w-full p-4 border-4 border-black font-black text-2xl mb-8 focus:bg-yellow-50 outline-none"
-          placeholder="Custom Amount"
-        />
-        <button 
-          onClick={handleRemitaRedirect}
-          className="w-full py-6 bg-black text-white font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-yellow-500 hover:text-black transition-all"
-        >
-          Pay with Remita
-        </button>
-      </div>
-    )}
+      {/* JOBS (LINKEDIN) BUTTON */}
+      <a 
+        href="https://www.linkedin.com/company/your-linkedin-url" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
+      >
+        <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">Jobs</h4>
+        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
+      </a>
+    </div>
   </div>
 </section>
 
