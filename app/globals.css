@@ -1,18 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  /* Ensure these names are exactly like this */
+  /* Brand Identity Colors */
   --color-gicd-yellow: #FFD200;
   --color-gicd-dark: #111111;
   --color-gicd-gray: #f4f4f4;
+
+  /* Smooth Animations */
+  --animate-subtle-bounce: subtle-bounce 3s ease-in-out infinite;
+
+  @keyframes subtle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #111111;
+/* Base Styles */
+@layer base {
+  html {
+    /* Ensures navigateTo scrolls are smooth and easy on the eye */
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-white text-gicd-dark antialiased;
+    /* Optimizes font rendering for academic research clarity */
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Custom Selection Color to match GICD branding */
+  ::selection {
+    @apply bg-gicd-yellow/30 text-black;
+  }
 }
 
-body {
-  background: white;
-  color: #111111;
+/* Utility for the 'Neobrutalist' border style used in your GICD components */
+@layer utilities {
+  .neo-shadow {
+    box-shadow: 8px 8px 0px 0px #111111;
+  }
+  
+  .neo-shadow-yellow {
+    box-shadow: 8px 8px 0px 0px #FFD200;
+  }
 }
