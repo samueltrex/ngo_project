@@ -191,7 +191,7 @@ const UpdatesSection = () => (
         {/* Left: Image */}
         <div className="lg:col-span-6 relative">
           <div className="relative border-4 border-black p-2 bg-white shadow-lg">
-            <img src="/part a 2.jpg" alt="Ministry Meeting" className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+            <img src="/part a 2.jpg" alt="Ministry Meeting" className="w-full h-[400px]" />
           </div>
           <div className="absolute -bottom-4 -right-4 bg-yellow-500 text-black font-black px-6 py-2 border-2 border-black text-xs uppercase tracking-widest shadow-md">
             Protocol Approved
@@ -532,11 +532,11 @@ export default function Home() {
   ];
 
   const stats = [
-    { val: "96.9%", label: "Protection Risk", img: "/5.jpg" },
-    { val: "65.6%", label: "Violence Exp.", img: "/2.jpg" },
-    { val: "1 in 5", label: "Child Marriage Risk", img: "/4.jpg" },
     { val: "88%", label: "Education Aspiration", img: "/1.jpg" },
-    { val: "0.0%", label: "Health Access", img: "/3.jpg" }
+    { val: "65.6%", label: "Violence Exp.", img: "/2.jpg" },
+    { val: "0.0%", label: "Health Access", img: "/3.jpg" },
+    { val: "1 in 5", label: "Child Marriage Risk", img: "/4.jpg" },
+    { val: "96.9%", label: "Protection Risk", img: "/5.jpg" },
   ];
 
   const navigateTo = (page: 'landing' | 'evidence' | 'updates' | 'capacity' | 'donation' | 'procurement' | 'partnership') => {
