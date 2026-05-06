@@ -737,57 +737,6 @@ return (
   </div>
 )}
 </header>
-
-{/* WORK WITH US PAGES */}
-{['partnership', 'donation', 'procurement', 'jobs'].includes(currentPage) && (
-  <section className="max-w-4xl mx-auto px-6 py-20">
-    
-    {/* Page Header */}
-    <div className="mb-12 border-l-8 border-yellow-500 pl-8">
-    
-  {currentPage === "partnership" && <PartnershipSection />}
-  {currentPage === "donation" && <DonationSection selectedAmount={''} setSelectedAmount={function (val: string): void {
-        throw new Error('Function not implemented.');
-      } } onClose={function (): void {
-        throw new Error('Function not implemented.');
-      } } handleRemitaRedirect={function (): void {
-        throw new Error('Function not implemented.');
-      } } />}
-  {currentPage === "procurement" && <ProcurementSection />}
-
-      <p className="text-gray-500 font-bold uppercase tracking-widest text-sm">
-        Work With Us / {currentPage}
-      </p>
-    </div>
-
-    {/* Partnership Content */}
-    {currentPage === 'partnership' && (
-      <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4">
-        <p className="text-xl leading-relaxed">
-          We believe in the power of collective action. GICD partners with international NGOs, 
-          government bodies, and local stakeholders to drive community resilience in Plateau State.
-        </p>
-        <div className="bg-black text-white p-8 border-4 border-yellow-500 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
-          <h3 className="font-black text-2xl uppercase mb-4">Let&apos;s Collaborate</h3>
-          <p className="mb-6">Ready to make an impact? Reach out to our partnership team for collaboration inquiries.</p>
-          <button className="bg-yellow-500 text-black px-8 py-3 font-black uppercase hover:bg-white transition-colors">
-            Contact Partnerships
-          </button>
-        </div>
-      </div>
-    )}
-
-    {/* Jobs Content */}
-    {currentPage === 'jobs' && (
-      <div className="text-center py-10 border-4 border-dashed border-gray-300">
-        <h3 className="font-black text-2xl uppercase mb-4">No Openings Currently</h3>
-        <p className="text-gray-500 mb-6">We are always looking for passionate researchers and community workers.</p>
-        <p className="font-bold">Follow us on LinkedIn for immediate updates on new roles.</p>
-      </div>
-    )}
-
-  </section>
-)}
   
       {/* --- CONDITIONAL ROUTING (Cleaned up the logic) --- */}
       
@@ -889,6 +838,7 @@ return (
   {currentPage === "updates" && <UpdatesSection />}
   {currentPage === "capacity" && <CapacitySection />}
   {currentPage === "partnership" && <PartnershipSection />}
+  {currentPage === 'jobs' && "Career Opportunities"}]
   {currentPage === "donation" && <DonationSection selectedAmount={''} setSelectedAmount={function (val: string): void {
         throw new Error('Function not implemented.');
       } } onClose={function (): void {
