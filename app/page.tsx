@@ -637,7 +637,7 @@ return (
       <img src="/logo.jpg" alt="GICD Logo" className="w-10 h-10 md:w-12 md:h-12 rounded-lg shadow-sm border border-gray-100" />
       <div className="border-l-2 border-yellow-500 pl-3 flex flex-col justify-center">
         <span className="font-black text-[10px] md:text-xs uppercase tracking-widest leading-tight text-black">
-          The Guardians Initiative
+          The Guardian Initiative
         </span>
         <span className="font-bold text-[8px] md:text-[9px] text-gray-500 uppercase tracking-widest leading-tight">
           For Community Development
@@ -754,7 +754,7 @@ return (
               </div>
               <div className="text-center md:text-left">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6 uppercase">
-                  The Guardians Initiative <br/> <span className="text-yellow-500">for</span> Community <br />
+                  The Guardian Initiative <br/> <span className="text-yellow-500">for</span> Community <br />
                   Development <span className="text-yellow-500">.</span>
                 </h1>
                 <p className="text-lg text-gray-400 max-w-2xl font-light border-l-4 border-yellow-500 pl-6 leading-relaxed">
