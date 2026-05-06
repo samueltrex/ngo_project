@@ -744,12 +744,17 @@ return (
     
     {/* Page Header */}
     <div className="mb-12 border-l-8 border-yellow-500 pl-8">
-      <h2 className="text-5xl font-black uppercase tracking-tighter mb-2">
-        {currentPage === 'partnership' && "Partner with GICD"}
-        {currentPage === 'donation' && "Support Our Mission"}
-        {currentPage === 'procurement' && "Procurement & Vendors"}
-        {currentPage === 'jobs' && "Career Opportunities"}
-      </h2>
+    
+  {currentPage === "partnership" && <PartnershipSection />}
+  {currentPage === "donation" && <DonationSection selectedAmount={''} setSelectedAmount={function (val: string): void {
+        throw new Error('Function not implemented.');
+      } } onClose={function (): void {
+        throw new Error('Function not implemented.');
+      } } handleRemitaRedirect={function (): void {
+        throw new Error('Function not implemented.');
+      } } />}
+  {currentPage === "procurement" && <ProcurementSection />}
+
       <p className="text-gray-500 font-bold uppercase tracking-widest text-sm">
         Work With Us / {currentPage}
       </p>
