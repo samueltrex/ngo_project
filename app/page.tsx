@@ -772,46 +772,6 @@ return (
       </div>
     )}
 
-    {/* Donation Content */}
-    {currentPage === 'donation' && (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-in fade-in">
-        <div className="border-4 border-black p-8">
-          <h3 className="font-black text-3xl uppercase mb-4">Direct Support</h3>
-          <p className="text-gray-600 mb-6">Your contributions directly fund our child protection and education initiatives.</p>
-          <div className="space-y-4">
-            <div className="border-b-2 border-gray-100 pb-2">
-              <span className="block text-xs font-bold text-gray-400 uppercase">Account Name</span>
-              <span className="font-bold">The Guardians Initiative</span>
-            </div>
-            {/* Add more bank details here */}
-          </div>
-        </div>
-        <div className="bg-yellow-500 p-8 flex flex-col justify-center">
-          <h3 className="font-black text-2xl uppercase mb-4 italic">Every bit counts.</h3>
-          <p className="font-bold mb-6">Help us strengthen community resilience through evidence-based research.</p>
-          <button className="bg-black text-white px-8 py-3 font-black uppercase">Give Online</button>
-        </div>
-      </div>
-    )}
-
-    {/* Procurement Content (Specific for Vendors) */}
-    {currentPage === 'procurement' && (
-      <div className="space-y-8 animate-in fade-in">
-        <div className="bg-gray-50 border-4 border-black p-8">
-          <h3 className="font-black text-2xl uppercase mb-4">Vendor Registration</h3>
-          <p className="mb-6">GICD maintains a transparent procurement process. We invite qualified vendors and service providers to register for future opportunities.</p>
-          <ul className="list-disc pl-5 space-y-2 font-bold text-sm uppercase">
-            <li>Valid Business Registration</li>
-            <li>Tax Compliance Certificate</li>
-            <li>Corporate Profile & References</li>
-          </ul>
-        </div>
-        <button className="w-full bg-black text-white py-6 text-xl font-black uppercase hover:bg-yellow-500 hover:text-black transition-all">
-          Download Vendor Application Form ↓
-        </button>
-      </div>
-    )}
-
     {/* Jobs Content */}
     {currentPage === 'jobs' && (
       <div className="text-center py-10 border-4 border-dashed border-gray-300">
