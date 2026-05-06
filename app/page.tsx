@@ -1,6 +1,37 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+type PageID = 
+  | 'landing'
+  | 'story' | 'trustees' | 'team' 
+  | 'protection' | 'education' 
+  | 'updates' 
+  | 'reports' | 'technical' 
+  | 'partnership' | 'donation' | 'procurement' | 'jobs'
+  | 'evidence' | 'capacity'; // Kept these to clear any old errors
+
+const navItems = [
+  { title: "Who we are", dropdown: [
+      { name: "Our Story", id: "story" },
+      { name: "Board of Trustee", id: "trustees" },
+      { name: "Working Team", id: "team" }
+  ]},
+  { title: "What we do", dropdown: [
+      { name: "Child Protection", id: "protection" },
+      { name: "Education", id: "education" }
+  ]},
+  { title: "Programme updates", id: "updates" },
+  { title: "Resources", dropdown: [
+      { name: "Reports & Assessments", id: "reports" },
+      { name: "Technical resources", id: "technical" }
+  ]},
+  { title: "Work with us", dropdown: [
+      { name: "Partnership", id: "partnership" },
+      { name: "Donation", id: "donation" },
+      { name: "Procurement", id: "procurement" },
+      { name: "Jobs", id: "jobs" }
+  ]}
+];
 
 const EvidenceSection = () => (
   <section className="px-6 bg-white py-24">
@@ -510,12 +541,55 @@ const DonationSection = ({
   </section>
 );
 
+const ActivityCarousel = () => {
+  const images = ["cover.jpg", "match 18.jpg", "hon 5.jpg"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <div className="relative w-full h-[500px] overflow-hidden border-b-8 border-black">
+      {images.map((src, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <img src={src} alt="Activity" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+      ))}
+      
+      <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-3 z-20">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            type="button"
+            onClick={() => setCurrentIndex(index)}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              index === currentIndex ? "bg-yellow-500" : "bg-white/50"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+  
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
   const [activeFlow, setActiveFlow] = useState('menu'); // options: 'menu','partners', 'donation', 'procurement'
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [selectedAmount, setSelectedAmount] = useState('');
-  const [currentPage, setCurrentPage] = useState<'landing' | 'evidence' | 'updates' | 'capacity' | 'donation' | 'procurement' | 'partnership'>('landing');
+  const [currentPage, setCurrentPage] = useState<'landing' | 'story' | 'trustees' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity'>('landing');
   const REMITA_URL = "https://www.remita.net/pay-a-biller";
   const handleRemitaRedirect = () => {
     window.open(REMITA_URL, "_blank");
@@ -539,256 +613,228 @@ export default function Home() {
     { val: "96.9%", label: "Protection Risk", img: "/5.jpg" },
   ];
 
-  const navigateTo = (page: 'landing' | 'evidence' | 'updates' | 'capacity' | 'donation' | 'procurement' | 'partnership') => {
+const navigateTo = (page: 'landing' | 'story' | 'trustees' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity') => {
     setCurrentPage(page);
     setActiveFlow('menu');
     setMenuOpen(false);
     window.scrollTo(0, 0);
-  };
+};
 
-  const getLinkStyle = (page: 'landing' | 'evidence'|'donation'|'procurement'|'partnership'|'jods' | 'updates' | 'capacity') => `
+const getLinkStyle = (page: 'landing' | 'story' | 'trustees' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity') => `
     block w-full text-left px-8 py-4 font-black uppercase tracking-widest text-sm 
     border-b-2 border-black transition-colors
     ${currentPage === page ? 'bg-yellow-500 text-black' : 'bg-white text-black hover:bg-gray-100'}
-  `;
+`;
 
-  return (    
+return (    
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden"> 
-      
-      {/* HEADER */}
-     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 md:px-6 py-3">
-        <div className="max-w-[1400px] mx-auto flex justify-between items-center">
-          
-          {/* UPDATED LOGO & FULL NAME AREA */}
-          <div className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => navigateTo('landing')}>
-            <img src="/logo.jpg" alt="GICD Logo" className="w-10 h-10 md:w-12 md:h-12 rounded-lg shadow-sm border border-gray-100" />
-            <div className="border-l-2 border-yellow-500 pl-3 flex flex-col justify-center">
-              <span className="font-black text-[10px] md:text-xs uppercase tracking-widest leading-tight text-black">
-                The Guardians Initiative
-              </span>
-              <span className="font-bold text-[8px] md:text-[9px] text-gray-500 uppercase tracking-widest leading-tight">
-                For Community Development
-              </span>
-            </div>
-          </div>
-          
-          {/* Added a toggle button so the menu can actually be opened! */}
-          <button 
-            onClick={() => setMenuOpen(!menuOpen)} 
-            className="font-black uppercase text-sm tracking-widest hover:text-yellow-600 transition-colors"
-          >
-            {menuOpen ? 'CLOSE' : 'MENU'}
-          </button>
-        </div>
 
-        {/* Menu Dropdown */}
-        {menuOpen && (
-          <div className="absolute right-0 mt-4 w-72 bg-white border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] z-50">
-            <nav className="flex flex-col">
-              <button onClick={() => navigateTo('landing')} className={getLinkStyle('landing')}>Home</button>
-              <button onClick={() => navigateTo('evidence')} className={getLinkStyle('evidence')}>Community Evidence</button>
-              <button onClick={() => navigateTo('updates')} className={getLinkStyle('updates')}>Field Updates</button>
-              <button onClick={() => navigateTo('capacity')} className={getLinkStyle('capacity')}>Capacity Building</button>
-              
-              {/* NEW LINKS ADDED BELOW */}
-              <div className="h-px bg-gray-200 my-2 mx-4" /> {/* Divider */}
-              <button onClick={() => navigateTo('partnership')} className={getLinkStyle('partnership')}>Partnership</button>
-              <button onClick={() => navigateTo('donation')} className={getLinkStyle('donation')}>Donate</button>
-              <button onClick={() => navigateTo('procurement')} className={getLinkStyle('procurement')}>Procurement (Vendors)</button>
-              <a 
-                href="https://www.linkedin.com/company/thegicd/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-left px-4 py-3 font-bold uppercase text-sm hover:bg-yellow-50 transition-colors"
-              >
-                Jobs (LinkedIn) ↗
-              </a>
-            </nav>
+  <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b-4 border-black px-4 md:px-6 py-3">
+  <div className="max-w-[1400px] mx-auto flex justify-between items-center">
+    
+    {/* LOGO AREA (Keeping your exact styling) */}
+    <div className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity" onClick={() => navigateTo('landing')}>
+      <img src="/logo.jpg" alt="GICD Logo" className="w-10 h-10 md:w-12 md:h-12 rounded-lg shadow-sm border border-gray-100" />
+      <div className="border-l-2 border-yellow-500 pl-3 flex flex-col justify-center">
+        <span className="font-black text-[10px] md:text-xs uppercase tracking-widest leading-tight text-black">
+          The Guardians Initiative
+        </span>
+        <span className="font-bold text-[8px] md:text-[9px] text-gray-500 uppercase tracking-widest leading-tight">
+          For Community Development
+        </span>
+      </div>
+    </div>
+    
+    {/* MENU TOGGLE BUTTON */}
+    <button 
+      onClick={() => setMenuOpen(!menuOpen)} 
+      className="font-black uppercase text-sm tracking-widest hover:text-yellow-600 transition-colors"
+    >
+      {menuOpen ? 'CLOSE' : 'MENU'}
+    </button>
+  </div>
+
+  {/* FULL SCREEN / LARGE DROPDOWN MENU */}
+  {menuOpen && (
+  <div className="absolute right-0 mt-4 w-full md:w-[400px] bg-white border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] z-50 overflow-hidden">
+    <nav className="flex flex-col">
+      
+      {/* WHO WE ARE */}
+      <div className="border-b-2 border-black">
+        <button 
+          onClick={() => setExpandedSection(expandedSection === 'who' ? null : 'who')}
+          className="w-full flex justify-between items-center px-6 py-4 font-black uppercase text-sm bg-gray-50 hover:bg-yellow-500 transition-colors"
+        >
+          Who we are <span>{expandedSection === 'who' ? '−' : '+'}</span>
+        </button>
+        {expandedSection === 'who' && (
+          <div className="bg-white py-2 animate-in slide-in-from-top-2 duration-200">
+            <button onClick={() => navigateTo('story')} className={getLinkStyle('story')}>Our Story</button>
+            <button onClick={() => navigateTo('trustees')} className={getLinkStyle('trustees')}>Board of Trustees</button>
+            <button onClick={() => navigateTo('team')} className={getLinkStyle('team')}>Working Team</button>
           </div>
         )}
-      </header>
+      </div>
+
+      {/* WHAT WE DO */}
+      <div className="border-b-2 border-black">
+        <button 
+          onClick={() => setExpandedSection(expandedSection === 'what' ? null : 'what')}
+          className="w-full flex justify-between items-center px-6 py-4 font-black uppercase text-sm bg-gray-50 hover:bg-yellow-500 transition-colors"
+        >
+          What we do <span>{expandedSection === 'what' ? '−' : '+'}</span>
+        </button>
+        {expandedSection === 'what' && (
+          <div className="bg-white py-2 animate-in slide-in-from-top-2 duration-200">
+            <button onClick={() => navigateTo('protection')} className={getLinkStyle('protection')}>Child Protection</button>
+            <button onClick={() => navigateTo('education')} className={getLinkStyle('education')}>Education</button>
+          </div>
+        )}
+      </div>
+
+      {/* PROGRAMME UPDATES (Direct Link) */}
+      <button 
+        onClick={() => navigateTo('updates')} 
+        className="w-full text-left px-6 py-4 font-black uppercase text-sm border-b-2 border-black hover:bg-yellow-500 transition-colors"
+      >
+        Programme Updates
+      </button>
+
+      {/* RESOURCES */}
+      <div className="border-b-2 border-black">
+        <button 
+          onClick={() => setExpandedSection(expandedSection === 'res' ? null : 'res')}
+          className="w-full flex justify-between items-center px-6 py-4 font-black uppercase text-sm bg-gray-50 hover:bg-yellow-500 transition-colors"
+        >
+          Resources <span>{expandedSection === 'res' ? '−' : '+'}</span>
+        </button>
+        {expandedSection === 'res' && (
+          <div className="bg-white py-2 animate-in slide-in-from-top-2 duration-200">
+            <button onClick={() => navigateTo('reports')} className={getLinkStyle('reports')}>Reports & Assessments</button>
+            <button onClick={() => navigateTo('technical')} className={getLinkStyle('technical')}>Technical Resources</button>
+          </div>
+        )}
+      </div>
+
+      {/* WORK WITH US */}
+      <div className="border-b-2 border-black">
+        <button 
+          onClick={() => setExpandedSection(expandedSection === 'work' ? null : 'work')}
+          className="w-full flex justify-between items-center px-6 py-4 font-black uppercase text-sm bg-gray-50 hover:bg-yellow-500 transition-colors"
+        >
+          Work with us <span>{expandedSection === 'work' ? '−' : '+'}</span>
+        </button>
+        {expandedSection === 'work' && (
+          <div className="bg-white py-2 animate-in slide-in-from-top-2 duration-200">
+            <button onClick={() => navigateTo('partnership')} className={getLinkStyle('partnership')}>Partnership</button>
+            <button onClick={() => navigateTo('donation')} className={getLinkStyle('donation')}>Donation</button>
+            <button onClick={() => navigateTo('procurement')} className={getLinkStyle('procurement')}>Procurement</button>
+            <button onClick={() => navigateTo('jobs')} className={getLinkStyle('jobs')}>Jobs</button>
+          </div>
+        )}
+      </div>
+
+    </nav>
+  </div>
+)}
+</header>
   
       {/* --- CONDITIONAL ROUTING (Cleaned up the logic) --- */}
       
       {currentPage === "landing" && (
-        <>
-          {/* 1. HERO SECTION */}
-          <section className="relative z-10 bg-black text-white py-20 px-6 md:px-12 border-b-8 border-yellow-500">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 mt-10">
+  <div className="animate-reveal">
+    
+    {/* 1. Hero & Carousel Section */}
+         <section className="relative z-10 bg-black text-white py-20 border-b-8 border-yellow-500 w-full overflow-hidden"> 
+  
+  {/* Header Content Container */}
+            <div className="w-full flex flex-col md:flex-row items-center gap-12 px-6 md:px-16 mb-16">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-yellow-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
                 <img src="/logo.jpg" alt="GICD Logo" className="relative w-32 md:w-48 rounded-3xl border border-white/10 shadow-2xl" />
               </div>
               <div className="text-center md:text-left">
                 <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6 uppercase">
-                  The Guardians Initiative <span className="text-yellow-500">for</span> Community <br />
-                  Development<span className="text-yellow-500">.</span>
+                  The Guardians Initiative <br/> <span className="text-yellow-500">for</span> Community <br />
+                  Development <span className="text-yellow-500">.</span>
                 </h1>
                 <p className="text-lg text-gray-400 max-w-2xl font-light border-l-4 border-yellow-500 pl-6 leading-relaxed">
                   Empowering vulnerable populations and strengthening community resilience through evidence-based research in Plateau State.
                 </p>
               </div>
             </div>
-          </section>
+          <ActivityCarousel />
+    </section>
 
-          {/* 2. RESEARCH DATA */}
-          <section className="relative z-20 py-16 px-6 bg-white">
-            <div className="max-w-7xl mx-auto">
-              <div className="mb-10">
-                <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-600 mb-2">Research Analysis</h2>
-                <h3 className="text-4xl font-black italic tracking-tight text-black">Angwan Rukuba Findings</h3>
-              </div>
+    {/* 2. About Us & Our Model (Side by Side on Desktop) */}
+    <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div>
+        <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">About Us</h2>
+        <p className="text-lg leading-relaxed text-gray-700 mb-6">
+          The Guardian Initiative for Community Development (GICD) is a child-focused Nigerian charity that responds to and addresses humanitarian and development challenges affecting children. We strengthen protection systems, advance education and youth development, and improve the resilience of households and communities to achieve sustainable outcomes across both humanitarian and development contexts.
+        </p>
+        <p className="text-lg leading-relaxed text-gray-700 font-bold">
+          We operate at the intersection of child protection, socio-economic empowerment, and the translation of global frameworks into meaningful grassroots outcomes.
+        </p>
+      </div>
+      
+      <div className="bg-gray-50 p-8 border-4 border-black neo-shadow-yellow">
+        <h2 className="text-3xl font-black uppercase mb-6">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
+        <p className="text-base leading-relaxed text-gray-700 mb-4">
+          Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
+        </p>
+        <p className="text-base leading-relaxed text-gray-700 font-bold italic border-l-4 border-black pl-4">
+          We exist to intervene early and deliberately; to safeguard children, equip adolescents, and expand the worldview of young people. We see guided exposure as a form of protection, one that broadens perspective, strengthens decision-making, and inspires dreams.
+        </p>
+      </div>
+    </section>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-                <div className="lg:col-span-4 flex flex-col gap-3">
-                  {stats.map((stat, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setSelectedImg(stat.img)}
-                      className="w-full text-left bg-white p-4 shadow-sm border-l-4 border-yellow-500 hover:bg-yellow-50 transition-all flex flex-col justify-center group"
-                    >
-                      <h4 className="text-2xl font-black text-black group-hover:text-yellow-600">{stat.val}</h4>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{stat.label}</p>
-                    </button>
-                  ))}
-                </div>
+    {/* 3. Mission Banner */}
+    <section className="bg-yellow-500 py-16 px-6 border-y-4 border-black text-center">
+      <h2 className="text-2xl font-black uppercase mb-4 tracking-widest text-black/70">Our Mission</h2>
+      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
+        To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
+      </p>
+    </section>
 
-                <div className="lg:col-span-8 relative min-h-[400px]">
-                  <div
-                    className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl border border-gray-200 cursor-zoom-in group"
-                    onClick={() => setSelectedImg("/ss.jpg")}
-                  >
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center">
-                      <span className="bg-black text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-bold uppercase tracking-widest">View Map Data</span>
-                    </div>
-                    <img src="/ss.jpg" alt="Research Map" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+    {/* 4. What We Do (3-Column Grid) */}
+    <section className="py-24 px-6 max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <h2 className="text-5xl font-black uppercase tracking-tighter">What We Do</h2>
+        <div className="h-2 w-24 bg-black mx-auto mt-6" />
+      </div>
 
-          {/* 3. TRUSTEES */}
-          <section className="relative z-20 bg-gray-50 py-20 px-6">
-            <div className="max-w-7xl mx-auto">
-              <div className="mb-12 border-l-8 border-yellow-500 pl-8">
-                <h2 className="text-5xl font-black uppercase tracking-tighter">Board of <br/> <span className="text-yellow-500">Trustees</span></h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {trustees.map((person, i) => (
-                  <div key={i} className="group relative bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200">
-                    <div className="relative aspect-[3/2] overflow-hidden bg-gray-200">
-                      <img
-                        src={person.img}
-                        alt={person.name}
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    </div>
-                    <div className="p-6 bg-white relative">
-                      <h4 className="text-lg font-black uppercase leading-tight tracking-tight group-hover:text-yellow-600 transition-colors">
-                        {person.name}
-                      </h4>
-                      <div className="w-12 h-1 bg-yellow-500 my-3 group-hover:w-24 transition-all duration-500" />
-                      <p className="text-[11px] text-gray-500 font-bold uppercase tracking-[0.2em]">
-                        {person.role}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        
+        {/* Child Protection */}
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
+          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Child Protection</h3>
+          <p className="text-gray-700 leading-relaxed text-sm">
+            We strengthen child protection through community-based awareness and prevention initiatives, early identification and referral of vulnerable children, and targeted parenting support that promotes family stability. We also work to reinforce informal protection systems within communities, ensuring that children are surrounded by responsive, informed, and supportive structures that can safeguard their well-being.
+          </p>
+        </div>
 
-          {/* 4. RESOURCE HUB */}
-          <section id="resources" className="py-28 px-6 bg-white">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-5xl font-black uppercase tracking-tighter italic">Resource <span className="text-yellow-600">Hub</span></h2>
-                <p className="text-xs text-gray-400 font-bold uppercase mt-4 tracking-widest">Public Access Documents</p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="group p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-black transition-all cursor-pointer">
-                  <p className="text-[9px] font-black text-yellow-600 uppercase mb-4 tracking-widest">Field Data</p>
-                  <h4 className="text-lg font-black uppercase tracking-tight group-hover:text-white">Reports & Assessments</h4>
-                </div>
-                <div className="group p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-black transition-all cursor-pointer">
-                  <p className="text-[9px] font-black text-yellow-600 uppercase mb-4 tracking-widest">Guidance</p>
-                  <h4 className="text-lg font-black uppercase tracking-tight group-hover:text-white">Technical Resources</h4>
-                </div>
-              </div>
-            </div>
-          </section>
+        {/* Education */}
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
+          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Education</h3>
+          <p className="text-gray-700 leading-relaxed text-sm">
+            We improve access to formal education by addressing barriers that prevent children from enrolling, attending, and staying in school, while promoting learning environments that support their growth, dignity, and long-term development. We also inspire learning through structured exposure that broadens learners’ worldview and gives them a clear sense of purpose to remain in school.
+          </p>
+        </div>
 
-          {/* 5. WORK WITH US / DONATION */}
-          <section id="work" className="py-28 px-6 bg-gray-50 text-black">
-  <div className="max-w-7xl mx-auto">
-    <h2 className="text-7xl font-black uppercase mb-20 tracking-tighter italic text-center leading-none">
-      Work With <br />
-      <span className="text-yellow-500 underline decoration-[10px] underline-offset-8">
-        Us.
-      </span>
-    </h2>
+        {/* Youth Empowerment */}
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-black text-white">
+          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Youth Development</h3>
+          <p className="text-gray-300 leading-relaxed text-sm">
+            We equip young people with the tools they need to transition successfully into adulthood by expanding access to education, providing psychosocial support and life-skills development, and creating pathways for vocational training and meaningful economic participation. We deliberately pursue alternative learning pathways that empower and prepare young people for the future workforce and self-sustenance.
+          </p>
+        </div>
 
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-      {/* PARTNERSHIP BUTTON */}
-      <button 
-        onClick={() => navigateTo('partnership')}
-        className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
-      >
-        <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">Partnership</h4>
-        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
-      </button>
+      </div>
+    </section>
 
-      {/* DONATION BUTTON */}
-      <button 
-        onClick={() => navigateTo('donation')}
-        className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
-      >
-        <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">Donation</h4>
-        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
-      </button>
-
-      {/* PROCUREMENT BUTTON */}
-      <button 
-        onClick={() => navigateTo('procurement')}
-        className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
-      >
-        <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">Procurement</h4>
-        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
-      </button>
-
-      {/* JOBS (LINKEDIN) BUTTON */}
-      <a 
-        href="https://www.linkedin.com/company/your-linkedin-url" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="aspect-square border border-black/10 rounded-[3rem] flex flex-col items-center justify-center hover:bg-yellow-500 hover:text-black transition-all group bg-white shadow-sm"
-      >
-        <h4 className="font-black uppercase text-2xl tracking-tighter group-hover:scale-110 transition-transform">Jobs</h4>
-        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-6 group-hover:bg-black" />
-      </a>
-    </div>
   </div>
-</section>
-
-          {/* Map Modal */}
-          {selectedImg && (
-            <div
-              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-pointer"
-              onClick={() => setSelectedImg(null)}
-            >
-              <img
-                src={selectedImg}
-                alt="Enlarged view"
-                className="max-w-4xl max-h-[90vh] object-contain rounded-lg shadow-2xl"
-              />
-            </div>
-          )}
-        </>
-      )}
-
+)}
       {/* --- INTERNAL PAGES --- */}
   {currentPage === "evidence" && <EvidenceSection />}
   {currentPage === "updates" && <UpdatesSection />}

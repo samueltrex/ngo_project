@@ -9,11 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "framer-motion": "^12.38.0",
-    "next": "^9.3.3",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
+  "next": "latest",
+  "react": "latest",
+  "react-dom": "latest",
+  "lucide-react": "latest"
+},
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
