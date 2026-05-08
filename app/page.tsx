@@ -33,37 +33,15 @@ const navItems = [
   ]}
 ];
 
-const EvidenceSection = () => (
-  <section className="px-6 bg-white py-24">
-    <div className="max-w-7xl mx-auto">
-      <h2 className="text-6xl font-black uppercase mb-12 italic">Community <span className="text-yellow-500">Evidence</span></h2>
-      
+const UpdatesSection = () => (
+  <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">      
       <div className="text-center mb-20">
         <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 italic">Programme <span className="text-yellow-600">Updates</span></h2>
         <div className="h-1.5 w-24 bg-yellow-500 mx-auto rounded-full" />
       </div>
 
       <div className="space-y-24">
-        {/* PREVIOUS UPDATE: SAFE SCHOOLS ADVOCACY */}
-        <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-yellow-500 shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-4">
-              <img src="/part c 1.jpg" alt="Insecurity Affects Education Advocacy" className="w-full rounded-2xl shadow-lg" />
-            </div>
-            <div className="lg:col-span-8">
-              <span className="bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">Urgent Action</span>
-              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">Safe Schools Now: <br /><span className="text-gray-400 text-2xl">A Call to Government</span></h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                With 47 Unity schools closed nationwide, insecurity is denying many Nigerian children their right to safe, quality education.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <span className="text-[10px] font-black text-gray-400">#SafeSchoolsNow</span>
-                <span className="text-[10px] font-black text-gray-400">#RightToEducation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
+    
         {/* NEW DONOR IMPACT: ORPHANAGE VISIT & SCHOLARSHIPS */}
         <div className="bg-gray-50 rounded-[3rem] p-8 md:p-16 border-2 border-dashed border-gray-300 hover:border-yellow-500 transition-colors">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -211,13 +189,56 @@ const EvidenceSection = () => (
           </div>
         </div>
       </div>
-    </div>
   </section>
 );
 
-const UpdatesSection = () => (
-  <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">
-    <div className="max-w-[1400px] mx-auto">
+const ChildProtectionSection = () => {
+  return (
+    <section className="max-w-7xl mx-auto px-6 py-20 animate-in fade-in">
+      
+      {/* Section Header */}
+      <div className="mb-12 border-l-8 border-red-600 pl-8">
+        <h2 className="text-5xl font-black uppercase tracking-tighter">
+          Child <br /> 
+          <span className="text-red-600">Protection</span>
+        </h2>
+        <p className="text-gray-500 font-bold uppercase tracking-widest text-sm mt-2 italic">
+          Strengthening Safeguarding Systems
+        </p>
+      </div>
+
+      {/* Your Provided Section */}
+      <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-yellow-500 shadow-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-4">
+            <img 
+              src="/part c 1.jpg" 
+              alt="Insecurity Affects Education Advocacy" 
+              className="w-full rounded-2xl shadow-lg border-2 border-gray-100" 
+            />
+          </div>
+          <div className="lg:col-span-8">
+            <span className="bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
+              Urgent Action
+            </span>
+            <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
+              Safe Schools Now: <br />
+              <span className="text-gray-400 text-2xl">A Call to Government</span>
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed mb-6">
+              With 47 Unity schools closed nationwide, insecurity is denying many Nigerian children their right to safe, quality education. 
+              GICD is advocating for the implementation of the Safe Schools Declaration to protect our future.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-[10px] font-black text-gray-400">#SafeSchoolsNow</span>
+              <span className="text-[10px] font-black text-gray-400">#RightToEducation</span>
+              <span className="text-[10px] font-black text-gray-400">#GICDAdvocacy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <div className="max-w-[1400px] mx-auto">
       <div className="grid lg:grid-cols-12 gap-12 items-center">
         {/* Left: Image */}
         <div className="lg:col-span-6 relative">
@@ -257,92 +278,94 @@ const UpdatesSection = () => (
         </div>
       </div>
     </div>
-  </section>
-);
+    </section>
+  );
+};
 
-const CapacitySection = () => (
-  <section className="px-6 bg-white py-24 border-t-8 border-black">
-    <div className="max-w-7xl mx-auto">
-      <h2 className="text-6xl font-black uppercase mb-12 italic">Capacity <span className="text-yellow-500">Building</span></h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div className="border-4 border-black hover:-rotate-1 transition-transform">
-          <img src="/hon 2.jpg" className="w-full h-80 object-cover" alt="Training" />
-        </div>
-        <div className="border-4 border-black hover:rotate-1 transition-transform">
-          <img src="/hon 7.jpg" className="w-full h-80 object-cover" alt="Training" />
-        </div>
-        <div className="border-4 border-black md:col-span-2 lg:col-span-1">
-          <img src="/hon 5.jpg" className="w-full h-80 object-cover" alt="Group Photo" />
-        </div>
-      </div>
-      <div className="mt-12 p-8 border-l-8 border-black bg-gray-50">
-        <p className="text-sm uppercase font-black tracking-widest text-gray-500 mb-4">Core Focus</p>
-        <h3 className="text-2xl font-black uppercase">Governance & Accountability</h3>
-        <p className="mt-4 text-gray-700 italic">&ldquo;This opportunity aligns strongly with our aspirations to strengthen leadership systems for greater community impact.&rdquo;</p>
-      </div>
-    </div>
-
-    {/* NEW UPDATE: YOUTH RESILIENCE MENTORS */}
-    <div className="max-w-7xl mx-auto mt-24">
-      <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6">
-            <span className="text-black text-[10px] font-black px-4 py-1 border-2 border-black rounded-full uppercase tracking-widest mb-6 inline-block">
-              18 December 2025
-            </span>
-            <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
-              Building Resilience: <br />
-              <span className="text-yellow-500 text-2xl italic">Community Mentors</span>
-            </h3>
-            <p className="text-sm text-gray-600 leading-relaxed mb-6">
-              We successfully onboarded and trained Community Mentors for adolescents using the Save the Children Youth Resilience Program. Moving beyond direct outreach, we are establishing structured safety nets and psychosocial support in the Angwan Rukuba community, reinforced by continuous parent and caregiver engagements.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {['#YouthResilience', '#ChildProtection', '#PositiveParenting'].map((tag) => (
-                <span key={tag} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-md text-gray-600">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div className="grid grid-cols-2 gap-4 border-t-2 border-gray-100 pt-6">
-              <div>
-                <p className="text-[10px] font-black uppercase text-gray-400">Framework</p>
-                <p className="text-xl font-black">Save the Children</p>
-              </div>
-              <div>
-                <p className="text-[10px] font-black uppercase text-gray-400">Location</p>
-                <p className="text-xl font-black">Angwan Rukuba</p>
-              </div>
-            </div>
+const WorkingTeamSection = () => {
+  return (
+    <section className="px-6 bg-white py-24 border-t-8 border-black animate-in fade-in">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-6xl font-black uppercase mb-12 italic">
+          Capacity <span className="text-yellow-500">Building</span>
+        </h2>
+        
+        {/* Photo Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="border-4 border-black hover:-rotate-1 transition-transform overflow-hidden bg-gray-100">
+            <img src="/hon 2.jpg" className="w-full h-80 object-cover" alt="Training" />
           </div>
-                    
-          <div className="lg:col-span-6 grid grid-cols-2 gap-3">
-            <img 
-              src="/onboard 1.jpg" 
-              alt="Facilitator leading the mentor training" 
-              className="w-full h-48 object-cover rounded-tl-[2rem] border-2 border-gray-100" 
-            />
-            <img 
-              src="/onboard 2.jpg" 
-              alt="Mentors collaborating on community maps" 
-              className="w-full h-48 object-cover rounded-tr-[2rem] border-2 border-gray-100" 
-            />
-            <img 
-              src="/onboard 3.jpg" 
-              alt="Small group discussion" 
-              className="w-full h-48 object-cover rounded-bl-[2rem] border-2 border-gray-100" 
-            />
-            <img 
-              src="/onboard 4.jpg" 
-              alt="Presentation on psychosocial support" 
-              className="w-full h-48 object-cover rounded-br-[2rem] border-2 border-gray-100" 
-            />
+          <div className="border-4 border-black hover:rotate-1 transition-transform overflow-hidden bg-gray-100">
+            <img src="/hon 7.jpg" className="w-full h-80 object-cover" alt="Training" />
+          </div>
+          <div className="border-4 border-black md:col-span-2 lg:col-span-1 overflow-hidden bg-gray-100">
+            <img src="/hon 5.jpg" className="w-full h-80 object-cover" alt="Group Photo" />
           </div>
         </div>
+
+        {/* Core Focus Card */}
+        <div className="mt-12 p-8 border-l-8 border-black bg-gray-50">
+          <p className="text-sm uppercase font-black tracking-widest text-gray-500 mb-4">Core Focus</p>
+          <h3 className="text-2xl font-black uppercase">Governance & Accountability</h3>
+          <p className="mt-4 text-gray-700 italic">
+            &ldquo;This opportunity aligns strongly with our aspirations to strengthen leadership systems for greater community impact.&rdquo;
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
-);
+
+      {/* YOUTH RESILIENCE MENTORS CARD */}
+      <div className="max-w-7xl mx-auto mt-24">
+        <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Column: Text Content */}
+            <div className="lg:col-span-6">
+              <span className="text-black text-[10px] font-black px-4 py-1 border-2 border-black rounded-full uppercase tracking-widest mb-6 inline-block">
+                18 December 2025
+              </span>
+              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
+                Building Resilience: <br />
+                <span className="text-yellow-500 text-2xl italic">Community Mentors</span>
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                We successfully onboarded and trained Community Mentors for adolescents using the Save the Children Youth Resilience Program. 
+                Moving beyond direct outreach, we are establishing structured safety nets and psychosocial support in the Angwan Rukuba community.
+              </p>
+              
+              <div className="flex flex-wrap gap-2 mb-8">
+                {['#YouthResilience', '#ChildProtection', '#PositiveParenting'].map((tag) => (
+                  <span key={tag} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-md text-gray-600">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 border-t-2 border-gray-100 pt-6">
+                <div>
+                  <p className="text-[10px] font-black uppercase text-gray-400">Framework</p>
+                  <p className="text-xl font-black">Save the Children</p>
+                </div>
+                <div>
+                  <p className="text-[10px] font-black uppercase text-gray-400">Location</p>
+                  <p className="text-xl font-black">Angwan Rukuba</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right Column: Image Mosaic */}
+            <div className="lg:col-span-6 grid grid-cols-2 gap-3">
+              <img src="/onboard 1.jpg" alt="Training 1" className="w-full h-48 object-cover rounded-tl-[2rem] border-2 border-gray-100" />
+              <img src="/onboard 2.jpg" alt="Training 2" className="w-full h-48 object-cover rounded-tr-[2rem] border-2 border-gray-100" />
+              <img src="/onboard 3.jpg" alt="Training 3" className="w-full h-48 object-cover rounded-bl-[2rem] border-2 border-gray-100" />
+              <img src="/onboard 4.jpg" alt="Training 4" className="w-full h-48 object-cover rounded-br-[2rem] border-2 border-gray-100" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const PartnershipSection = () => (
   <section className="px-6 bg-white py-24 border-t-8 border-black">
@@ -541,6 +564,8 @@ const DonationSection = ({
   </section>
 );
 
+
+
 const ActivityCarousel = () => {
   const images = ["cover.jpg", "match 18.jpg", "hon 5.jpg"];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -582,6 +607,66 @@ const ActivityCarousel = () => {
     </div>
   );
 };
+
+const TrusteesSection = () => {
+  // Your Data
+  const trustees = [
+    { name: "Rev Fr Hilary Naankot Longs", role: "Catholic Priest / Leadership", img: "/a.jpg" },
+    { name: "Ejilayomi Omokorede Damoeroem", role: "PHD Science Educator", img: "/b.jpg" },
+    { name: "Abdulrazak Ishola", role: "Child Protection Specialist", img: "/c.jpg" },
+    { name: "Iliya John Dayok", role: "Human Resources Professional", img: "/d.jpg" },
+    { name: "Atihong Lois Yengoet", role: "Economist / Director General", img: "/e.jpg" },
+    { name: "Dr. Terna Abege (PHD)", role: "Head of MHPSS", img: "/f.jpg" },
+    { name: "Dorcas Bello (Sheffy)", role: "Multimedia Journalist", img: "/g.jpg" }
+  ];
+
+  return (
+    <section className="relative z-20 bg-gray-50 py-20 px-6">
+      <div className="max-w-7xl mx-auto"> 
+        {/* Header */}
+        <div className="mb-12 border-l-8 border-yellow-500 pl-8">
+          <h2 className="text-5xl font-black uppercase tracking-tighter">
+            Board of <br /> 
+            <span className="text-yellow-500">Trustees</span>
+          </h2>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {trustees.map((person, i) => (
+            <div key={i} className="group relative bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200">
+              
+              {/* Image Container */}
+              <div className="relative aspect-[3/2] overflow-hidden bg-gray-200">
+                <img
+                  src={person.img}
+                  alt={person.name}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+
+              {/* Content */}
+              <div className="p-6 bg-white relative">
+                <h4 className="text-lg font-black uppercase leading-tight tracking-tight group-hover:text-yellow-600 transition-colors">
+                  {person.name}
+                </h4>
+                
+                {/* The expanding line you created */}
+                <div className="w-12 h-1 bg-yellow-500 my-3 group-hover:w-24 transition-all duration-500" />
+                
+                <p className="text-[11px] text-gray-500 font-bold uppercase tracking-[0.2em]">
+                  {person.role}
+                </p>
+              </div>
+
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
   
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -594,16 +679,6 @@ export default function Home() {
   const handleRemitaRedirect = () => {
     window.open(REMITA_URL, "_blank");
   };
-
-  const trustees = [
-    { name: "Rev Fr Hilary Naankot Longs", role: "Catholic Priest / Leadership", img: "/a.jpg" },
-    { name: "Ejilayomi Omokorede Damoeroem", role: "PHD Science Educator", img: "/b.jpg"},
-    { name: "Abdulrazak Ishola", role: "Child Protection Specialist", img: "/c.jpg" },
-    { name: "Iliya John Dayok", role: "Human Resources Professional", img: "/d.jpg" },
-    { name: "Atihong Lois Yengoet", role: "Economist / Director General", img: "/e.jpg" },
-    { name: "Dr. Terna Abege (PHD)", role: "Head of MHPSS", img: "/f.jpg" },
-    { name: "Dorcas Bello (Sheffy)", role: "Multimedia Journalist", img: "/g.jpg" }
-  ];
 
   const stats = [
     { val: "88%", label: "Education Aspiration", img: "/1.jpg" },
@@ -834,10 +909,11 @@ return (
   </div>
 )}
       {/* --- INTERNAL PAGES --- */}
-  {currentPage === "evidence" && <EvidenceSection />}
-  {currentPage === "updates" && <UpdatesSection />}
-  {currentPage === "capacity" && <CapacitySection />}
+  {currentPage === "updates" && <UpdatesSection/>}
+  {currentPage === 'team' && <WorkingTeamSection/>}
+  {currentPage === 'trustees' && <TrusteesSection />}
   {currentPage === "partnership" && <PartnershipSection />}
+  {currentPage === 'protection' && <ChildProtectionSection />}
   {currentPage === 'jobs' && "Career Opportunities"}]
   {currentPage === "donation" && <DonationSection selectedAmount={''} setSelectedAmount={function (val: string): void {
         throw new Error('Function not implemented.');
