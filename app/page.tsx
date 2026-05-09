@@ -907,6 +907,38 @@ return (
           <ActivityCarousel />
     </section>
 
+    {/* 2. About Us & Our Model (Side by Side on Desktop) */}
+    <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div>
+        <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2 text-center">About Us</h2>
+        <p className="text-lg leading-relaxed text-gray-700 mb-6 text-justify">
+          The Guardian Initiative for Community Development (GICD) is a child-focused Nigerian charity that responds to and addresses humanitarian and development challenges affecting children. We strengthen protection systems, advance education and youth development, and improve the resilience of households and communities to achieve sustainable outcomes across both humanitarian and development contexts.
+        </p>
+        <p className="text-lg leading-relaxed text-gray-700 font-bold text-justify">
+          We operate at the intersection of child protection, socio-economic empowerment, and the translation of global frameworks into meaningful grassroots outcomes.
+        </p>
+      </div>
+      
+      <div className="bg-gray-50 p-8 border-4 border-black">
+        <h2 className="text-3xl font-black uppercase mb-6">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
+        <p className="text-base leading-relaxed text-gray-700 mb-4 text-justify">
+          Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
+        </p>
+        <p className="text-base leading-relaxed text-gray-700 font-bold italic text-justify">
+          We exist to intervene early and deliberately; to safeguard children, equip adolescents, and expand the worldview of young people. We see guided exposure as a form of protection, one that broadens perspective, strengthens decision-making, and inspires dreams.
+        </p>
+      </div>
+    </section>
+
+    {/* 3. Mission Banner */}
+    <section className="bg-yellow-100 py-16 px-6 border-y-4 border-black text-center">
+      <h2 className="text-2xl font-black uppercase mb-4 tracking-widest text-black/70">Our Mission</h2>
+      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
+        To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
+      </p>
+    </section>
+
+    
     {/* 3. Vision & Mission (Side by Side on Desktop) */}
 <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
   <div>
@@ -919,46 +951,6 @@ return (
     </p>
   </div>
 </section>
-
-    {/* 3. Mission Banner */}
-    <section className="bg-yellow-100 py-16 px-6 border-y-4 border-black text-center">
-      <h2 className="text-2xl font-black uppercase mb-4 tracking-widest text-black/70">Our Mission</h2>
-      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
-        To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
-      </p>
-    </section>
-
-    {/*our vision*/}
-    <section className="relative z-10 py-24 px-6 bg-yellow-500 border-y-4 border-black">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
-        {/* Left Side: Bold Branding */}
-        <div>
-          <h2 className="text-[12px] font-black uppercase tracking-[0.5em] text-black mb-4">
-            The North Star
-          </h2>
-          <h3 className="text-6xl md:text-8xl font-black italic tracking-tighter text-white drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-            OUR <br /> VISION.
-          </h3>
-        </div>
-
-        {/* Right Side: The Statement */}
-        <div className="bg-white p-8 md:p-12 border-4 border-black shadow-[15px_15px_0px_0px_rgba(0,0,0,1)]">
-          <p className="text-xl md:text-2xl font-bold text-black leading-relaxed text-justify">
-            To foster a future where **data-driven insights** and **community-led action** converge to eliminate systemic barriers, ensuring that every grassroots initiative possesses the scientific rigor and administrative support necessary to create 
-            **lasting social equity** and sustainable development across the region.
-          </p>
-          
-          <div className="mt-8 flex items-center gap-4">
-            <div className="h-px flex-1 bg-black"></div>
-            <span className="text-[10px] font-black uppercase tracking-widest text-black">
-              GICD Platform 2026
-            </span>
-          </div>
-        </div>
-
-      </div>
-    </section>
 
     {/* 4. What We Do (3-Column Grid) */}
     <section className="py-24 px-6 max-w-7xl mx-auto">
