@@ -949,7 +949,7 @@ return (
         
         {/* Child Protection */}
         <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
-          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Child Protection</h3>
+          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Child Protection</h3>
           <p className="text-gray-700 leading-relaxed text-sm text-justify">
             We strengthen child protection through community-based awareness and prevention initiatives, early identification and referral of vulnerable children, and targeted parenting support that promotes family stability. We also work to reinforce informal protection systems within communities, ensuring that children are surrounded by responsive, informed, and supportive structures that can safeguard their well-being.
           </p>
@@ -957,15 +957,15 @@ return (
 
         {/* Education */}
         <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
-          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Education</h3>
+          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Education</h3>
           <p className="text-gray-700 leading-relaxed text-sm text-justify">
             We improve access to formal education by addressing barriers that prevent children from enrolling, attending, and staying in school, while promoting learning environments that support their growth, dignity, and long-term development. We also inspire learning through structured exposure that broadens learners’ worldview and gives them a clear sense of purpose to remain in school.
           </p>
         </div>
 
         {/* Youth Empowerment */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-black text-white">
-          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Youth Development</h3>
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-white text-black">
+          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Youth Development</h3>
           <p className="text-gray-300 leading-relaxed text-sm text-justify">
             We equip young people with the tools they need to transition successfully into adulthood by expanding access to education, providing psychosocial support and life-skills development, and creating pathways for vocational training and meaningful economic participation. We deliberately pursue alternative learning pathways that empower and prepare young people for the future workforce and self-sustenance.
           </p>
