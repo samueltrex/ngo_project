@@ -929,16 +929,6 @@ return (
         </p>
       </div>
     </section>
-
-    {/* 3. Mission Banner */}
-    <section className="bg-yellow-100 py-16 px-6 border-y-4 border-black text-center">
-      <h2 className="text-2xl font-black uppercase mb-4 tracking-widest text-black/70">Our Mission</h2>
-      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
-        To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
-      </p>
-    </section>
-
-    
     {/* 3. Vision & Mission (Side by Side on Desktop) */}
 <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
   <div>
@@ -951,6 +941,14 @@ return (
     </p>
   </div>
 </section>
+
+    {/* 3. Mission Banner */}
+    <section className="bg-yellow-100 py-16 px-6 border-y-4 border-black text-center">
+      <h2 className="text-2xl font-black uppercase mb-4 tracking-widest text-black/70">Our Mission</h2>
+      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
+        To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
+      </p>
+    </section>
 
     {/* 4. What We Do (3-Column Grid) */}
     <section className="py-24 px-6 max-w-7xl mx-auto">
