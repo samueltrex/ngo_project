@@ -287,7 +287,7 @@ const WorkingTeamSection = () => {
     <section className="px-6 bg-white py-24 border-t-8 border-black animate-in fade-in">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-6xl font-black uppercase mb-12 italic">
-          Capacity <span className="text-yellow-500">Building</span>
+          Working <span className="text-yellow-500">Team</span>
         </h2>
         
         {/* Photo Grid */}
@@ -608,6 +608,81 @@ const ActivityCarousel = () => {
   );
 };
 
+const ReportsAssessmentsSection = () => {
+  const stats = [
+    { val: "88%", label: "Education Aspiration", img: "/1.jpg" },
+    { val: "65.6%", label: "Violence Exp.", img: "/2.jpg" },
+    { val: "0.0%", label: "Health Access", img: "/3.jpg" },
+    { val: "1 in 5", label: "Child Marriage Risk", img: "/4.jpg" },
+    { val: "96.9%", label: "Protection Risk", img: "/5.jpg" },
+  ];
+
+  // 1. State for swapping the small image
+  const [selectedImg, setSelectedImg] = useState("/ss.jpg");
+  
+  // 2. State for the "Pop-Out" (the zoom)
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  return (
+    <section className="relative z-20 py-16 px-6 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-10">
+          <h2 className="text-[10px] font-black uppercase tracking-[0.4em] text-yellow-600 mb-2">Research Analysis</h2>
+          <h3 className="text-4xl font-black italic tracking-tight text-black">Angwan Rukuba Findings</h3>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          <div className="lg:col-span-4 flex flex-col gap-3">
+            {stats.map((stat, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setSelectedImg(stat.img)}
+                className={`w-full text-left p-4 shadow-sm border-l-4 transition-all flex flex-col justify-center group 
+                  ${selectedImg === stat.img ? 'bg-yellow-50 border-yellow-500' : 'bg-white border-transparent hover:bg-gray-50'}`}
+              >
+                <h4 className={`text-2xl font-black ${selectedImg === stat.img ? 'text-yellow-600' : 'text-black'}`}>
+                  {stat.val}
+                </h4>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{stat.label}</p>
+              </button>
+            ))}
+          </div>
+
+          <div className="lg:col-span-8 relative min-h-[400px]">
+            <div
+              className="absolute inset-0 rounded-2xl overflow-hidden shadow-xl border border-gray-200 cursor-zoom-in group"
+              // 📍 WHEN CLICKED, SET ZOOM TO TRUE
+              onClick={() => setIsZoomed(true)}
+            >
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center">
+                <span className="bg-black text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-bold uppercase tracking-widest">
+                  View Full Data Pop Out
+                </span>
+              </div>
+              <img src={selectedImg} alt="Research Map" className="w-full h-full object-cover transition-all duration-500" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 📍 THE POP-OUT BOX (Only shows when isZoomed is true) */}
+      {isZoomed && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-12 animate-in fade-in duration-300"
+          onClick={() => setIsZoomed(false)}
+        >
+          <button className="absolute top-10 right-10 text-white font-black uppercase tracking-widest border-2 border-white px-4 py-2 hover:bg-white hover:text-black transition-all">
+            Close [X]
+          </button>
+          <div className="relative max-w-5xl w-full bg-white p-2 border-8 border-black shadow-[20px_20px_0px_0px_rgba(234,179,8,1)] animate-in zoom-in-95">
+            <img src={selectedImg} alt="Full Data" className="w-full h-auto" />
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};
 const TrusteesSection = () => {
   // Your Data
   const trustees = [
@@ -680,14 +755,6 @@ export default function Home() {
     window.open(REMITA_URL, "_blank");
   };
 
-  const stats = [
-    { val: "88%", label: "Education Aspiration", img: "/1.jpg" },
-    { val: "65.6%", label: "Violence Exp.", img: "/2.jpg" },
-    { val: "0.0%", label: "Health Access", img: "/3.jpg" },
-    { val: "1 in 5", label: "Child Marriage Risk", img: "/4.jpg" },
-    { val: "96.9%", label: "Protection Risk", img: "/5.jpg" },
-  ];
-
 const navigateTo = (page: 'landing' | 'story' | 'trustees' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity') => {
     setCurrentPage(page);
     setActiveFlow('menu');
@@ -700,6 +767,7 @@ const getLinkStyle = (page: 'landing' | 'story' | 'trustees' | 'team' | 'protect
     border-b-2 border-black transition-colors
     ${currentPage === page ? 'bg-yellow-500 text-black' : 'bg-white text-black hover:bg-gray-100'}
 `;
+const [zoomedImage, setZoomedImage] = useState(null);
 
 return (    
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden"> 
@@ -851,7 +919,7 @@ return (
         </p>
       </div>
       
-      <div className="bg-gray-50 p-8 border-4 border-black neo-shadow-yellow">
+      <div className="bg-gray-50 p-8 border-4 border-black neo-shadow-yellow text-justify">
         <h2 className="text-3xl font-black uppercase mb-6">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
         <p className="text-base leading-relaxed text-gray-700 mb-4">
           Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
@@ -863,7 +931,7 @@ return (
     </section>
 
     {/* 3. Mission Banner */}
-    <section className="bg-yellow-500 py-16 px-6 border-y-4 border-black text-center">
+    <section className="bg-yellow-500 py-16 px-6 border-y-4 border-black text-center text-justify">
       <h2 className="text-2xl font-black uppercase mb-4 tracking-widest text-black/70">Our Mission</h2>
       <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
         To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
@@ -880,25 +948,25 @@ return (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         
         {/* Child Protection */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 text-justify">
           <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Child Protection</h3>
-          <p className="text-gray-700 leading-relaxed text-sm">
+          <p className="text-gray-700 leading-relaxed text-sm text-justified">
             We strengthen child protection through community-based awareness and prevention initiatives, early identification and referral of vulnerable children, and targeted parenting support that promotes family stability. We also work to reinforce informal protection systems within communities, ensuring that children are surrounded by responsive, informed, and supportive structures that can safeguard their well-being.
           </p>
         </div>
 
         {/* Education */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 text-justify">
           <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Education</h3>
-          <p className="text-gray-700 leading-relaxed text-sm">
+          <p className="text-gray-700 leading-relaxed text-sm text-justified">
             We improve access to formal education by addressing barriers that prevent children from enrolling, attending, and staying in school, while promoting learning environments that support their growth, dignity, and long-term development. We also inspire learning through structured exposure that broadens learners’ worldview and gives them a clear sense of purpose to remain in school.
           </p>
         </div>
 
         {/* Youth Empowerment */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-black text-white">
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-black text-white text-justify">
           <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Youth Development</h3>
-          <p className="text-gray-300 leading-relaxed text-sm">
+          <p className="text-gray-300 leading-relaxed text-sm text-justify">
             We equip young people with the tools they need to transition successfully into adulthood by expanding access to education, providing psychosocial support and life-skills development, and creating pathways for vocational training and meaningful economic participation. We deliberately pursue alternative learning pathways that empower and prepare young people for the future workforce and self-sustenance.
           </p>
         </div>
@@ -911,10 +979,11 @@ return (
       {/* --- INTERNAL PAGES --- */}
   {currentPage === "updates" && <UpdatesSection/>}
   {currentPage === 'team' && <WorkingTeamSection/>}
+  {currentPage === 'reports' && <ReportsAssessmentsSection/>}
   {currentPage === 'trustees' && <TrusteesSection />}
   {currentPage === "partnership" && <PartnershipSection />}
   {currentPage === 'protection' && <ChildProtectionSection />}
-  {currentPage === 'jobs' && "Career Opportunities"}]
+  {currentPage === 'jobs' && "Career Opportunities"}
   {currentPage === "donation" && <DonationSection selectedAmount={''} setSelectedAmount={function (val: string): void {
         throw new Error('Function not implemented.');
       } } onClose={function (): void {
@@ -923,6 +992,18 @@ return (
         throw new Error('Function not implemented.');
       } } />}
   {currentPage === "procurement" && <ProcurementSection />}
+  {/* This only appears if zoomedImage has a value */}
+{zoomedImage && (
+  <div 
+    className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
+    onClick={() => setZoomedImage(null)} // Click anywhere to close
+  >
+    <div className="relative max-w-5xl w-full bg-white p-2 border-4 border-black shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+      <button className="absolute -top-12 right-0 text-white font-black text-xl uppercase tracking-widest">Close [X]</button>
+      <img src={zoomedImage} alt="Zoomed View" className="w-full h-auto" />
+    </div>
+  </div>
+)}
 
       {/* FOOTER (Shows on all pages) */}
       <footer className="bg-black py-16 px-6 border-t border-white/10 text-center mt-auto">
