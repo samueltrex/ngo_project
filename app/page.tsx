@@ -919,12 +919,12 @@ return (
         </p>
       </div>
       
-      <div className="bg-gray-50 p-8 border-4 border-black neo-shadow-yellow text-justify">
+      <div className="bg-gray-50 p-8 border-4 border-black neo-shadow-yellow">
         <h2 className="text-3xl font-black uppercase mb-6">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
-        <p className="text-base leading-relaxed text-gray-700 mb-4">
+        <p className="text-base leading-relaxed text-gray-700 mb-4 text-justify">
           Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
         </p>
-        <p className="text-base leading-relaxed text-gray-700 font-bold italic border-l-4 border-black pl-4">
+        <p className="text-base leading-relaxed text-gray-700 font-bold italic text-justify">
           We exist to intervene early and deliberately; to safeguard children, equip adolescents, and expand the worldview of young people. We see guided exposure as a form of protection, one that broadens perspective, strengthens decision-making, and inspires dreams.
         </p>
       </div>
