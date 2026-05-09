@@ -453,7 +453,7 @@ const DonationSection = ({
   handleRemitaRedirect: () => void
 }) => (
   <section className="px-6 bg-white py-24 border-t-8 border-black">
-    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
+    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row border-2 border-yellow-500">
       {/* Left Column */}
       <div className="lg:w-1/2 p-8 md:p-12 bg-yellow-500 text-black flex flex-col justify-between border-b-8 lg:border-b-0 lg:border-r-8 border-black">
         <div>
