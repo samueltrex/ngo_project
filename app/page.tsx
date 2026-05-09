@@ -403,7 +403,7 @@ const PartnershipSection = () => (
 const ProcurementSection = () => (
   <section className="px-6 bg-white py-24 border-t-8 border-black">
     <div className="min-h-screen pt-32 pb-20 px-6 bg-gray-50 flex items-center justify-center">
-      <div className="max-w-4xl w-full bg-white border-8 border-black p-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+      <div className="max-w-4xl w-full bg-white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
             <span className="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block">Open: 9th – 20th Feb 2026</span>
