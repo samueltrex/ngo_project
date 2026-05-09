@@ -907,28 +907,18 @@ return (
           <ActivityCarousel />
     </section>
 
-    {/* 2. About Us & Our Model (Side by Side on Desktop) */}
-    <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-      <div>
-        <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2 text-center">About Us</h2>
-        <p className="text-lg leading-relaxed text-gray-700 mb-6 text-justify">
-          The Guardian Initiative for Community Development (GICD) is a child-focused Nigerian charity that responds to and addresses humanitarian and development challenges affecting children. We strengthen protection systems, advance education and youth development, and improve the resilience of households and communities to achieve sustainable outcomes across both humanitarian and development contexts.
-        </p>
-        <p className="text-lg leading-relaxed text-gray-700 font-bold text-justify">
-          We operate at the intersection of child protection, socio-economic empowerment, and the translation of global frameworks into meaningful grassroots outcomes.
-        </p>
-      </div>
-      
-      <div className="bg-gray-50 p-8 border-4 border-black">
-        <h2 className="text-3xl font-black uppercase mb-6">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
-        <p className="text-base leading-relaxed text-gray-700 mb-4 text-justify">
-          Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
-        </p>
-        <p className="text-base leading-relaxed text-gray-700 font-bold italic text-justify">
-          We exist to intervene early and deliberately; to safeguard children, equip adolescents, and expand the worldview of young people. We see guided exposure as a form of protection, one that broadens perspective, strengthens decision-making, and inspires dreams.
-        </p>
-      </div>
-    </section>
+    {/* 3. Vision & Mission (Side by Side on Desktop) */}
+<section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
+  <div>
+    <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
+    <p className="text-lg leading-relaxed text-gray-700 mb-6 text-justify">
+      To foster a future where every child and youth in Nigeria—regardless of their socio-economic background—has access to the resources, protection, and opportunities needed to reach their full potential and contribute meaningfully to national development. We envision a society where data-driven grassroots interventions provide the foundation for sustainable youth empowerment and long-term community resilience.
+    </p>
+    <p className="text-lg leading-relaxed text-gray-700 font-bold text-justify">
+      Our ultimate goal is the total eradication of systemic barriers that hinder the growth and safety of the Nigerian child, replacing them with structures of intentional nurture and scientific rigor.
+    </p>
+  </div>
+</section>
 
     {/* 3. Mission Banner */}
     <section className="bg-yellow-100 py-16 px-6 border-y-4 border-black text-center">
