@@ -940,6 +940,19 @@ return (
       Our ultimate goal is the total eradication of systemic barriers that hinder the growth and safety of the Nigerian child, replacing them with structures of intentional nurture and scientific rigor.
     </p>
   </div>
+  {/* Vision Content Card */}
+      <div className="relative z-10 bg-white p-8 md:p-10 border-4 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)] ml-6 mt-10 transition-transform hover:-translate-y-2 hover:-translate-x-1 duration-300">
+        <h2 className="text-4xl font-black uppercase mb-6">Our <span className="text-yellow-600">Vision</span></h2>
+        <div className="space-y-4">
+          <p className="text-lg leading-relaxed text-gray-800 text-justify">
+            To foster a future where every child and youth possesses the resources, protection, and opportunities needed to reach their full potential and contribute meaningfully to development.
+          </p>
+          <p className="text-base leading-relaxed text-gray-600 font-bold text-justify">
+            We envision a society where data-driven grassroots interventions provide the foundation for sustainable empowerment and long-term community resilience.
+          </p>
+        </div>
+      </div>
+    </div>
 </section>
 
     {/* 3. Mission Banner */}
