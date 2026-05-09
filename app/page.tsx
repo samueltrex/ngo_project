@@ -936,9 +936,6 @@ return (
     <p className="text-lg leading-relaxed text-gray-700 mb-6 text-justify">
       A world where the safety of children, the potentials of youth and the prospeerity of community is a lived reality.
     </p>
-    <p className="text-lg leading-relaxed text-gray-700 font-bold text-justify">
-      Our ultimate goal is the total eradication of systemic barriers that hinder the growth and safety of the Nigerian child, replacing them with structures of intentional nurture and scientific rigor.
-    </p>
   </div>
 </section>
 
