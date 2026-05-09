@@ -368,12 +368,12 @@ const WorkingTeamSection = () => {
 };
 
 const PartnershipSection = () => (
-  <section className="px-6 bg-white py-24 border-t-8 border-black">
+  <section className="px-6 bg-white py-24">
     <div className="min-h-screen pt-32 pb-20 px-6 bg-gray-50 flex items-center justify-center">
-      <div className="max-w-5xl w-full bg-white border-8 border-black p-8 md:p-12 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+      <div className="max-w-5xl w-full bg-white border-8 border-black p-8 md:p-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="bg-black text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
+            <span className="bg-yellow-500  text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
               Strategic Collaboration
             </span>
             <h3 className="text-4xl font-black uppercase mb-6 leading-tight tracking-tighter">
