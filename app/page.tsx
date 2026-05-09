@@ -933,7 +933,7 @@ return (
 <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
   <div>
     <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
-    <p className="text-lg leading-relaxed text-gray-700 mb-6 text-justify">
+    <p className="text-lg leading-relaxed text-black mb-6 text-justify">
       A world where the safety of children, the potentials of youth and the prospeerity of community is a lived reality.
     </p>
   </div>
