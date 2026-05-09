@@ -116,17 +116,17 @@ const UpdatesSection = () => (
         </div>
 
         {/* NEW IMPACT MOMENT: GSS FOBUR */}
-        <div className="bg-black text-black rounded-[3rem] p-8 md:p-16 border-2 border-white">
+        <div className="bg-white text-black rounded-[3rem] p-8 md:p-16 border-2 border-white">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
               <span className="text-yellow-500 text-[10px] font-black px-4 py-1 border-2 border-yellow-500 rounded-full uppercase tracking-widest mb-6 inline-block">
                 9 December 2026
               </span>
-              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
+              <h3 className="text-4xl font-black text-black uppercase tracking-tighter mb-6 leading-none">
                 Impact Moments: <br />
                 <span className="text-yellow-500 text-2xl italic">Empowering GSS Fobur</span>
               </h3>
-              <p className="text-sm text-gray-300 leading-relaxed mb-6">
+              <p className="text-sm text-black leading-relaxed mb-6">
                 On the invitation of the First Lady (Jos East LGA), we reached over 150 adolescent girls. We dismantled myths surrounding SGBV and reproductive health, equipping them with the knowledge to protect their rights and personal safety in rural settings.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
