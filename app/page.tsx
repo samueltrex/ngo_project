@@ -899,7 +899,7 @@ return (
                   The Guardian Initiative <br/> <span className="text-yellow-500">for</span> Community <br />
                   Development <span className="text-yellow-500">.</span>
                 </h1>
-                <p className="text-lg text-gray-400 max-w-2xl font-light border-l-4 border-yellow-500 pl-6 leading-relaxed">
+                <p className="text-lg text-black max-w-2xl font-light border-l-4 border-yellow-500 pl-6 leading-relaxed">
                   Empowering vulnerable populations and strengthening community resilience through evidence-based research in Plateau State.
                 </p>
               </div>
