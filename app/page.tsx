@@ -87,7 +87,7 @@ const UpdatesSection = () => (
         </div>
 
         {/* NEW OUTREACH: TIK TAK YEAR-END COUNTDOWN */}
-        <div className="bg-gray-50 rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(0,0,0,1)]">
+        <div className="bg-gray-50 rounded-[3rem] p-8 md:p-16 border-2 border-black">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 grid grid-cols-2 gap-2">
               <img src="/tik 1.jpg" alt="Outreach group" className="w-full h-48 object-cover rounded-tl-[2rem]" />
@@ -116,7 +116,7 @@ const UpdatesSection = () => (
         </div>
 
         {/* NEW IMPACT MOMENT: GSS FOBUR */}
-        <div className="bg-black text-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+        <div className="bg-black text-black rounded-[3rem] p-8 md:p-16 border-2 border-white">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
               <span className="text-yellow-500 text-[10px] font-black px-4 py-1 border-2 border-yellow-500 rounded-full uppercase tracking-widest mb-6 inline-block">
@@ -292,7 +292,7 @@ const WorkingTeamSection = () => {
         
         {/* Photo Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="border-4 border-black hover:-rotate-1 transition-transform overflow-hidden bg-gray-100">
+          <div className="border-4 hover:-rotate-1 transition-transform overflow-hidden bg-gray-100">
             <img src="/hon 2.jpg" className="w-full h-80 object-cover" alt="Training" />
           </div>
           <div className="border-4 border-black hover:rotate-1 transition-transform overflow-hidden bg-gray-100">
@@ -315,7 +315,7 @@ const WorkingTeamSection = () => {
 
       {/* YOUTH RESILIENCE MENTORS CARD */}
       <div className="max-w-7xl mx-auto mt-24">
-        <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+        <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-black">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Column: Text Content */}
@@ -966,7 +966,7 @@ return (
         {/* Youth Empowerment */}
         <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-white text-black">
           <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Youth Development</h3>
-          <p className="text-gray-300 leading-relaxed text-sm text-justify">
+          <p className="text-black leading-relaxed text-sm text-justify">
             We equip young people with the tools they need to transition successfully into adulthood by expanding access to education, providing psychosocial support and life-skills development, and creating pathways for vocational training and meaningful economic participation. We deliberately pursue alternative learning pathways that empower and prepare young people for the future workforce and self-sustenance.
           </p>
         </div>
