@@ -1,31 +1,42 @@
-import type  {Metadata}  from "next";
-import { Inter, Montserrat } from "next/font/google"; // Optimized fonts
+import type { Metadata } from "next";
+import { Oswald, Lato } from "next/font/google"; // 1. Import the new fonts
 import "./globals.css";
 
-// Font configurations for a professional academic and community feel
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-montserrat" });
+// 2. Configure Oswald for Headings
+const oswald = Oswald({ 
+  subsets: ["latin"], 
+  variable: "--font-oswald",
+  display: "swap",
+});
+
+// 3. Configure Lato for Body Text
+const lato = Lato({ 
+  subsets: ["latin"], 
+  weight: ["100", "300", "400", "700", "900"], // Lato requires explicit weights
+  variable: "--font-lato",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "GICD | The Guardians Initiative for Community Development",
   description: "A research-driven organization empowering vulnerable populations and strengthening community resilience in Plateau State.",
   
-  // 1. Browser & Tab Icons
+  // Browser & Tab Icons
   icons: {
     icon: "/logo.jpg", 
     shortcut: "/logo.jpg",
     apple: "/logo.jpg",
   },
 
-  // 2. Social Media Previews (This makes the logo show up in links)
+  // Social Media Previews
   openGraph: {
     title: "The Guardians Initiative for Community Development",
     description: "Empowering communities through evidence-based research and youth development.",
-    url: "https://thegicd.org", // Replace with your actual domain
+    url: "https://thegicd.org",
     siteName: "GICD Nigeria",
     images: [
       {
-        url: "/logo.jpg", // The path to your logo
+        url: "/logo.jpg",
         width: 800,
         height: 800,
         alt: "GICD Logo",
@@ -35,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
   },
 
-  // 3. Twitter/X Card
+  // Twitter/X Card
   twitter: {
     card: "summary_large_image",
     title: "GICD Nigeria",
@@ -50,8 +61,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${montserrat.variable} antialiased bg-white text-gicd-dark`}>
+    // 4. Inject the new font variables into the HTML tag
+    <html lang="en" className={`scroll-smooth ${oswald.variable} ${lato.variable}`}>
+      {/* 5. Applied font-sans here so Lato becomes the default site-wide */}
+      <body className="font-sans antialiased bg-white text-gicd-dark">
         {children}
       </body>
     </html>

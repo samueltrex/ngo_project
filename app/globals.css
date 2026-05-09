@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 @theme {
+  /* 1. Define Fonts (Matches the variables in layout.tsx) */
+  --font-sans: var(--font-lato), ui-sans-serif, system-ui;
+  --font-heading: var(--font-oswald), sans-serif;
+
   /* Brand Identity Colors */
   --color-gicd-yellow: #FFD200;
   --color-gicd-dark: #111111;
@@ -18,24 +22,27 @@
 /* Base Styles */
 @layer base {
   html {
-    /* Ensures navigateTo scrolls are smooth and easy on the eye */
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }
 
   body {
-    @apply bg-white text-gicd-dark antialiased;
-    /* Optimizes font rendering for academic research clarity */
+    /* Using Lato for the body as configured in layout.tsx */
+    @apply bg-white text-gicd-dark antialiased font-sans;
     text-rendering: optimizeLegibility;
   }
 
-  /* Custom Selection Color to match GICD branding */
+  /* Applied Oswald to all headings by default */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+
   ::selection {
     @apply bg-gicd-yellow/30 text-black;
   }
 }
 
-/* Utility for the 'Neobrutalist' border style used in your GICD components */
+/* Neo-Brutalist Utilities */
 @layer utilities {
   .neo-shadow {
     box-shadow: 8px 8px 0px 0px #111111;
@@ -43,5 +50,11 @@
   
   .neo-shadow-yellow {
     box-shadow: 8px 8px 0px 0px #FFD200;
+  }
+
+  /* Custom utility if you want extra justified control */
+  .text-justify-balanced {
+    text-align: justify;
+    text-justify: inter-word;
   }
 }
