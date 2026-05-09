@@ -938,6 +938,38 @@ return (
       </p>
     </section>
 
+    {/*our vision*/}
+    <section className="relative z-10 py-24 px-6 bg-yellow-500 border-y-4 border-black">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        {/* Left Side: Bold Branding */}
+        <div>
+          <h2 className="text-[12px] font-black uppercase tracking-[0.5em] text-black mb-4">
+            The North Star
+          </h2>
+          <h3 className="text-6xl md:text-8xl font-black italic tracking-tighter text-white drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+            OUR <br /> VISION.
+          </h3>
+        </div>
+
+        {/* Right Side: The Statement */}
+        <div className="bg-white p-8 md:p-12 border-4 border-black shadow-[15px_15px_0px_0px_rgba(0,0,0,1)]">
+          <p className="text-xl md:text-2xl font-bold text-black leading-relaxed text-justify">
+            To foster a future where **data-driven insights** and **community-led action** converge to eliminate systemic barriers, ensuring that every grassroots initiative possesses the scientific rigor and administrative support necessary to create 
+            **lasting social equity** and sustainable development across the region.
+          </p>
+          
+          <div className="mt-8 flex items-center gap-4">
+            <div className="h-px flex-1 bg-black"></div>
+            <span className="text-[10px] font-black uppercase tracking-widest text-black">
+              GICD Platform 2026
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     {/* 4. What We Do (3-Column Grid) */}
     <section className="py-24 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-16">
