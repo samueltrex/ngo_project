@@ -131,7 +131,7 @@ const UpdatesSection = () => (
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
                 {['#SGBVPrevention', '#RuralImpact', '#GirlsEmpowerment'].map((tag) => (
-                  <span key={tag} className="text-[10px] font-bold bg-white/10 px-3 py-1 rounded-md">
+                  <span key={tag} className="text-[10px] font-bold bg-black/10 px-3 py-1 rounded-md">
                     {tag}
                   </span>
                 ))}
@@ -165,7 +165,7 @@ const UpdatesSection = () => (
         </div>
 
         {/* PREVIOUS UPDATE: TUDUN WADA */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-12 border-2 border-gray-50">
           <div className="lg:col-span-7">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
