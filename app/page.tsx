@@ -910,16 +910,16 @@ return (
     {/* 2. About Us & Our Model (Side by Side on Desktop) */}
     <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
       <div>
-        <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">About Us</h2>
-        <p className="text-lg leading-relaxed text-gray-700 mb-6">
+        <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2 text-center">About Us</h2>
+        <p className="text-lg leading-relaxed text-gray-700 mb-6 text-justify">
           The Guardian Initiative for Community Development (GICD) is a child-focused Nigerian charity that responds to and addresses humanitarian and development challenges affecting children. We strengthen protection systems, advance education and youth development, and improve the resilience of households and communities to achieve sustainable outcomes across both humanitarian and development contexts.
         </p>
-        <p className="text-lg leading-relaxed text-gray-700 font-bold">
+        <p className="text-lg leading-relaxed text-gray-700 font-bold text-justify">
           We operate at the intersection of child protection, socio-economic empowerment, and the translation of global frameworks into meaningful grassroots outcomes.
         </p>
       </div>
       
-      <div className="bg-gray-50 p-8 border-4 border-black neo-shadow-yellow">
+      <div className="bg-gray-50 p-8 border-4 border-black">
         <h2 className="text-3xl font-black uppercase mb-6">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
         <p className="text-base leading-relaxed text-gray-700 mb-4 text-justify">
           Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
@@ -931,9 +931,9 @@ return (
     </section>
 
     {/* 3. Mission Banner */}
-    <section className="bg-yellow-500 py-16 px-6 border-y-4 border-black text-center text-justify">
+    <section className="bg-yellow-500 py-16 px-6 border-y-4 border-black text-center">
       <h2 className="text-2xl font-black uppercase mb-4 tracking-widest text-black/70">Our Mission</h2>
-      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
+      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight text-justify">
         To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
       </p>
     </section>
@@ -948,23 +948,23 @@ return (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         
         {/* Child Protection */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 text-justify">
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
           <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Child Protection</h3>
-          <p className="text-gray-700 leading-relaxed text-sm text-justified">
+          <p className="text-gray-700 leading-relaxed text-sm text-justify">
             We strengthen child protection through community-based awareness and prevention initiatives, early identification and referral of vulnerable children, and targeted parenting support that promotes family stability. We also work to reinforce informal protection systems within communities, ensuring that children are surrounded by responsive, informed, and supportive structures that can safeguard their well-being.
           </p>
         </div>
 
         {/* Education */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 text-justify">
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
           <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Education</h3>
-          <p className="text-gray-700 leading-relaxed text-sm text-justified">
+          <p className="text-gray-700 leading-relaxed text-sm text-justify">
             We improve access to formal education by addressing barriers that prevent children from enrolling, attending, and staying in school, while promoting learning environments that support their growth, dignity, and long-term development. We also inspire learning through structured exposure that broadens learners’ worldview and gives them a clear sense of purpose to remain in school.
           </p>
         </div>
 
         {/* Youth Empowerment */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-black text-white text-justify">
+        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-black text-white">
           <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2">Youth Development</h3>
           <p className="text-gray-300 leading-relaxed text-sm text-justify">
             We equip young people with the tools they need to transition successfully into adulthood by expanding access to education, providing psychosocial support and life-skills development, and creating pathways for vocational training and meaningful economic participation. We deliberately pursue alternative learning pathways that empower and prepare young people for the future workforce and self-sustenance.
