@@ -54,14 +54,14 @@ const UpdatesSection = () => (
             </div>
             
             <div className="lg:col-span-7 order-1 lg:order-2">
-              <span className="text-blue-600 text-[10px] font-black px-4 py-1 bg-blue-50 rounded-full uppercase tracking-widest mb-6 inline-block">
+              <span className="text-yellow-500 text-[10px] font-black px-4 py-1 bg-yellow-100 rounded-full uppercase tracking-widest mb-6 inline-block">
                 Donor Spotlight • 11 December 2025
               </span>
               <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
                 Courtesty of a Donor: <br />
-                <span className="text-gray-400 text-2xl">Dignity, Nutrition & Education</span>
+                <span className="text-yellow-500 text-2xl">Dignity, Nutrition & Education</span>
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-6 italic">
+              <p className="text-sm text-black leading-relaxed mb-6 italic">
                 Aunty, we are speechless… we won&apos;t fail you
               </p>
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
@@ -70,15 +70,15 @@ const UpdatesSection = () => (
               
               <div className="grid grid-cols-3 gap-4 border-t border-gray-200 pt-6">
                 <div>
-                  <p className="text-[10px] font-black uppercase text-gray-400">Scholarships</p>
+                  <p className="text-[10px] font-black uppercase text-yellow-500">Scholarships</p>
                   <p className="text-xl font-black">16 Students</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-black uppercase text-gray-400">Locations</p>
+                  <p className="text-[10px] font-black uppercase text-yellow-500">Locations</p>
                   <p className="text-xl font-black">Jos East/North</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-black uppercase text-gray-400">Focus</p>
+                  <p className="text-[10px] font-black uppercase text-yellow-500">Focus</p>
                   <p className="text-xl font-black">Dignity of Life</p>
                 </div>
               </div>
