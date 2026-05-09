@@ -931,9 +931,9 @@ return (
     </section>
 
     {/* 3. Mission Banner */}
-    <section className="bg-yellow-500 py-16 px-6 border-y-4 border-black text-center">
+    <section className="bg-yellow-100 py-16 px-6 border-y-4 border-black text-center">
       <h2 className="text-2xl font-black uppercase mb-4 tracking-widest text-black/70">Our Mission</h2>
-      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight text-justify">
+      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
         To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
       </p>
     </section>
