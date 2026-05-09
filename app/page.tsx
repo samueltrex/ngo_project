@@ -887,7 +887,7 @@ return (
   <div className="animate-reveal">
     
     {/* 1. Hero & Carousel Section */}
-         <section className="relative z-10 bg-black text-white py-20 border-b-8 border-yellow-500 w-full overflow-hidden"> 
+         <section className="relative z-10 bg-yellow-100 text-white py-20 border-b-8 border-yellow-500 w-full overflow-hidden"> 
     {/* Header Content Container */}
             <div className="w-full flex flex-col md:flex-row items-center gap-12 px-6 md:px-16 mb-16">
               <div className="relative group">
