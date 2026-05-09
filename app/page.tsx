@@ -929,49 +929,18 @@ return (
         </p>
       </div>
     </section>
-    const VisionSection = () => {
-  return (
-    <section className="py-24 px-6 max-w-7xl mx-auto border-t border-gray-100">
-      <div className="relative pt-12 min-h-[500px]">
-        
-        {/* 1. THE HOVERING IMAGE (The Base Layer) */}
-        {/* We use 'absolute' to pull it out of the flow so the card can sit 'on' it */}
-        <div className="absolute top-0 left-0 w-full md:w-4/5 h-[85%] border-4 border-black overflow-hidden z-0 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] bg-gray-200">
-          <img 
-            src="/vision-bg.jpg" 
-            alt="Research and Community Vision" 
-            className="w-full h-full object-cover grayscale opacity-40 hover:scale-105 transition-transform duration-1000 ease-in-out"
-          />
-          {/* Subtle overlay to ensure text remains readable */}
-          <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-transparent" />
-        </div>
-
-        {/* 2. THE CONTENT CARD (The Top Layer) */}
-        {/* 'relative z-10' ensures this stays above the image. 'ml-auto' pushes it right */}
-        <div className="relative z-10 bg-white p-8 md:p-16 border-4 border-black shadow-[20px_20px_0px_0px_rgba(234,179,8,1)] md:w-3/4 ml-auto mt-20 transition-all hover:-translate-y-2 hover:-translate-x-2 duration-300">
-          
-          <h2 className="text-5xl font-black uppercase mb-8 tracking-tighter">
-            Our <span className="text-yellow-500">Vision</span>
-          </h2>
-          
-          <div className="space-y-6">
-            <p className="text-xl leading-relaxed text-gray-900 font-bold text-justify">
-              To pioneer a future where **phytochemical research** and community-led action merge to eliminate systemic barriers. We envision a society where every child has the protection and scientific support necessary to reach their full potential.
-            </p>
-            
-            <p className="text-lg leading-relaxed text-gray-600 text-justify">
-              By focusing on areas like **Gombe State**, we aim to transform youth empowerment policies into sustainable, local realities through rigorous analysis of both social and biological data.
-            </p>
-          </div>
-
-          {/* Neo-Brutalist Decoration */}
-          <div className="absolute -top-6 -right-6 w-12 h-12 bg-yellow-500 border-4 border-black hidden md:block" />
-        </div>
-
-      </div>
-    </section>
-  );
-};
+    {/* 3. Vision & Mission (Side by Side on Desktop) */}
+<section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
+  <div>
+    <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
+    <p className="text-lg leading-relaxed text-gray-700 mb-6 text-justify">
+      A world where the safety of children, the potentials of youth and the prospeerity of community is a lived reality.
+    </p>
+    <p className="text-lg leading-relaxed text-gray-700 font-bold text-justify">
+      Our ultimate goal is the total eradication of systemic barriers that hinder the growth and safety of the Nigerian child, replacing them with structures of intentional nurture and scientific rigor.
+    </p>
+  </div>
+</section>
 
     {/* 3. Mission Banner */}
     <section className="bg-yellow-100 py-16 px-6 border-y-4 border-black text-center">
