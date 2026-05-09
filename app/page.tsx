@@ -930,17 +930,17 @@ return (
       </div>
     </section>
     {/* 3. Vision & Mission (Side by Side on Desktop) */}
-<section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
-  <div>
-    <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
-    <p className="text-lg leading-relaxed text-gray-700 mb-6 text-justify">
-      To foster a future where every child and youth in Nigeria—regardless of their socio-economic background—has access to the resources, protection, and opportunities needed to reach their full potential and contribute meaningfully to national development. We envision a society where data-driven grassroots interventions provide the foundation for sustainable youth empowerment and long-term community resilience.
-    </p>
-    <p className="text-lg leading-relaxed text-gray-700 font-bold text-justify">
-      Our ultimate goal is the total eradication of systemic barriers that hinder the growth and safety of the Nigerian child, replacing them with structures of intentional nurture and scientific rigor.
-    </p>
-  </div>
-  {/* Vision Content Card */}
+<div className="relative pt-12">
+      {/* Floating Background Image (Vision) */}
+      <div className="absolute top-0 left-0 w-11/12 h-[90%] border-4 border-black overflow-hidden z-0 shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
+        <img 
+          src="/logo.jpg" 
+          alt="Future Vision" 
+          className="w-full h-full object-cover grayscale opacity-30 hover:scale-110 transition-transform duration-700"
+        />
+      </div>
+
+      {/* Vision Content Card */}
       <div className="relative z-10 bg-white p-8 md:p-10 border-4 border-black shadow-[15px_15px_0px_0px_rgba(234,179,8,1)] ml-6 mt-10 transition-transform hover:-translate-y-2 hover:-translate-x-1 duration-300">
         <h2 className="text-4xl font-black uppercase mb-6">Our <span className="text-yellow-600">Vision</span></h2>
         <div className="space-y-4">
