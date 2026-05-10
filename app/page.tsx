@@ -591,14 +591,14 @@ const ActivityCarousel = () => {
         </div>
       ))}
       
-      <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-3 z-20">
+      <div className="absolute bottom left-0 right-0 flex justify-center z-20">
         {images.map((_, index) => (
           <button
             key={index}
             type="button"
             onClick={() => setCurrentIndex(index)}
             className={`w-3 h-3 rounded-full transition-colors ${
-              index === currentIndex ? "bg-yellow-500" : "bg-white/50"
+              index === currentIndex ? "bg-yellow-300" : "bg-white/50"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
