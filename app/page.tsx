@@ -887,7 +887,7 @@ return (
   <div className="animate-reveal">
     
     {/* 1. Hero & Carousel Section */}
-         <section className="relative z-10 bg-yellow-100 text-black py-20 border-b-8 border-yellow-500 w-full overflow-hidden"> 
+         <section className="relative z-10 bg-yellow-200 text-black py-20 border-b-8 border-yellow-500 w-full overflow-hidden"> 
     {/* Header Content Container */}
             <div className="w-full flex flex-col md:flex-row items-center gap-12 px-6 md:px-16 mb-16">
               <div className="relative group">
@@ -895,7 +895,7 @@ return (
                 <img src="/logo.jpg" alt="GICD Logo" className="relative w-32 md:w-48 rounded-3xl border border-white/10 shadow-2xl" />
               </div>
               <div className="text-center md:text-left">
-                <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6 uppercase">
+                <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6 uppercase text-center md:text-left">
                   The Guardian Initiative <br/> for Community <br />
                   Development.
                 </h1>
