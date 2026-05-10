@@ -936,7 +936,7 @@ return (
   </div>
 <div>
    <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Mission</h2>
-      <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
+      <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight">
         To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
       </p>
 </div>
