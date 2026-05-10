@@ -934,15 +934,13 @@ return (
       A world where the safety of children, the potentials of youth and the prospeerity of community is a lived reality.
     </p>
   </div>
-</section>
-
-    {/* 3. Mission Banner */}
-    <section className="bg-yellow-100 py-16 px-6 border-y-4 border-black text-center">
-      <h2 className="text-2xl font-black uppercase mb-4 tracking-widest text-black/70">Our Mission</h2>
+<div>
+   <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Mission</h2>
       <p className="text-3xl md:text-4xl font-black max-w-4xl mx-auto leading-tight">
         To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
       </p>
-    </section>
+</div>
+</section>
 
     {/* 4. What We Do (3-Column Grid) */}
     <section className="py-24 px-6 max-w-7xl mx-auto">
