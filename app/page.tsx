@@ -578,7 +578,7 @@ const ActivityCarousel = () => {
   }, [images.length]);
 
   return (
-    <div className="relative w-full h-[600px] overflow-hidden">
+    <div className="relative w-full h-[600px] absolute bottom-0 overflow-hidden">
       {images.map((src, index) => (
         <div
           key={index}
@@ -591,7 +591,7 @@ const ActivityCarousel = () => {
         </div>
       ))}
       
-      <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-3 z-20">
+      <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-3 z-20">
         {images.map((_, index) => (
           <button
             key={index}
