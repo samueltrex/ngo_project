@@ -35,7 +35,78 @@ const navItems = [
 ];
 
 const UpdatesSection = () => (
-  <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">      
+  <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">            
+         {/* Your Provided Section */}
+      <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-yellow-500 shadow-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-4">
+            <img 
+              src="/part c 1.jpg" 
+              alt="Insecurity Affects Education Advocacy" 
+              className="w-full rounded-2xl shadow-lg border-2 border-gray-100" 
+            />
+          </div>
+          <div className="lg:col-span-8">
+            <span className="bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
+              Urgent Action
+            </span>
+            <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
+              Safe Schools Now: <br />
+              <span className="text-gray-400 text-2xl">A Call to Government</span>
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed mb-6">
+              With 47 Unity schools closed nationwide, insecurity is denying many Nigerian children their right to safe, quality education. 
+              GICD is advocating for the implementation of the Safe Schools Declaration to protect our future.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-[10px] font-black text-gray-400">#SafeSchoolsNow</span>
+              <span className="text-[10px] font-black text-gray-400">#RightToEducation</span>
+              <span className="text-[10px] font-black text-gray-400">#GICDAdvocacy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <div className="max-w-[1400px] mx-auto">
+      <div className="grid lg:grid-cols-12 gap-12 items-center">
+        {/* Left: Image */}
+        <div className="lg:col-span-6 relative">
+          <div className="relative border-4 border-black p-2 bg-white shadow-lg">
+            <img src="/part a 2.jpg" alt="Ministry Meeting" className="w-full h-[400px]" />
+          </div>
+          <div className="absolute -bottom-4 -right-4 bg-yellow-500 text-black font-black px-6 py-2 border-2 border-black text-xs uppercase tracking-widest shadow-md">
+            Protocol Approved
+          </div>
+        </div>
+
+        {/* Right: Content */}
+        <div className="lg:col-span-6 lg:pl-10">
+          <div className="inline-block bg-black text-white text-[10px] font-black uppercase tracking-[0.4em] px-4 py-1.5 mb-6">
+            Latest Engagement
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-8">
+            Laughs <br /> <span className="text-yellow-600 italic">at Last!</span>
+          </h2>
+          <div className="space-y-6">
+            <blockquote className="border-l-4 border-yellow-500 pl-6 text-lg md:text-xl font-medium text-gray-800 leading-snug italic">
+              &quot;The Commissioner&apos;s signing marks a major milestone for child protection research in Plateau State.&quot;
+            </blockquote>
+            <p className="text-sm text-gray-500 leading-relaxed font-lato">
+              We have concluded high-level discussions with the Honorable Commissioner, Plateau State Ministry of Women Affairs and Social Development, ensuring local research is grounded in official policy.
+            </p>
+            <div className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-lg w-fit mt-8">
+              <div className="w-10 h-12 bg-black flex items-center justify-center text-yellow-500 font-bold text-xs">PDF</div>
+              <div>
+                <p className="text-[9px] font-lato font-black uppercase tracking-widest text-gray-400">View Signed File</p>
+                <p className="text-xs font-lato font-bold text-black uppercase hover:text-yellow-600 cursor-pointer transition-colors">
+                  Research_Protocol_2026.pdf
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       <div className="text-center mb-20">
         <h2 className="text-5xl font-oswald uppercase tracking-tighter mb-4 italic">Programme <span className="text-yellow-600">Updates</span></h2>
         <div className="h-1.5 w-24 bg-yellow-500 mx-auto rounded-full" />
