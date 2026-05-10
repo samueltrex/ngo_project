@@ -578,7 +578,7 @@ const ActivityCarousel = () => {
   }, [images.length]);
 
   return (
-    <div className="relative w-full h-[600px]">
+    <div className="relative w-full h-[600px] overflow-hidden">
       {images.map((src, index) => (
         <div
           key={index}
