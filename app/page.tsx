@@ -907,8 +907,8 @@ return (
     {/* 2. About Us & Our Model (Side by Side on Desktop) */}
     <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
       <div>
-        <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2 text-center">About Us</h2>
-        <p className="text-lg leading-relaxed text-gray-700 mb-6 text-justify">
+        <h2 className="text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2 text-center">About Us</h2>
+        <p className="text-base leading-relaxed text-gray-700 font-lato italic text-justify">
           The Guardian Initiative for Community Development (GICD) is a child-focused Nigerian charity that responds to and addresses humanitarian and development challenges affecting children. We strengthen protection systems, advance education and youth development, and improve the resilience of households and communities to achieve sustainable outcomes across both humanitarian and development contexts.
         </p>
         <p className="text-lg leading-relaxed text-gray-700 font-bold text-justify">
