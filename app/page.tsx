@@ -6,7 +6,7 @@ type PageID =
   | 'story' | 'trustees' | 'team' 
   | 'protection' | 'education' 
   | 'updates' 
-  | 'reports' | 'technical' 
+  | 'reports' | 'technical' | 'youth'
   | 'partnership' | 'donation' | 'procurement' | 'jobs'
   | 'evidence' | 'capacity'; // Kept these to clear any old errors
 
@@ -18,7 +18,8 @@ const navItems = [
   ]},
   { title: "What we do", dropdown: [
       { name: "Child Protection", id: "protection" },
-      { name: "Education", id: "education" }
+      { name: "Education", id: "education" },
+      { name: "Youth", id: "youth" }
   ]},
   { title: "Programme updates", id: "updates" },
   { title: "Resources", dropdown: [
@@ -191,6 +192,40 @@ const UpdatesSection = () => (
       </div>
   </section>
 );
+
+const YouthSection = () => (
+ <section className="px-6 bg-white py-24">
+    <div className="min-h-screen pt-32 pb-20 px-6 bg-gray-50 flex items-center justify-center">
+      <div className="max-w-5xl w-full bg-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="bg-yellow-500  text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
+              Strategic Collaboration
+            </span>
+            <h3 className="text-4xl font-oswald uppercase mb-6 leading-tight tracking-tighter">
+              Kavod Relief <span className="text-yellow-500">×</span> GICD
+            </h3>
+            <div className="prose prose-sm text-gray-600 font-lato font-medium leading-relaxed space-y-4">
+              <p>We are proud to announce the signing of a Memorandum of Understanding (MoU) formalizing a strategic collaboration to expand access to protection and skills for adolescents in Plateau State.</p>
+              <p>This partnership anchors <strong>&quot;Goals for Skills: Football Meets Tech,&quot;</strong> an integrated programme combining sport-based engagement with digital skills training and mentorship.</p>
+              <p className="border-l-4 border-yellow-500 pl-4 italic">&quot;This MoU represents more than a partnership; it reflects strong governance and a joint commitment to measurable impact&quot;.</p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {["#YouthDevelopment", "#ChildProtection", "#FootballMeetsTech"].map(tag => (
+                <span key={tag} className="text-[10px] font-lato uppercase text-gray-400">{tag}</span>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-2 bg-yellow-500 -z-10 rounded-2xl transform rotate-2"></div>
+            <img src="/partners.jpg" alt="GICD and Kavod Relief MoU Signing" className="w-full h-auto rounded-xl border-4 border-black shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 
 const ChildProtectionSection = () => {
   return (
@@ -749,20 +784,20 @@ export default function Home() {
   const [activeFlow, setActiveFlow] = useState('menu'); // options: 'menu','partners', 'donation', 'procurement'
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [selectedAmount, setSelectedAmount] = useState('');
-  const [currentPage, setCurrentPage] = useState<'landing' | 'story' | 'trustees' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity'>('landing');
+  const [currentPage, setCurrentPage] = useState<'landing' | 'story' | 'trustees' | 'youth' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity'>('landing');
   const REMITA_URL = "https://www.remita.net/pay-a-biller";
   const handleRemitaRedirect = () => {
     window.open(REMITA_URL, "_blank");
   };
 
-const navigateTo = (page: 'landing' | 'story' | 'trustees' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity') => {
+const navigateTo = (page: 'landing' | 'story' |'youth'| 'trustees' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity') => {
     setCurrentPage(page);
     setActiveFlow('menu');
     setMenuOpen(false);
     window.scrollTo(0, 0);
 };
 
-const getLinkStyle = (page: 'landing' | 'story' | 'trustees' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity') => `
+const getLinkStyle = (page: 'landing' | 'story' | 'trustees' | 'youth' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity') => `
     block w-full text-left px-8 py-4 font-black uppercase tracking-widest text-sm 
     border-b-2 border-black transition-colors
     ${currentPage === page ? 'bg-yellow-500 text-black' : 'bg-white text-black hover:bg-gray-100'}
@@ -831,6 +866,7 @@ return (
           <div className="bg-white py-2 animate-in slide-in-from-top-2 duration-200">
             <button onClick={() => navigateTo('protection')} className={getLinkStyle('protection')}>Child Protection</button>
             <button onClick={() => navigateTo('education')} className={getLinkStyle('education')}>Education</button>
+            <button onClick={() => navigateTo('youth')} className={getLinkStyle('youth')}>Youth Development</button>
           </div>
         )}
       </div>
@@ -985,6 +1021,7 @@ return (
   {currentPage === 'team' && <WorkingTeamSection/>}
   {currentPage === 'reports' && <ReportsAssessmentsSection/>}
   {currentPage === 'trustees' && <TrusteesSection />}
+  {currentPage === 'youth' && <YouthSection />}
   {currentPage === "partnership" && <PartnershipSection />}
   {currentPage === 'protection' && <ChildProtectionSection />}
   {currentPage === 'jobs' && "Career Opportunities"}
