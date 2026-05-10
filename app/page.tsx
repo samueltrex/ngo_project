@@ -36,7 +36,7 @@ const navItems = [
 const UpdatesSection = () => (
   <section id="updates" className="py-20 md:py-28 px-4 md:px-10 bg-white border-b border-gray-100">      
       <div className="text-center mb-20">
-        <h2 className="text-5xl font-black uppercase tracking-tighter mb-4 italic">Programme <span className="text-yellow-600">Updates</span></h2>
+        <h2 className="text-5xl font-oswald uppercase tracking-tighter mb-4 italic">Programme <span className="text-yellow-600">Updates</span></h2>
         <div className="h-1.5 w-24 bg-yellow-500 mx-auto rounded-full" />
       </div>
 
@@ -54,10 +54,10 @@ const UpdatesSection = () => (
             </div>
             
             <div className="lg:col-span-7 order-1 lg:order-2">
-              <span className="text-yellow-500 text-[10px] font-black px-4 py-1 bg-yellow-100 rounded-full uppercase tracking-widest mb-6 inline-block">
+              <span className="text-yellow-500 text-[10px] font-lato px-4 py-1 bg-yellow-100 rounded-full uppercase tracking-widest mb-6 inline-block">
                 Donor Spotlight • 11 December 2025
               </span>
-              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
+              <h3 className="text-4xl font-oswald uppercase tracking-tighter mb-6 leading-none">
                 Courtesty of a Donor: <br />
                 <span className="text-yellow-500 text-2xl">Dignity, Nutrition & Education</span>
               </h3>
@@ -70,16 +70,16 @@ const UpdatesSection = () => (
               
               <div className="grid grid-cols-3 gap-4 border-t border-gray-200 pt-6">
                 <div>
-                  <p className="text-[10px] font-black uppercase text-yellow-500">Scholarships</p>
-                  <p className="text-xl font-black">16 Students</p>
+                  <p className="text-[10px] font-lato uppercase text-yellow-500">Scholarships</p>
+                  <p className="text-xl font-lato">16 Students</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-black uppercase text-yellow-500">Locations</p>
-                  <p className="text-xl font-black">Jos East/North</p>
+                  <p className="text-[10px] font-lato uppercase text-yellow-500">Locations</p>
+                  <p className="text-xl font-lato">Jos East/North</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-black uppercase text-yellow-500">Focus</p>
-                  <p className="text-xl font-black">Dignity of Life</p>
+                  <p className="text-[10px] font-lato uppercase text-yellow-500">Focus</p>
+                  <p className="text-xl font-lato">Dignity of Life</p>
                 </div>
               </div>
             </div>
@@ -96,19 +96,19 @@ const UpdatesSection = () => (
               <img src="/tik 4.jpg" alt="Classroom session" className="w-full h-48 object-cover rounded-br-[2rem]" />
             </div>
             <div className="lg:col-span-7">
-              <span className="text-yellow-600 text-[10px] font-black px-4 py-1 border-2 border-yellow-600 rounded-full uppercase tracking-widest mb-6 inline-block">6 December 2025</span>
-              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">Tik... Tak... <br /><span className="text-gray-400 text-2xl">Countdown to Year-End</span></h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+              <span className="text-yellow-600 text-[10px] font-oswald px-4 py-1 border-2 border-yellow-600 rounded-full uppercase tracking-widest mb-6 inline-block">6 December 2025</span>
+              <h3 className="text-4xl font-oswald uppercase tracking-tighter mb-6 leading-none">Tik... Tak... <br /><span className="text-gray-400 text-2xl">Countdown to Year-End</span></h3>
+              <p className="text-sm text-gray-600 font-lato leading-relaxed mb-6">
                 Engaged 167 girls and boys from United Faith Tabernacle School (Jarawan Kogi) and GSS Federe (Angware) on reproductive health and SGBV prevention. We are building a future where informed children are better protected.
               </p>
               <div className="grid grid-cols-2 gap-4 border-t-2 border-gray-200 pt-6">
                 <div>
-                  <p className="text-[10px] font-black uppercase text-gray-400">Reach</p>
-                  <p className="text-xl font-black">167 Students</p>
+                  <p className="text-[10px] font-lato uppercase text-gray-400">Reach</p>
+                  <p className="text-xl font-lato">167 Students</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-black uppercase text-gray-400">Location</p>
-                  <p className="text-xl font-black">Angware, Plateau</p>
+                  <p className="text-[10px] font-lato uppercase text-gray-400">Location</p>
+                  <p className="text-xl font-lato">Angware, Plateau</p>
                 </div>
               </div>
             </div>
@@ -122,11 +122,11 @@ const UpdatesSection = () => (
               <span className="text-yellow-500 text-[10px] font-black px-4 py-1 border-2 border-yellow-500 rounded-full uppercase tracking-widest mb-6 inline-block">
                 9 December 2026
               </span>
-              <h3 className="text-4xl font-black text-black uppercase tracking-tighter mb-6 leading-none">
+              <h3 className="text-4xl font-oswald text-black uppercase tracking-tighter mb-6 leading-none">
                 Impact Moments: <br />
                 <span className="text-yellow-500 text-2xl italic">Empowering GSS Fobur</span>
               </h3>
-              <p className="text-sm text-black leading-relaxed mb-6">
+              <p className="text-sm text-black font-lato leading-relaxed mb-6">
                 On the invitation of the First Lady (Jos East LGA), we reached over 150 adolescent girls. We dismantled myths surrounding SGBV and reproductive health, equipping them with the knowledge to protect their rights and personal safety in rural settings.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
@@ -138,12 +138,12 @@ const UpdatesSection = () => (
               </div>
               <div className="grid grid-cols-2 gap-4 border-t border-white/20 pt-6">
                 <div>
-                  <p className="text-[10px] font-black uppercase text-yellow-500">Reach</p>
-                  <p className="text-xl font-black">150+ Girls</p>
+                  <p className="text-[10px] font-lato uppercase text-yellow-500">Reach</p>
+                  <p className="text-xl font-lato">150+ Girls</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-black uppercase text-yellow-500">Partner</p>
-                  <p className="text-xl font-black">First Lady, Jos East</p>
+                  <p className="text-[10px] font-lato uppercase text-yellow-500">Partner</p>
+                  <p className="text-xl font-lato">First Lady, Jos East</p>
                 </div>
               </div>
             </div>
@@ -178,9 +178,9 @@ const UpdatesSection = () => (
             </div>
           </div>
           <div className="lg:col-span-5">
-            <span className="text-[10px] font-black text-yellow-600 uppercase tracking-[0.4em] mb-4 block">Field Consultation</span>
-            <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-[0.9]">Safe Futures <br /> in Tudun Wada</h3>
-            <p className="text-sm text-gray-600 leading-relaxed mb-8">
+            <span className="text-[10px] font-lato font-black text-yellow-600 uppercase tracking-[0.4em] mb-4 block">Field Consultation</span>
+            <h3 className="text-4xl font-oswald font-black uppercase tracking-tighter mb-6 leading-[0.9]">Safe Futures <br /> in Tudun Wada</h3>
+            <p className="text-sm font-lato text-gray-600 leading-relaxed mb-8">
               Integrating community insights from the Sarkin Tudun Wada into the design of the GICD Safe Futures Project to combat drug abuse and teenage pregnancy.
             </p>
             <div className="bg-white p-6 rounded-2xl border border-gray-100 italic text-xs text-gray-500">
@@ -202,7 +202,7 @@ const ChildProtectionSection = () => {
           Child <br /> 
           <span className="text-red-600">Protection</span>
         </h2>
-        <p className="text-gray-500 font-bold uppercase tracking-widest text-sm mt-2 italic">
+        <p className="text-gray-500 font-bold font-lato uppercase tracking-widest text-sm mt-2 italic">
           Strengthening Safeguarding Systems
         </p>
       </div>
@@ -262,14 +262,14 @@ const ChildProtectionSection = () => {
             <blockquote className="border-l-4 border-yellow-500 pl-6 text-lg md:text-xl font-medium text-gray-800 leading-snug italic">
               &quot;The Commissioner&apos;s signing marks a major milestone for child protection research in Plateau State.&quot;
             </blockquote>
-            <p className="text-sm text-gray-500 leading-relaxed font-medium">
+            <p className="text-sm text-gray-500 leading-relaxed font-lato">
               We have concluded high-level discussions with the Honorable Commissioner, Plateau State Ministry of Women Affairs and Social Development, ensuring local research is grounded in official policy.
             </p>
             <div className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-lg w-fit mt-8">
               <div className="w-10 h-12 bg-black flex items-center justify-center text-yellow-500 font-bold text-xs">PDF</div>
               <div>
-                <p className="text-[9px] font-black uppercase tracking-widest text-gray-400">View Signed File</p>
-                <p className="text-xs font-bold text-black uppercase hover:text-yellow-600 cursor-pointer transition-colors">
+                <p className="text-[9px] font-lato font-black uppercase tracking-widest text-gray-400">View Signed File</p>
+                <p className="text-xs font-lato font-bold text-black uppercase hover:text-yellow-600 cursor-pointer transition-colors">
                   Research_Protocol_2026.pdf
                 </p>
               </div>
@@ -286,7 +286,7 @@ const WorkingTeamSection = () => {
   return (
     <section className="px-6 bg-white py-24 border-t-8 border-black animate-in fade-in">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-6xl font-black uppercase mb-12 italic">
+        <h2 className="text-6xl font-oswald uppercase mb-12 italic">
           Working <span className="text-yellow-500">Team</span>
         </h2>
         
@@ -306,8 +306,8 @@ const WorkingTeamSection = () => {
         {/* Core Focus Card */}
         <div className="mt-12 p-8 border-l-8 border-black bg-gray-50">
           <p className="text-sm uppercase font-black tracking-widest text-gray-500 mb-4">Core Focus</p>
-          <h3 className="text-2xl font-black uppercase">Governance & Accountability</h3>
-          <p className="mt-4 text-gray-700 italic">
+          <h3 className="text-2xl font-oswald uppercase">Governance & Accountability</h3>
+          <p className="mt-4 text-gray-700 font-lato italic">
             &ldquo;This opportunity aligns strongly with our aspirations to strengthen leadership systems for greater community impact.&rdquo;
           </p>
         </div>
@@ -320,21 +320,21 @@ const WorkingTeamSection = () => {
             
             {/* Left Column: Text Content */}
             <div className="lg:col-span-6">
-              <span className="text-black text-[10px] font-black px-4 py-1 border-2 border-black rounded-full uppercase tracking-widest mb-6 inline-block">
+              <span className="text-black text-[10px] font-lato px-4 py-1 border-2 border-black rounded-full uppercase tracking-widest mb-6 inline-block">
                 18 December 2025
               </span>
-              <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
+              <h3 className="text-4xl font-oswald uppercase tracking-tighter mb-6 leading-none">
                 Building Resilience: <br />
                 <span className="text-yellow-500 text-2xl italic">Community Mentors</span>
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-6">
+              <p className="text-sm font-lato text-gray-600 leading-relaxed mb-6">
                 We successfully onboarded and trained Community Mentors for adolescents using the Save the Children Youth Resilience Program. 
                 Moving beyond direct outreach, we are establishing structured safety nets and psychosocial support in the Angwan Rukuba community.
               </p>
               
               <div className="flex flex-wrap gap-2 mb-8">
                 {['#YouthResilience', '#ChildProtection', '#PositiveParenting'].map((tag) => (
-                  <span key={tag} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-md text-gray-600">
+                  <span key={tag} className="text-[10px] font-lato font-bold bg-gray-100 px-3 py-1 rounded-md text-gray-600">
                     {tag}
                   </span>
                 ))}
@@ -376,17 +376,17 @@ const PartnershipSection = () => (
             <span className="bg-yellow-500  text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
               Strategic Collaboration
             </span>
-            <h3 className="text-4xl font-black uppercase mb-6 leading-tight tracking-tighter">
+            <h3 className="text-4xl font-oswald uppercase mb-6 leading-tight tracking-tighter">
               Kavod Relief <span className="text-yellow-500">×</span> GICD
             </h3>
-            <div className="prose prose-sm text-gray-600 font-medium leading-relaxed space-y-4">
+            <div className="prose prose-sm text-gray-600 font-lato font-medium leading-relaxed space-y-4">
               <p>We are proud to announce the signing of a Memorandum of Understanding (MoU) formalizing a strategic collaboration to expand access to protection and skills for adolescents in Plateau State.</p>
               <p>This partnership anchors <strong>&quot;Goals for Skills: Football Meets Tech,&quot;</strong> an integrated programme combining sport-based engagement with digital skills training and mentorship.</p>
               <p className="border-l-4 border-yellow-500 pl-4 italic">&quot;This MoU represents more than a partnership; it reflects strong governance and a joint commitment to measurable impact&quot;.</p>
             </div>
             <div className="mt-8 flex flex-wrap gap-2">
               {["#YouthDevelopment", "#ChildProtection", "#FootballMeetsTech"].map(tag => (
-                <span key={tag} className="text-[10px] font-black uppercase text-gray-400">{tag}</span>
+                <span key={tag} className="text-[10px] font-lato uppercase text-gray-400">{tag}</span>
               ))}
             </div>
           </div>
@@ -407,26 +407,26 @@ const ProcurementSection = () => (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
             <span className="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded-full uppercase mb-4 inline-block">Open: 9th – 20th Feb 2026</span>
-            <h3 className="text-4xl font-black uppercase mb-6 leading-tight">Vendor <br/>Prequalification</h3>
+            <h3 className="text-4xl font-oswald uppercase mb-6 leading-tight">Vendor <br/>Prequalification</h3>
             <p className="text-sm text-gray-600 mb-6 leading-relaxed">The Guardian Initiative for Community Development (GICD) seeks reputable vendors for ICT, Hospitality, and General Supplies.</p>
             <div className="space-y-4 mb-8">
               <div className="flex gap-3 items-center">
-                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">01</div>
-                <p className="text-xs font-black uppercase tracking-tight">ICT Supplies & Services</p>
+                <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-oswald text-xs">01</div>
+                <p className="text-xs font-lato uppercase tracking-tight">ICT Supplies & Services</p>
               </div>
               <div className="flex gap-3 items-center">
                 <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">02</div>
-                <p className="text-xs font-black uppercase tracking-tight">Food & Event Management</p>
+                <p className="text-xs font-lato uppercase tracking-tight">Food & Event Management</p>
               </div>
               <div className="flex gap-3 items-center">
                 <div className="w-8 h-8 bg-black text-white flex items-center justify-center font-black text-xs">03</div>
-                <p className="text-xs font-black uppercase tracking-tight">General Printing & Branding</p>
+                <p className="text-xs font-lato uppercase tracking-tight">General Printing & Branding</p>
               </div>
             </div>
             <a href="mailto:gicdprocurements@gmail.com?subject=EOI – Vendor Prequalification" className="block text-center py-6 bg-black text-white font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-yellow-500 hover:text-black transition-all">Submit EOI Email</a>
           </div>
           <div className="space-y-4">
-            <p className="text-[10px] font-black uppercase text-gray-400 text-center">Reference Documents</p>
+            <p className="text-[10px] font-lato uppercase text-gray-400 text-center">Reference Documents</p>
             <div className="grid grid-cols-2 gap-2">
               <img src="/vol 1.jpg" alt="EOI Doc 1" className="w-full h-32 object-cover border-2 border-black hover:scale-105 transition-transform" />
               <img src="/vol 2.jpg" alt="EOI Doc 2" className="w-full h-32 object-cover border-2 border-black hover:scale-105 transition-transform" />
@@ -508,15 +508,15 @@ const DonationSection = ({
           ✕ Close
         </button>
 
-        <h3 className="text-3xl font-black uppercase mb-2 mt-4 lg:mt-0">Select Amount</h3>
-        <p className="text-sm text-gray-500 mb-8 font-medium">All donations are securely processed via Remita (NGN).</p>
+        <h3 className="text-3xl font-oswald uppercase mb-2 mt-4 lg:mt-0">Select Amount</h3>
+        <p className="text-sm text-gray-500 mb-8 font-lato font-medium">All donations are securely processed via Remita (NGN).</p>
         
         <div className="grid grid-cols-2 gap-4 mb-6">
           {['5000', '10000', '25000', '50000'].map((amt) => (
             <button 
               key={amt}
               onClick={() => setSelectedAmount(amt)}
-              className={`py-4 border-4 border-black font-black text-2xl transition-all ${
+              className={`py-4 border-4 border-black font-oswald text-2xl transition-all ${
                 selectedAmount === amt 
                 ? 'bg-black text-white shadow-[4px_4px_0px_0px_rgba(234,179,8,1)]' 
                 : 'bg-white hover:bg-gray-50'
@@ -553,7 +553,7 @@ const DonationSection = ({
           </svg>
         </button>
 
-        <p className="text-center text-xs text-gray-400 mt-4 font-bold flex justify-center items-center gap-1 uppercase tracking-wider">
+        <p className="text-center text-xs text-gray-400 mt-4 font-lato flex justify-center items-center gap-1 uppercase tracking-wider">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
           </svg>
@@ -641,10 +641,10 @@ const ReportsAssessmentsSection = () => {
                 className={`w-full text-left p-4 shadow-sm border-l-4 transition-all flex flex-col justify-center group 
                   ${selectedImg === stat.img ? 'bg-yellow-50 border-yellow-500' : 'bg-white border-transparent hover:bg-gray-50'}`}
               >
-                <h4 className={`text-2xl font-black ${selectedImg === stat.img ? 'text-yellow-600' : 'text-black'}`}>
+                <h4 className={`text-2xl font-oswald ${selectedImg === stat.img ? 'text-yellow-600' : 'text-black'}`}>
                   {stat.val}
                 </h4>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{stat.label}</p>
+                <p className="text-[10px] font-lato uppercase tracking-widest text-gray-400">{stat.label}</p>
               </button>
             ))}
           </div>
@@ -700,7 +700,7 @@ const TrusteesSection = () => {
       <div className="max-w-7xl mx-auto"> 
         {/* Header */}
         <div className="mb-12 border-l-8 border-yellow-500 pl-8">
-          <h2 className="text-5xl font-black uppercase tracking-tighter">
+          <h2 className="text-5xl font-oswald uppercase tracking-tighter">
             Board of <br /> 
             <span className="text-yellow-500">Trustees</span>
           </h2>
@@ -723,14 +723,14 @@ const TrusteesSection = () => {
 
               {/* Content */}
               <div className="p-6 bg-white relative">
-                <h4 className="text-lg font-black uppercase leading-tight tracking-tight group-hover:text-yellow-600 transition-colors">
+                <h4 className="text-lg font-oswald uppercase leading-tight tracking-tight group-hover:text-yellow-600 transition-colors">
                   {person.name}
                 </h4>
                 
                 {/* The expanding line you created */}
                 <div className="w-12 h-1 bg-yellow-500 my-3 group-hover:w-24 transition-all duration-500" />
                 
-                <p className="text-[11px] text-gray-500 font-bold uppercase tracking-[0.2em]">
+                <p className="text-[11px] text-gray-500 font-lato uppercase tracking-[0.2em]">
                   {person.role}
                 </p>
               </div>
@@ -895,7 +895,7 @@ return (
                 <img src="/logo.jpg" alt="GICD Logo" className="relative w-32 md:w-48 rounded-3xl border border-white/10 shadow-2xl" />
               </div>
               <div className="text-center md:text-left">
-                <h1 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6 uppercase text-center">
+                <h1 className="text-4xl md:text-6xl font-oswald tracking-tighter leading-[0.9] mb-6 uppercase text-center">
                   The Guardian Initiative <br/> for Community <br />
                   Development.
                 </h1>
@@ -917,7 +917,7 @@ return (
       </div>
       
       <div className="bg-gray-50 p-8 border-4 border-black">
-        <h2 className="text-3xl font-black uppercase mb-6">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
+        <h2 className="text-3xl font-oswald uppercase mb-6">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
         <p className="text-base leading-relaxed text-gray-700 mb-4 text-justify">
           Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
         </p>
@@ -929,13 +929,13 @@ return (
     {/* 3. Vision & Mission (Side by Side on Desktop) */}
 <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
   <div>
-    <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
+    <h2 className="text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
     <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight">
       A world where the safety of children, the potentials of youth and the prospeerity of community is a lived reality.
     </p>
   </div>
 <div>
-   <h2 className="text-4xl font-black uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Mission</h2>
+   <h2 className="text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Mission</h2>
       <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight">
         To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
       </p>
@@ -945,7 +945,7 @@ return (
     {/* 4. What We Do (3-Column Grid) */}
     <section className="py-24 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-5xl font-black uppercase tracking-tighter">What We Do</h2>
+        <h2 className="text-5xl font-oswald uppercase tracking-tighter">What We Do</h2>
         <div className="h-2 w-24 bg-black mx-auto mt-6" />
       </div>
 
@@ -953,23 +953,23 @@ return (
         
         {/* Child Protection */}
         <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
-          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Child Protection</h3>
-          <p className="text-gray-700 leading-relaxed text-sm text-justify">
+          <h3 className="text-2xl font-oswald uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Child Protection</h3>
+          <p className="text-gray-700 font-lato leading-relaxed text-sm text-justify">
             We strengthen child protection through community-based awareness and prevention initiatives, early identification and referral of vulnerable children, and targeted parenting support that promotes family stability. We also work to reinforce informal protection systems within communities, ensuring that children are surrounded by responsive, informed, and supportive structures that can safeguard their well-being.
           </p>
         </div>
 
         {/* Education */}
         <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
-          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Education</h3>
-          <p className="text-gray-700 leading-relaxed text-sm text-justify">
+          <h3 className="text-2xl font-oswald uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Education</h3>
+          <p className="text-gray-700 font-lato leading-relaxed text-sm text-justify">
             We improve access to formal education by addressing barriers that prevent children from enrolling, attending, and staying in school, while promoting learning environments that support their growth, dignity, and long-term development. We also inspire learning through structured exposure that broadens learners’ worldview and gives them a clear sense of purpose to remain in school.
           </p>
         </div>
 
         {/* Youth Empowerment */}
         <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-white text-black">
-          <h3 className="text-2xl font-black uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Youth Development</h3>
+          <h3 className="text-2xl font-oswald uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Youth Development</h3>
           <p className="text-black leading-relaxed text-sm text-justify">
             We equip young people with the tools they need to transition successfully into adulthood by expanding access to education, providing psychosocial support and life-skills development, and creating pathways for vocational training and meaningful economic participation. We deliberately pursue alternative learning pathways that empower and prepare young people for the future workforce and self-sustenance.
           </p>
