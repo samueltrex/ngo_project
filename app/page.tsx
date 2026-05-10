@@ -586,12 +586,12 @@ const ActivityCarousel = () => {
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         >
-          <img src={src} alt="Activity" className="w-full h-full object-cover" />
+          <img src={src} alt="Activity" className="w-full h-[600px] object-cover" />
           <div className="absolute inset-0 bg-black/40" />
         </div>
       ))}
       
-      <div className="absolute bottom-6 left-0 right-0 flex justify-center space-x-3 z-20">
+      <div className="absolute bottom-0 left-0 right-0 flex justify-center space-x-3 z-20">
         {images.map((_, index) => (
           <button
             key={index}
