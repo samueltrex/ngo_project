@@ -582,12 +582,12 @@ const ActivityCarousel = () => {
       {images.map((src, index) => (
         <div
           key={index}
-          className={`absolute bottom-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-1000 ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         >
           <img src={src} alt="Activity" className="w-full h-[600px] object-cover" />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute bottom-0 left-0 right-0 bg-black/40" />
         </div>
       ))}
       
