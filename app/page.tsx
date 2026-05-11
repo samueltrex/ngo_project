@@ -1012,7 +1012,7 @@ return (
     </section>
 
     {/* 2. About Us & Our Model (Side by Side on Desktop) */}
-    <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+    <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1">
       <div>
         <h2 className="text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2 text-center">About Us</h2>
         <p className="text-base leading-relaxed text-gray-700 font-lato text-justify">
@@ -1022,17 +1022,49 @@ return (
           We operate at the intersection of child protection, socio-economic empowerment, and the translation of global frameworks into meaningful grassroots outcomes.
         </p>
       </div>
-      
-      <div className="bg-gray-50 p-8 border-4 border-black">
-        <h2 className="text-3xl font-oswald uppercase mb-6">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
-        <p className="text-base leading-relaxed text-gray-700 mb-4 text-justify">
-          Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
-        </p>
-        <p className="text-base leading-relaxed text-gray-700 font-bold italic text-justify">
-          We exist to intervene early and deliberately; to safeguard children, equip adolescents, and expand the worldview of young people. We see guided exposure as a form of protection, one that broadens perspective, strengthens decision-making, and inspires dreams.
-        </p>
-      </div>
-    </section>
+      </section>
+
+     <section className="relative py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 overflow-hidden">
+  {/* 📍 Step 1: Carousel background with overlay */}
+  <div className="absolute inset-0 z-0">
+    {/* Implement a carousel component here, referencing 3 Illustrative Educational Image Paths */}
+    <img 
+      src="tik 4.jpg" /* Example educational path 1 */
+      alt="Youth program activity in Plateau State" 
+      className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-30" 
+    />
+    <img 
+      src="tik 6.jpg" /* Example educational path 2 */
+      alt="Child in school environment in Gombe State" 
+      className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-0 transition-opacity duration-1000" 
+    />
+    <img 
+      src="tik 7.jpg" /* Example educational path 3 */
+      alt="Community members interacting, fostering resilience" 
+      className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-0 transition-opacity duration-1000" 
+    />
+    
+    {/* Semi-transparent dark overlay to ensure text contrast */}
+    <div className="absolute inset-0 bg-black/60" />
+  </div>
+
+  {/* 📍 Step 2: Content card - Removed all borders and background color */}
+  {/* Relative z-10 ensures it stays above the carousel, use text-white or light for contrast */}
+  <div className="relative z-10 p-8 text-white">
+    {/* Heading preserves styling logic: font-oswald, uppercase, and the 'text-yellow-600' contrast color */}
+    <h2 className="font-heading text-3xl font-black uppercase mb-6 text-white">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
+    
+    {/* Preserve text-base leading-relaxed text-justify logic, update text color to light */}
+    <p className="text-base leading-relaxed text-gray-100 mb-4 text-justify">
+      Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
+    </p>
+    
+    {/* Preserve font-bold italic text-justify logic, update color to light */}
+    <p className="text-base leading-relaxed text-gray-100 font-bold italic text-justify">
+      We exist to intervene early and deliberately; to safeguard children, equip adolescents, and expand the worldview of young people. We see guided exposure as a form of protection, one that broadens perspective, strengthens decision-making, and inspires dreams.
+    </p>
+  </div>
+</section>
     {/* 3. Vision & Mission (Side by Side on Desktop) */}
 <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
   <div>
