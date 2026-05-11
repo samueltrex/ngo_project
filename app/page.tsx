@@ -1005,7 +1005,7 @@ return (
                 <img src="/logo.jpg" alt="GICD Logo" className="relative w-32 md:w-48 rounded-3xl border border-white/10 shadow-2xl" />
               </div>
               <div className="text-center md:text-left">
-                <h1 className="text-4xl md:text-8xl font-bold font-oswald tracking-tighter leading-[0.9] mb-6 uppercase text-center">
+                <h1 className="text-6xl md:text-6xl font-bold font-oswald tracking-tighter leading-[0.9] mb-6 uppercase text-left">
                   The Guardian Initiative <br/> for Community <br />
                   Development.
                 </h1>
