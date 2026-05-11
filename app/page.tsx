@@ -467,6 +467,41 @@ const PartnershipSection = () => (
   </section>
 );
 
+const EducationSection = () => (
+<section className="px-6 bg-white py-24">
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse gap-16 items-center">
+    {/* Visual Side */}
+    <div className="w-full lg:w-1/2 relative">
+      <div className="absolute -bottom-4 -right-4 w-full h-full bg-black -z-10" />
+      <div className="border-4 border-black overflow-hidden shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+        <img 
+          src="/images/education-exposure.jpg" 
+          alt="Structured learning environment" 
+          className="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
+        />
+      </div>
+    </div>
+    {/* Content Side */}
+    <div className="w-full lg:w-1/2 space-y-8">
+      <h2 className="font-heading text-6xl font-black uppercase leading-none">
+        The <span className="text-yellow-600">Education</span> Model
+      </h2>
+      <div className="space-y-6">
+        <p className="font-sans text-lg leading-relaxed text-gray-900 text-justify">
+          We improve access to formal education by addressing barriers that prevent children from enrolling, attending, and staying in school, while promoting learning environments that support their growth, dignity, and long-term development.
+        </p>
+        <div className="bg-yellow-400 border-4 border-black p-8">
+           <p className="font-heading text-2xl font-black uppercase mb-4 text-black italic">&quot;Guided Exposure as Protection&quot;</p>
+           <p className="font-sans text-gray-900 text-justify font-medium">
+             We inspire learning through structured exposure that broadens learners’ worldview and gives them a clear sense of purpose to remain in school.
+           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+);
+
 const ProcurementSection = () => (
   <section className="px-6 bg-white py-24 border-t-8 border-black">
     <div className="min-h-screen pt-32 pb-20 px-6 bg-gray-50 flex items-center justify-center">
@@ -1052,6 +1087,7 @@ return (
 )}
       {/* --- INTERNAL PAGES --- */}
   {currentPage === "updates" && <UpdatesSection/>}
+  {currentPage === "education" && <EducationSection/>}
   {currentPage === 'team' && <WorkingTeamSection/>}
   {currentPage === 'reports' && <ReportsAssessmentsSection/>}
   {currentPage === 'trustees' && <TrusteesSection />}
