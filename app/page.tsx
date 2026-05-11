@@ -282,7 +282,7 @@ const YouthSection = () => (
     {/* Content Side */}
     <div className="w-full lg:w-1/2 space-y-8">
       <h2 className="font-heading text-6xl font-black uppercase leading-none">
-        Youth <span className="text-yellow-600">Development</span>
+        Youth <span className="text-yellow-600">empowerment</span>
       </h2>
       <div className="space-y-6">
         <p className="font-sans text-lg leading-relaxed text-gray-900 text-justify">
