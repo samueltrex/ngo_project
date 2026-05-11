@@ -266,15 +266,14 @@ const UpdatesSection = () => (
 
 const YouthSection = () => (
  <section className="px-6 bg-white py-24">
- {/* EDUCATION SUB-SECTION */}
-  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse gap-16 items-center">
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
     {/* Visual Side */}
     <div className="w-full lg:w-1/2 relative">
-      <div className="absolute -bottom-4 -right-4 w-full h-full bg-black -z-10" />
-      <div className="border-4 border-black overflow-hidden shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+      <div className="absolute inset-0 bg-yellow-500 border-4 rotate-3 -z-10" />
+      <div className="border-4 border-black overflow-hidden">
         <img 
-          src="/images/education-exposure.jpg" 
-          alt="Structured learning environment" 
+          src="/images/youth-empowerment.jpg" 
+          alt="Youth vocational training" 
           className="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
         />
       </div>
@@ -283,18 +282,15 @@ const YouthSection = () => (
     {/* Content Side */}
     <div className="w-full lg:w-1/2 space-y-8">
       <h2 className="font-heading text-6xl font-black uppercase leading-none">
-        The <span className="text-yellow-600">Education</span> Model
+        Youth <span className="text-yellow-600">Development</span>
       </h2>
       <div className="space-y-6">
         <p className="font-sans text-lg leading-relaxed text-gray-900 text-justify">
-          We improve access to formal education by addressing barriers that prevent children from enrolling, attending, and staying in school, while promoting learning environments that support their growth, dignity, and long-term development.
+          We equip young people with the tools they need to transition successfully into adulthood by expanding access to education, providing psychosocial support and life-skills development, and creating pathways for vocational training.
         </p>
-        <div className="bg-yellow-400 border-4 border-black p-8">
-           <p className="font-heading text-2xl font-black uppercase mb-4 text-black italic">&quot;Guided Exposure as Protection&quot;</p>
-           <p className="font-sans text-gray-900 text-justify font-medium">
-             We inspire learning through structured exposure that broadens learners’ worldview and gives them a clear sense of purpose to remain in school.
-           </p>
-        </div>
+        <p className="font-sans text-lg leading-relaxed text-gray-800 text-justify font-bold bg-white">
+          We deliberately pursue alternative learning pathways that empower and prepare young people for the future workforce and self-sustenance through meaningful economic participation.
+        </p>
       </div>
     </div>
   </div>
@@ -304,16 +300,13 @@ const YouthSection = () => (
 
 const ChildProtectionSection = () => {
   return (
-    
-    
-    
     <section className="max-w-7xl mx-auto px-6 py-20 animate-in fade-in">  
       {/* Section Header */}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
     {/* Visual Side */}
     <div className="w-full lg:w-1/2 relative">
       <div className="absolute -top-4 -left-4 w-full h-full bg-yellow-400 -z-10 border-4 border-black" />
-      <div className="border-4 border-black overflow-hidden neo-shadow">
+      <div className="border-4 border-black overflow-hidden">
         <img 
           src="/images/protection-impact.jpg" 
           alt="Community protection initiatives" 
@@ -472,8 +465,8 @@ const EducationSection = () => (
   <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse gap-16 items-center">
     {/* Visual Side */}
     <div className="w-full lg:w-1/2 relative">
-      <div className="absolute -bottom-4 -right-4 w-full h-full bg-black -z-10" />
-      <div className="border-4 border-black overflow-hidden shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+      <div className="absolute -bottom-4 -right-4 w-full h-full bg-yellow-300" />
+      <div className="border-4 border-black overflow-hidden">
         <img 
           src="/images/education-exposure.jpg" 
           alt="Structured learning environment" 
