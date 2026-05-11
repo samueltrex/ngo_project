@@ -266,124 +266,85 @@ const UpdatesSection = () => (
 
 const YouthSection = () => (
  <section className="px-6 bg-white py-24">
-    <div className="min-h-screen pt-32 pb-20 px-6 bg-gray-50 flex items-center justify-center">
-      <div className="max-w-5xl w-full bg-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="bg-yellow-500  text-black text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
-              Strategic Collaboration
-            </span>
-            <h3 className="text-4xl font-oswald uppercase mb-6 leading-tight tracking-tighter">
-              Kavod Relief <span className="text-yellow-500">×</span> GICD
-            </h3>
-            <div className="prose prose-sm text-gray-600 font-lato font-medium leading-relaxed space-y-4">
-              <p>We are proud to announce the signing of a Memorandum of Understanding (MoU) formalizing a strategic collaboration to expand access to protection and skills for adolescents in Plateau State.</p>
-              <p>This partnership anchors <strong>&quot;Goals for Skills: Football Meets Tech,&quot;</strong> an integrated programme combining sport-based engagement with digital skills training and mentorship.</p>
-              <p className="border-l-4 border-yellow-500 pl-4 italic">&quot;This MoU represents more than a partnership; it reflects strong governance and a joint commitment to measurable impact&quot;.</p>
-            </div>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {["#YouthDevelopment", "#ChildProtection", "#FootballMeetsTech"].map(tag => (
-                <span key={tag} className="text-[10px] font-lato uppercase text-gray-400">{tag}</span>
-              ))}
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -inset-2 bg-yellow-500 -z-10 rounded-2xl transform rotate-2"></div>
-            <img src="/partners.jpg" alt="GICD and Kavod Relief MoU Signing" className="w-full h-auto rounded-xl border-4 border-black shadow-lg" />
-          </div>
+ {/* EDUCATION SUB-SECTION */}
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse gap-16 items-center">
+    {/* Visual Side */}
+    <div className="w-full lg:w-1/2 relative">
+      <div className="absolute -bottom-4 -right-4 w-full h-full bg-black -z-10" />
+      <div className="border-4 border-black overflow-hidden shadow-[15px_15px_0px_0px_rgba(234,179,8,1)]">
+        <img 
+          src="/images/education-exposure.jpg" 
+          alt="Structured learning environment" 
+          className="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
+        />
+      </div>
+    </div>
+
+    {/* Content Side */}
+    <div className="w-full lg:w-1/2 space-y-8">
+      <h2 className="font-heading text-6xl font-black uppercase leading-none">
+        The <span className="text-yellow-600">Education</span> Model
+      </h2>
+      <div className="space-y-6">
+        <p className="font-sans text-lg leading-relaxed text-gray-900 text-justify">
+          We improve access to formal education by addressing barriers that prevent children from enrolling, attending, and staying in school, while promoting learning environments that support their growth, dignity, and long-term development.
+        </p>
+        <div className="bg-yellow-400 border-4 border-black p-8">
+           <p className="font-heading text-2xl font-black uppercase mb-4 text-black italic">&quot;Guided Exposure as Protection&quot;</p>
+           <p className="font-sans text-gray-900 text-justify font-medium">
+             We inspire learning through structured exposure that broadens learners’ worldview and gives them a clear sense of purpose to remain in school.
+           </p>
         </div>
       </div>
     </div>
+  </div>
   </section>
 );
 
 
 const ChildProtectionSection = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 animate-in fade-in">
-      
+    
+    
+    
+    <section className="max-w-7xl mx-auto px-6 py-20 animate-in fade-in">  
       {/* Section Header */}
-      <div className="mb-12 border-l-8 border-red-600 pl-8">
-        <h2 className="text-5xl font-black uppercase tracking-tighter">
-          Child <br /> 
-          <span className="text-red-600">Protection</span>
-        </h2>
-        <p className="text-gray-500 font-bold font-lato uppercase tracking-widest text-sm mt-2 italic">
-          Strengthening Safeguarding Systems
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+    {/* Visual Side */}
+    <div className="w-full lg:w-1/2 relative">
+      <div className="absolute -top-4 -left-4 w-full h-full bg-yellow-400 -z-10 border-4 border-black" />
+      <div className="border-4 border-black overflow-hidden neo-shadow">
+        <img 
+          src="/images/protection-impact.jpg" 
+          alt="Community protection initiatives" 
+          className="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
+        />
+      </div>
+    </div>
+    
+    {/* Content Side */}
+    <div className="w-full lg:w-1/2 space-y-8">
+      <h2 className="font-heading text-6xl font-black uppercase leading-none">
+        Child <span className="text-yellow-600">Protection</span>
+      </h2>
+      <div className="space-y-6">
+        <p className="font-sans text-lg leading-relaxed text-gray-900 text-justify">
+          We strengthen child protection through community-based awareness and prevention initiatives, early identification and referral of vulnerable children, and targeted parenting support that promotes family stability. 
         </p>
-      </div>
-
-      {/* Your Provided Section */}
-      <div className="bg-white rounded-[3rem] p-8 md:p-16 border-2 border-yellow-500 shadow-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-4">
-            <img 
-              src="/part c 1.jpg" 
-              alt="Insecurity Affects Education Advocacy" 
-              className="w-full rounded-2xl shadow-lg border-2 border-gray-100" 
-            />
-          </div>
-          <div className="lg:col-span-8">
-            <span className="bg-red-600 text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
-              Urgent Action
-            </span>
-            <h3 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-none">
-              Safe Schools Now: <br />
-              <span className="text-gray-400 text-2xl">A Call to Government</span>
-            </h3>
-            <p className="text-sm text-gray-600 leading-relaxed mb-6">
-              With 47 Unity schools closed nationwide, insecurity is denying many Nigerian children their right to safe, quality education. 
-              GICD is advocating for the implementation of the Safe Schools Declaration to protect our future.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <span className="text-[10px] font-black text-gray-400">#SafeSchoolsNow</span>
-              <span className="text-[10px] font-black text-gray-400">#RightToEducation</span>
-              <span className="text-[10px] font-black text-gray-400">#GICDAdvocacy</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-          <div className="max-w-[1400px] mx-auto">
-      <div className="grid lg:grid-cols-12 gap-12 items-center">
-        {/* Left: Image */}
-        <div className="lg:col-span-6 relative">
-          <div className="relative border-4 border-black p-2 bg-white shadow-lg">
-            <img src="/part a 2.jpg" alt="Ministry Meeting" className="w-full h-[400px]" />
-          </div>
-          <div className="absolute -bottom-4 -right-4 bg-yellow-500 text-black font-black px-6 py-2 border-2 border-black text-xs uppercase tracking-widest shadow-md">
-            Protocol Approved
-          </div>
-        </div>
-
-        {/* Right: Content */}
-        <div className="lg:col-span-6 lg:pl-10">
-          <div className="inline-block bg-black text-white text-[10px] font-black uppercase tracking-[0.4em] px-4 py-1.5 mb-6">
-            Latest Engagement
-          </div>
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-8">
-            Laughs <br /> <span className="text-yellow-600 italic">at Last!</span>
-          </h2>
-          <div className="space-y-6">
-            <blockquote className="border-l-4 border-yellow-500 pl-6 text-lg md:text-xl font-medium text-gray-800 leading-snug italic">
-              &quot;The Commissioner&apos;s signing marks a major milestone for child protection research in Plateau State.&quot;
-            </blockquote>
-            <p className="text-sm text-gray-500 leading-relaxed font-lato">
-              We have concluded high-level discussions with the Honorable Commissioner, Plateau State Ministry of Women Affairs and Social Development, ensuring local research is grounded in official policy.
-            </p>
-            <div className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded-lg w-fit mt-8">
-              <div className="w-10 h-12 bg-black flex items-center justify-center text-yellow-500 font-bold text-xs">PDF</div>
-              <div>
-                <p className="text-[9px] font-lato font-black uppercase tracking-widest text-gray-400">View Signed File</p>
-                <p className="text-xs font-lato font-bold text-black uppercase hover:text-yellow-600 cursor-pointer transition-colors">
-                  Research_Protocol_2026.pdf
-                </p>
-              </div>
-            </div>
-          </div>
+        <p className="font-sans text-lg leading-relaxed text-gray-700 text-justify italic border-l-8 border-yellow-500 pl-6">
+          We work to reinforce informal protection systems within communities, ensuring that children are surrounded by responsive, informed, and supportive structures that can safeguard their well-being.
+        </p>
+        <div className="bg-black text-white p-6 neo-shadow-yellow">
+          <h4 className="font-heading text-xl uppercase mb-2 text-yellow-400">Core Focus:</h4>
+          <ul className="list-disc list-inside font-sans space-y-2">
+            <li>Community-Based Referral Systems</li>
+            <li>Parenting & Family Stability Programs</li>
+            <li>Early Vulnerability Identification</li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
     </section>
   );
 };
@@ -1087,43 +1048,6 @@ return (
       </p>
 </div>
 </section>
-
-    {/* 4. What We Do (3-Column Grid) */}
-    <section className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-oswald uppercase tracking-tighter">What We Do</h2>
-        <div className="h-2 w-24 bg-black mx-auto mt-6" />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        
-        {/* Child Protection */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
-          <h3 className="text-2xl font-oswald uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Child Protection</h3>
-          <p className="text-gray-700 font-lato leading-relaxed text-sm text-justify">
-            We strengthen child protection through community-based awareness and prevention initiatives, early identification and referral of vulnerable children, and targeted parenting support that promotes family stability. We also work to reinforce informal protection systems within communities, ensuring that children are surrounded by responsive, informed, and supportive structures that can safeguard their well-being.
-          </p>
-        </div>
-
-        {/* Education */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300">
-          <h3 className="text-2xl font-oswald uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Education</h3>
-          <p className="text-gray-700 font-lato leading-relaxed text-sm text-justify">
-            We improve access to formal education by addressing barriers that prevent children from enrolling, attending, and staying in school, while promoting learning environments that support their growth, dignity, and long-term development. We also inspire learning through structured exposure that broadens learners’ worldview and gives them a clear sense of purpose to remain in school.
-          </p>
-        </div>
-
-        {/* Youth Empowerment */}
-        <div className="border-2 border-black p-8 hover:-translate-y-2 transition-transform duration-300 bg-white text-black">
-          <h3 className="text-2xl font-oswald uppercase mb-4 border-b-2 border-yellow-500 pb-2 text-center">Youth Development</h3>
-          <p className="text-black leading-relaxed text-sm text-justify">
-            We equip young people with the tools they need to transition successfully into adulthood by expanding access to education, providing psychosocial support and life-skills development, and creating pathways for vocational training and meaningful economic participation. We deliberately pursue alternative learning pathways that empower and prepare young people for the future workforce and self-sustenance.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
   </div>
 )}
       {/* --- INTERNAL PAGES --- */}
