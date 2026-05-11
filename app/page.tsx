@@ -725,7 +725,6 @@ const ReportsAssessmentsSection = () => {
 
   // 1. State for swapping the small image
   const [selectedImg, setSelectedImg] = useState("/ss.jpg");
-  
   // 2. State for the "Pop-Out" (the zoom)
   const [isZoomed, setIsZoomed] = useState(false);
 
@@ -860,7 +859,18 @@ export default function Home() {
   const handleRemitaRedirect = () => {
     window.open(REMITA_URL, "_blank");
   };
+const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+useEffect(() => {
+  // Set up an interval to automatically change the image every 5 seconds
+  const intervalId = setInterval(() => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % educationalImages.length);
+  }, 5000); // 5000ms = 5 seconds
+
+  // Clean up the interval when the component unmounts to prevent memory leaks
+  return () => clearInterval(intervalId);
+}, []);
+  
 const navigateTo = (page: 'landing' | 'story' |'youth'| 'trustees' | 'team' | 'protection' | 'education' | 'updates' | 'reports' | 'technical' | 'partnership' | 'donation' | 'procurement' | 'jobs' | 'evidence' | 'capacity') => {
     setCurrentPage(page);
     setActiveFlow('menu');
@@ -874,7 +884,11 @@ const getLinkStyle = (page: 'landing' | 'story' | 'trustees' | 'youth' | 'team' 
     ${currentPage === page ? 'bg-yellow-500 text-black' : 'bg-white text-black hover:bg-gray-100'}
 `;
 const [zoomedImage, setZoomedImage] = useState(null);
-
+const educationalImages = [
+  '/images/youth-program-plateau.jpg', // Reference path 1: Youth activity in Plateau State
+  '/images/school-nurture-gombe.jpg',   // Reference path 2: Child in school in Gombe State
+  '/images/community-resilience.jpg',   // Reference path 3: Community interaction
+];
 return (    
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden"> 
 
@@ -1025,42 +1039,35 @@ return (
       </section>
 
      <section className="relative py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 overflow-hidden">
-  {/* 📍 Step 1: Carousel background with overlay */}
+  {/* 📍 Step 1: Changing, light background carousel */}
   <div className="absolute inset-0 z-0">
-    {/* Implement a carousel component here, referencing 3 Illustrative Educational Image Paths */}
-    <img 
-      src="tik 4.jpg" /* Example educational path 1 */
-      alt="Youth program activity in Plateau State" 
-      className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-30" 
-    />
-    <img 
-      src="tik 6.jpg" /* Example educational path 2 */
-      alt="Child in school environment in Gombe State" 
-      className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-0 transition-opacity duration-1000" 
-    />
-    <img 
-      src="tik 7.jpg" /* Example educational path 3 */
-      alt="Community members interacting, fostering resilience" 
-      className="absolute inset-0 w-full h-full object-cover grayscale contrast-125 opacity-0 transition-opacity duration-1000" 
-    />
+    {educationalImages.map((src, index) => (
+      <img 
+        key={src}
+        src={src}
+        alt={`Illustrative educational activity image ${index + 1}`} 
+        // Use opacity transition and conditional styling to fade between images
+        className={`absolute inset-0 w-full h-full object-cover grayscale contrast-125 transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-30' : 'opacity-0'}`} 
+      />
+    ))}
     
-    {/* Semi-transparent dark overlay to ensure text contrast */}
-    <div className="absolute inset-0 bg-black/60" />
+    {/* Semi-transparent light overlay for contrast against dark text */}
+    {/* Use bg-white/70 or similar to create a light background effect over the images */}
+    <div className="absolute inset-0 bg-white/70" />
   </div>
 
-  {/* 📍 Step 2: Content card - Removed all borders and background color */}
-  {/* Relative z-10 ensures it stays above the carousel, use text-white or light for contrast */}
-  <div className="relative z-10 p-8 text-white">
-    {/* Heading preserves styling logic: font-oswald, uppercase, and the 'text-yellow-600' contrast color */}
-    <h2 className="font-heading text-3xl font-black uppercase mb-6 text-white">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
+  {/* 📍 Step 2: Content card - no borders, dark text on light background */}
+  {/* Use original dark text colors for contrast against the light background */}
+  <div className="relative z-10 p-8 text-gicd-dark"> 
+    {/* Preserve heading with original dark and yellow colors */}
+    <h2 className="font-heading text-3xl font-black uppercase mb-6 text-black">Our Model: <br/><span className="text-yellow-600">Protection through Exposure</span></h2>
     
-    {/* Preserve text-base leading-relaxed text-justify logic, update text color to light */}
-    <p className="text-base leading-relaxed text-gray-100 mb-4 text-justify">
+    {/* Preserve text styling and dark colors */}
+    <p className="text-base leading-relaxed text-gray-700 mb-4 text-justify">
       Our work is inspired by a persistent and widening gap; between learning and purpose, and between protection and the lived socio-economic realities of children, particularly in underserved communities. In these environments, curiosity, resilience, and talent often fade quietly, not from lack of potential, but from lack of intentional nurture and meaningful exposure. Young people follow the expected path through school, yet still arrive at adulthood unprepared; not because they failed, but because the system never fully revealed what was possible.
     </p>
     
-    {/* Preserve font-bold italic text-justify logic, update color to light */}
-    <p className="text-base leading-relaxed text-gray-100 font-bold italic text-justify">
+    <p className="text-base leading-relaxed text-gray-700 font-bold italic text-justify">
       We exist to intervene early and deliberately; to safeguard children, equip adolescents, and expand the worldview of young people. We see guided exposure as a form of protection, one that broadens perspective, strengthens decision-making, and inspires dreams.
     </p>
   </div>
