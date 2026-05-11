@@ -885,9 +885,9 @@ const getLinkStyle = (page: 'landing' | 'story' | 'trustees' | 'youth' | 'team' 
 `;
 const [zoomedImage, setZoomedImage] = useState(null);
 const educationalImages = [
-  '/images/youth-program-plateau.jpg', // Reference path 1: Youth activity in Plateau State
-  '/images/school-nurture-gombe.jpg',   // Reference path 2: Child in school in Gombe State
-  '/images/community-resilience.jpg',   // Reference path 3: Community interaction
+  '/tik 7.jpg', // Reference path 1: Youth activity in Plateau State
+  'survey 4.jpg',   // Reference path 2: Child in school in Gombe State
+  'orph 5.jpg',   // Reference path 3: Community interaction
 ];
 return (    
     <main className="w-full min-h-screen bg-white text-black font-sans selection:bg-yellow-100 overflow-x-hidden"> 
