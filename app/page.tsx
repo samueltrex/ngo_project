@@ -306,7 +306,7 @@ const ChildProtectionSection = () => {
     {/* Visual Side */}
     <div className="w-full lg:w-1/2 relative">
       <div className="absolute -top-4 -left-4 w-full h-full bg-yellow-400 -z-10 border-4 border-black" />
-      <div className="border-4 border-black overflow-hidden">
+      <div className="border-4 overflow-hidden">
         <img 
           src="/images/protection-impact.jpg" 
           alt="Community protection initiatives" 
@@ -327,7 +327,7 @@ const ChildProtectionSection = () => {
         <p className="font-sans text-lg leading-relaxed text-gray-700 text-justify italic border-l-8 border-yellow-500 pl-6">
           We work to reinforce informal protection systems within communities, ensuring that children are surrounded by responsive, informed, and supportive structures that can safeguard their well-being.
         </p>
-        <div className="bg-black text-white p-6 neo-shadow-yellow">
+        <div className="bg-gray-100 text-black p-6">
           <h4 className="font-heading text-xl uppercase mb-2 text-yellow-400">Core Focus:</h4>
           <ul className="list-disc list-inside font-sans space-y-2">
             <li>Community-Based Referral Systems</li>
@@ -1049,7 +1049,7 @@ return (
   {/* Use original dark text colors for contrast against the light background */}
   <div className="relative z-10 p-8 text-gicd-dark"> 
     {/* Preserve heading with original dark and yellow colors */}
-    <h2 className="font-heading text-3xl font-oswald uppercase mb-6 text-black">Our Model: <br/><span className="text-yellow-300">Protection through Exposure</span></h2>
+    <h2 className="font-heading text-4xl font-oswald uppercase mb-6 text-black">Our Model: <br/><span className="text-yellow-500">Protection through Exposure</span></h2>
     
     {/* Preserve text styling and dark colors */}
     <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight font-lato">
