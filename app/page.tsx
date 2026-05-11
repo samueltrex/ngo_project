@@ -1071,13 +1071,13 @@ return (
     {/* 3. Vision & Mission (Side by Side on Desktop) */}
 <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
   <div>
-    <h2 className="text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
+    <h2 className="text-center text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
     <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight">
       A world where the safety of children, the potentials of youth and the prospeerity of community is a lived reality.
     </p>
   </div>
 <div>
-   <h2 className="text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Mission</h2>
+   <h2 className="text-center text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Mission</h2>
       <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight">
         To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
       </p>
