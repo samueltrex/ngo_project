@@ -305,12 +305,12 @@ const ChildProtectionSection = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
     {/* Visual Side */}
     <div className="w-full lg:w-1/2 relative">
-      <div className="absolute -top-4 -left-4 w-full h-full bg-yellow-400 -z-10 border-4 border-black" />
+      <div className="absolute -top-4 -left-4 w-full h-full bg-yellow-400 -z-10 border-4"/>
       <div className="border-4 overflow-hidden">
         <img 
-          src="/images/protection-impact.jpg" 
+          src="part c 1.jpg" 
           alt="Community protection initiatives" 
-          className="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
+          className="w-[600px] h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
         />
       </div>
     </div>
@@ -1005,7 +1005,7 @@ return (
                 <img src="/logo.jpg" alt="GICD Logo" className="relative w-32 md:w-48 rounded-3xl border border-white/10 shadow-2xl" />
               </div>
               <div className="text-center md:text-left">
-                <h1 className="text-4xl md:text-6xl font-bold font-oswald tracking-tighter leading-[0.9] mb-6 uppercase text-center">
+                <h1 className="text-4xl md:text-8xl font-bold font-oswald tracking-tighter leading-[0.9] mb-6 uppercase text-center">
                   The Guardian Initiative <br/> for Community <br />
                   Development.
                 </h1>
@@ -1017,7 +1017,7 @@ return (
     {/* 2. About Us & Our Model (Side by Side on Desktop) */}
       <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1"> 
        <div>
-        <h2 className="text-center text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">ABOUT US</h2>
+        <h2 className="text-center text-6xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">ABOUT US</h2>
         <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight font-lato">
             The Guardian Initiative for Community Development (GICD) is a child-focused Nigerian charity that responds to and addresses humanitarian and development challenges affecting children. We strengthen protection systems, advance education and youth development, and improve the resilience of households and communities to achieve sustainable outcomes across both humanitarian and development contexts.
         </p>
@@ -1049,7 +1049,7 @@ return (
   {/* Use original dark text colors for contrast against the light background */}
   <div className="relative z-10 p-8 text-gicd-dark"> 
     {/* Preserve heading with original dark and yellow colors */}
-    <h2 className="font-heading text-4xl font-oswald uppercase mb-6 text-black">Our Model: <br/><span className="text-yellow-500">Protection through Exposure</span></h2>
+    <h2 className="font-heading text-6xl font-oswald uppercase mb-6 text-black">Our Model: <br/><span className="text-yellow-500">Protection through Exposure</span></h2>
     
     {/* Preserve text styling and dark colors */}
     <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight font-lato">
@@ -1064,13 +1064,13 @@ return (
     {/* 3. Vision & Mission (Side by Side on Desktop) */}
 <section className="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-gray-100">
   <div>
-    <h2 className="text-center text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
+    <h2 className="text-center text-6xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Vision</h2>
     <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight">
       A world where the safety of children, the potentials of youth and the prospeerity of community is a lived reality.
     </p>
   </div>
 <div>
-   <h2 className="text-center text-4xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Mission</h2>
+   <h2 className="text-center text-6xl font-oswald uppercase border-b-4 border-yellow-500 inline-block mb-6 pb-2">Our Mission</h2>
       <p className="text-3xl md:text-4xl text-justify max-w-4xl mx-auto leading-tight">
         To protect children’s rights, drive sustainable development, and build resilient communities through evidence-based approaches.
       </p>
