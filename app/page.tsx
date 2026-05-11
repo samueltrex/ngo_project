@@ -272,7 +272,7 @@ const YouthSection = () => (
       <div className="absolute inset-0 bg-yellow-500 border-4 rotate-3 -z-10" />
       <div className="border-4 border-black overflow-hidden">
         <img 
-          src="/images/youth-empowerment.jpg" 
+          src="match 13.jpg" 
           alt="Youth vocational training" 
           className="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
         />
@@ -310,7 +310,7 @@ const ChildProtectionSection = () => {
         <img 
           src="part c 1.jpg" 
           alt="Community protection initiatives" 
-          className="w-[600px] h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
+          className="w-full h-[1000px]"
         />
       </div>
     </div>
@@ -465,10 +465,10 @@ const EducationSection = () => (
   <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse gap-16 items-center">
     {/* Visual Side */}
     <div className="w-full lg:w-1/2 relative">
-      <div className="absolute -bottom-4 -right-4 w-full h-full bg-yellow-300" />
-      <div className="border-4 border-black overflow-hidden">
+      <div className="absolute -bottom-4 -right-4 w-full h-full" />
+      <div className="border-4 overflow-hidden">
         <img 
-          src="/images/education-exposure.jpg" 
+          src="tik 5.jpg" 
           alt="Structured learning environment" 
           className="w-full h-[450px] object-cover grayscale hover:grayscale-0 transition-all duration-500"
         />
@@ -534,131 +534,6 @@ const ProcurementSection = () => (
     </div>
   </section>
 );
-
-// Wrapped the floating Donation section into a proper React component
-const DonationSection = ({ 
-  selectedAmount, 
-  setSelectedAmount, 
-  onClose, 
-  handleRemitaRedirect 
-}: { 
-  selectedAmount: string, 
-  setSelectedAmount: (val: string) => void, 
-  onClose: () => void,
-  handleRemitaRedirect: () => void
-}) => (
-  <section className="px-6 bg-white py-24 border-t-8 border-black">
-    <div className="max-w-7xl mx-auto flex flex-col lg:flex-row border-2 border-yellow-500">
-      {/* Left Column */}
-      <div className="lg:w-1/2 p-8 md:p-12 bg-yellow-500 text-black flex flex-col justify-between border-b-8 lg:border-b-0 lg:border-r-8 border-black">
-        <div>
-          <span className="bg-black text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-widest mb-6 inline-block">
-            Support Our Mission
-          </span>
-          <h3 className="text-5xl font-black uppercase mb-6 leading-none tracking-tighter">
-            Your Support <br /> Creates Change.
-          </h3>
-          <p className="font-medium text-lg mb-8 leading-relaxed">
-            Every Naira you donate goes directly toward providing safe spaces, essential education, and vital psychosocial support for vulnerable children and adolescents in Plateau State.
-          </p>
-
-          <div className="space-y-6">
-            <div className="flex gap-4 items-start">
-              <div className="w-8 h-8 bg-black text-white flex-shrink-0 flex items-center justify-center font-black rounded-full">✓</div>
-              <div>
-                <h4 className="font-black uppercase text-sm">Education & Skills</h4>
-                <p className="text-sm font-medium opacity-90 mt-1">Funding WAEC/JAMB registrations and digital skills training.</p>
-              </div>
-            </div>
-            <div className="flex gap-4 items-start">
-              <div className="w-8 h-8 bg-black text-white flex-shrink-0 flex items-center justify-center font-black rounded-full">✓</div>
-              <div>
-                <h4 className="font-black uppercase text-sm">Child Protection</h4>
-                <p className="text-sm font-medium opacity-90 mt-1">Supporting our community mentors and SGBV prevention spaces.</p>
-              </div>
-            </div>
-            <div className="flex gap-4 items-start">
-              <div className="w-8 h-8 bg-black text-white flex-shrink-0 flex items-center justify-center font-black rounded-full">✓</div>
-              <div>
-                <h4 className="font-black uppercase text-sm">Nutrition & Care</h4>
-                <p className="text-sm font-medium opacity-90 mt-1">Providing basic welfare, food, and dignity for local orphanages.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 pt-6 border-t-4 border-black/20">
-          <p className="text-xs font-black uppercase tracking-widest">
-            GICD is a transparent, registered non-profit.
-          </p>
-        </div>
-      </div>
-
-      {/* RIGHT COLUMN: THE FORM (How to Donate) */}
-      <div className="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white relative">
-        <button 
-          onClick={onClose} 
-          className="absolute top-8 right-8 font-black uppercase text-xs tracking-widest hover:text-yellow-500 transition-colors"
-        >
-          ✕ Close
-        </button>
-
-        <h3 className="text-3xl font-oswald uppercase mb-2 mt-4 lg:mt-0">Select Amount</h3>
-        <p className="text-sm text-gray-500 mb-8 font-lato font-medium">All donations are securely processed via Remita (NGN).</p>
-        
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          {['5000', '10000', '25000', '50000'].map((amt) => (
-            <button 
-              key={amt}
-              onClick={() => setSelectedAmount(amt)}
-              className={`py-4 border-4 border-black font-oswald text-2xl transition-all ${
-                selectedAmount === amt 
-                ? 'bg-black text-white shadow-[4px_4px_0px_0px_rgba(234,179,8,1)]' 
-                : 'bg-white hover:bg-gray-50'
-              }`}
-            >
-              ₦{parseInt(amt).toLocaleString()}
-            </button>
-          ))}
-        </div>
-
-        <div className="mb-8">
-          <label className="block text-xs font-black uppercase tracking-widest text-gray-400 mb-2">
-            Or enter custom amount
-          </label>
-          <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 font-black text-xl text-gray-400">₦</span>
-            <input 
-              type="number" 
-              value={selectedAmount}
-              onChange={(e) => setSelectedAmount(e.target.value)}
-              className="w-full pl-10 p-4 border-4 border-black font-black text-xl focus:bg-yellow-50 outline-none transition-colors"
-              placeholder="0.00"
-            />
-          </div>
-        </div>
-
-        <button 
-          onClick={handleRemitaRedirect}
-          className="w-full py-5 bg-yellow-500 text-black font-black uppercase tracking-widest text-xl border-4 border-black hover:bg-black hover:text-yellow-500 transition-all flex justify-center items-center gap-2"
-        >
-          Donate Securely 
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </button>
-
-        <p className="text-center text-xs text-gray-400 mt-4 font-lato flex justify-center items-center gap-1 uppercase tracking-wider">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-          </svg>
-          100% Secure Payment Guarantee
-        </p>
-      </div>
-    </div>
-  </section>
-);
-
 
 
 const ActivityCarousel = () => {
@@ -1088,13 +963,6 @@ return (
   {currentPage === "partnership" && <PartnershipSection />}
   {currentPage === 'protection' && <ChildProtectionSection />}
   {currentPage === 'jobs' && "Career Opportunities"}
-  {currentPage === "donation" && <DonationSection selectedAmount={''} setSelectedAmount={function (val: string): void {
-        throw new Error('Function not implemented.');
-      } } onClose={function (): void {
-        throw new Error('Function not implemented.');
-      } } handleRemitaRedirect={function (): void {
-        throw new Error('Function not implemented.');
-      } } />}
   {currentPage === "procurement" && <ProcurementSection />}
   {/* This only appears if zoomedImage has a value */}
 {zoomedImage && (
